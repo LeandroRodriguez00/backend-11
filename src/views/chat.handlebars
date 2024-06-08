@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h2>Chat Room</h2>
+    <div id="chat-window">
+        <ul id="messages"></ul>
+    </div>
+    <input id="message" type="text" placeholder="Escribe tu mensaje aquí..." />
+    <button id="send">Enviar</button>
+
+    <script>
+        $(function () {
+            var socket = io.connect();
+            // Solicitar el nombre de usuario al cargar la página
+            var userName = prompt("Por favor, ingresa tu nombre de usuario:");
+
+            $('#send').on('click', function() {
+                var messageText = $('#message').val();
+                if (!messageText) {
+                    alert('Por favor, escribe un mensaje.');
+                    return;
+                }
+                // Enviar el mensaje como un objeto con texto y remitente
+                socket.emit('new-message', { text: messageText, sender: userName });
+                $('#message').val(''); // Limpiar el campo de texto después de enviar
+            });
+
+            // Recibir mensajes del servidor y añadirlos a la lista
+            socket.on('message', function(data) {
+                // Asumiendo que data es un objeto con text y sender
+                var messageContent = `${data.sender}: ${data.text}`;
+                $('#messages').append($('<li>').text(messageContent));
+            });
+        });
+    </script>
+</body>
+</html>
