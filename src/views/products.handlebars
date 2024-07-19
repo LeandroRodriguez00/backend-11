@@ -5,6 +5,7 @@
     <title>Productos</title>
 </head>
 <body>
+    <h1>Bienvenido, {{user.email}} (Rol: {{user.role}})</h1>
     <h1>Productos</h1>
     <div>
         {{#each productos}}
@@ -29,7 +30,7 @@
     </div>
     <script>
         function agregarAlCarrito(productId) {
-          
+            // Lógica para agregar al carrito
         }
     </script>
 </body>

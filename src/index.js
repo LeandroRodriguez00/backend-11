@@ -56,6 +56,12 @@ passport.use(new LocalStrategy({
   passwordField: 'password'
 }, async (email, password, done) => {
   try {
+ 
+    if (email === 'adminCoder@coder.com' && password === 'adminCod3r123') {
+      const adminUser = { id: 'admin', email: 'adminCoder@coder.com', role: 'admin' };
+      return done(null, adminUser);
+    }
+
     const user = await User.findOne({ email });
     if (!user) {
       return done(null, false, { message: 'User not found' });
@@ -75,6 +81,10 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser(async (id, done) => {
+  if (id === 'admin') {
+    const adminUser = { id: 'admin', email: 'adminCoder@coder.com', role: 'admin' };
+    return done(null, adminUser);
+  }
   try {
     const user = await User.findById(id);
     done(null, user);
@@ -83,6 +93,16 @@ passport.deserializeUser(async (id, done) => {
   }
 });
 
+function ensureAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.redirect('/login');
+}
+
+app.get('/', (req, res) => {
+  res.redirect('/login');
+});
 
 app.get('/login', (req, res) => {
   res.render('login');
@@ -92,13 +112,11 @@ app.get('/register', (req, res) => {
   res.render('register');
 });
 
-
 app.get('/logout', (req, res) => {
   req.logout(() => {
     res.redirect('/login');
   });
 });
-
 
 app.post('/login', passport.authenticate('local', {
   successRedirect: '/products',
@@ -112,39 +130,6 @@ app.post('/register', async (req, res) => {
   await newUser.save();
   res.redirect('/login');
 });
-
-function ensureAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-    return next();
-  }
-  res.redirect('/login');
-}
-
-
-app.post('/api/carts/:cid/productos', ensureAuthenticated, async (req, res) => {
-  try {
-    const carrito = await Cart.findById(req.params.cid);
-    if (!carrito) {
-      return res.status(404).send('Carrito no encontrado');
-    }
-    const producto = await Product.findById(req.body.productId);
-    if (!producto) {
-      return res.status(404).send('Producto no encontrado');
-    }
-    const existingProductIndex = carrito.products.findIndex(item => item.product.toString() === req.body.productId);
-    if (existingProductIndex >= 0) {
-      carrito.products[existingProductIndex].quantity += req.body.quantity;
-    } else {
-      carrito.products.push({ product: req.body.productId, quantity: req.body.quantity });
-    }
-    await carrito.save();
-    res.json(carrito);
-  } catch (error) {
-    console.error('Error al agregar producto al carrito:', error);
-    res.status(500).send('Error al agregar producto al carrito');
-  }
-});
-
 
 app.get('/products', ensureAuthenticated, async (req, res) => {
   try {
@@ -191,12 +176,9 @@ app.get('/products', ensureAuthenticated, async (req, res) => {
   }
 });
 
-
-
-
 const productosRouter = express.Router();
 
-productosRouter.get('/', async (req, res) => {
+productosRouter.get('/', ensureAuthenticated, async (req, res) => {
   try {
     const { limit = 10, page = 1, sort, query } = req.query;
 
@@ -243,7 +225,7 @@ productosRouter.get('/', async (req, res) => {
   }
 });
 
-productosRouter.get('/:id', async (req, res) => {
+productosRouter.get('/:id', ensureAuthenticated, async (req, res) => {
   const producto = await Product.findById(req.params.id);
   if (producto) {
     res.json(producto);
@@ -252,13 +234,13 @@ productosRouter.get('/:id', async (req, res) => {
   }
 });
 
-productosRouter.post('/', async (req, res) => {
+productosRouter.post('/', ensureAuthenticated, async (req, res) => {
   const nuevoProducto = new Product(req.body);
   await nuevoProducto.save();
   res.status(201).json(nuevoProducto);
 });
 
-productosRouter.put('/:id', async (req, res) => {
+productosRouter.put('/:id', ensureAuthenticated, async (req, res) => {
   const productoActualizado = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
   if (productoActualizado) {
     res.json(productoActualizado);
@@ -267,7 +249,7 @@ productosRouter.put('/:id', async (req, res) => {
   }
 });
 
-productosRouter.delete('/:id', async (req, res) => {
+productosRouter.delete('/:id', ensureAuthenticated, async (req, res) => {
   const productoEliminado = await Product.findByIdAndDelete(req.params.id);
   if (productoEliminado) {
     res.json(productoEliminado);
@@ -278,16 +260,15 @@ productosRouter.delete('/:id', async (req, res) => {
 
 app.use('/api/products', productosRouter);
 
-
 const carritosRouter = express.Router();
 
-carritosRouter.post('/', async (req, res) => {
+carritosRouter.post('/', ensureAuthenticated, async (req, res) => {
   const nuevoCarrito = new Cart({ products: [] });
   await nuevoCarrito.save();
   res.status(201).json(nuevoCarrito);
 });
 
-carritosRouter.get('/:id', async (req, res) => {
+carritosRouter.get('/:id', ensureAuthenticated, async (req, res) => {
   const carrito = await Cart.findById(req.params.id).populate('products.product');
   if (carrito) {
     res.json(carrito);
@@ -296,7 +277,7 @@ carritosRouter.get('/:id', async (req, res) => {
   }
 });
 
-carritosRouter.post('/:id/productos', async (req, res) => {
+carritosRouter.post('/:id/productos', ensureAuthenticated, async (req, res) => {
   const carrito = await Cart.findById(req.params.id);
   if (!carrito) {
     return res.status(404).send('Carrito no encontrado');
@@ -315,7 +296,7 @@ carritosRouter.post('/:id/productos', async (req, res) => {
   res.json(carrito);
 });
 
-carritosRouter.delete('/:cid/products/:pid', async (req, res) => {
+carritosRouter.delete('/:cid/products/:pid', ensureAuthenticated, async (req, res) => {
   try {
     const { cid, pid } = req.params;
     const carrito = await Cart.findById(cid);
@@ -337,7 +318,7 @@ carritosRouter.delete('/:cid/products/:pid', async (req, res) => {
   }
 });
 
-carritosRouter.put('/:cid', async (req, res) => {
+carritosRouter.put('/:cid', ensureAuthenticated, async (req, res) => {
   try {
     const { cid } = req.params;
     const { products } = req.body;
@@ -356,7 +337,7 @@ carritosRouter.put('/:cid', async (req, res) => {
   }
 });
 
-carritosRouter.put('/:cid/products/:pid', async (req, res) => {
+carritosRouter.put('/:cid/products/:pid', ensureAuthenticated, async (req, res) => {
   try {
     const { cid, pid } = req.params;
     const { quantity } = req.body;
@@ -380,7 +361,7 @@ carritosRouter.put('/:cid/products/:pid', async (req, res) => {
   }
 });
 
-carritosRouter.delete('/:cid', async (req, res) => {
+carritosRouter.delete('/:cid', ensureAuthenticated, async (req, res) => {
   try {
     const { cid } = req.params;
 
@@ -400,27 +381,24 @@ carritosRouter.delete('/:cid', async (req, res) => {
 
 app.use('/api/carts', carritosRouter);
 
-
 const mensajesRouter = express.Router();
 
-mensajesRouter.post('/', async (req, res) => {
+mensajesRouter.post('/', ensureAuthenticated, async (req, res) => {
   const nuevoMensaje = new Message(req.body);
   await nuevoMensaje.save();
   res.status(201).json(nuevoMensaje);
 });
 
-mensajesRouter.get('/', async (req, res) => {
+mensajesRouter.get('/', ensureAuthenticated, async (req, res) => {
   const mensajes = await Message.find();
   res.json(mensajes);
 });
 
 app.use('/api/messages', mensajesRouter);
 
-
 app.get('/chat', ensureAuthenticated, (req, res) => {
   res.render('chat');
 });
-
 
 app.get('/realtimeproducts', ensureAuthenticated, async (req, res) => {
   try {
@@ -474,21 +452,6 @@ app.get('/products', ensureAuthenticated, async (req, res) => {
   } catch (error) {
     console.error('Error al obtener productos:', error);
     res.status(500).send('Error al obtener productos');
-  }
-});
-
-app.get('/carts/:cid', ensureAuthenticated, async (req, res) => {
-  try {
-    const { cid } = req.params;
-    const carrito = await Cart.findById(cid).populate('products.product');
-    if (!carrito) {
-      return res.status(404).send('Carrito no encontrado');
-    }
-
-    res.render('cart', { carrito });
-  } catch (error) {
-    console.error('Error al obtener carrito:', error);
-    res.status(500).send('Error al obtener carrito');
   }
 });
 
