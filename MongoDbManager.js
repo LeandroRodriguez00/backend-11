@@ -1,11 +1,8 @@
-// Importar Mongoose
+
 const mongoose = require('mongoose');
 
-// URI de conexión a MongoDB Atlas con la contraseña ya incluida
-// Asegúrate de reemplazar <password> y cualquier otro detalle necesario
 const uri = "mongodb+srv://leabackend:leabackend@lea32-backend.799yt4h.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
-// Establecer la conexión a MongoDB Atlas usando Mongoose
 mongoose.connect(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -14,7 +11,7 @@ mongoose.connect(uri, {
 .then(() => console.log('Conectado a MongoDB Atlas'))
 .catch(err => console.error('Error al conectar a MongoDB', err));
 
-// Definición de la clase MongoDbManager
+
 class MongoDbManager {
   constructor(model) {
     this.model = model;
