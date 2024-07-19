@@ -7,6 +7,7 @@ const socketIO = require('socket.io');
 const session = require('express-session');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const bcrypt = require('bcryptjs');
 
 const Product = require('../dao/models/Product');
@@ -56,12 +57,6 @@ passport.use(new LocalStrategy({
   passwordField: 'password'
 }, async (email, password, done) => {
   try {
- 
-    if (email === 'adminCoder@coder.com' && password === 'adminCod3r123') {
-      const adminUser = { id: 'admin', email: 'adminCoder@coder.com', role: 'admin' };
-      return done(null, adminUser);
-    }
-
     const user = await User.findOne({ email });
     if (!user) {
       return done(null, false, { message: 'User not found' });
@@ -76,15 +71,32 @@ passport.use(new LocalStrategy({
   }
 }));
 
+passport.use(new GoogleStrategy({
+  clientID: '22751861382-q0vtl9jual80atdl7sk0ce8klkhoj5ro.apps.googleusercontent.com', 
+  clientSecret: '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', 
+  callbackURL: 'http://localhost:8080/auth/google/callback'
+}, async (token, tokenSecret, profile, done) => {
+  try {
+    let user = await User.findOne({ googleId: profile.id });
+    if (!user) {
+      user = new User({
+        googleId: profile.id,
+        email: profile.emails[0].value,
+        role: 'user'
+      });
+      await user.save();
+    }
+    return done(null, user);
+  } catch (err) {
+    return done(err);
+  }
+}));
+
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });
 
 passport.deserializeUser(async (id, done) => {
-  if (id === 'admin') {
-    const adminUser = { id: 'admin', email: 'adminCoder@coder.com', role: 'admin' };
-    return done(null, adminUser);
-  }
   try {
     const user = await User.findById(id);
     done(null, user);
@@ -130,6 +142,17 @@ app.post('/register', async (req, res) => {
   await newUser.save();
   res.redirect('/login');
 });
+
+app.get('/auth/google',
+  passport.authenticate('google', { scope: ['profile', 'email'] })
+);
+
+app.get('/auth/google/callback', 
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  (req, res) => {
+    res.redirect('/products');
+  }
+);
 
 app.get('/products', ensureAuthenticated, async (req, res) => {
   try {
