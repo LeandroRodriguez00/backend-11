@@ -17,10 +17,7 @@ const User = require('../dao/models/User');
 
 const mongoDBUri = 'mongodb+srv://leabackend:leabackend@lea32-backend.799yt4h.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
-mongoose.connect(mongoDBUri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+mongoose.connect(mongoDBUri)
   .then(() => console.log('Conectado a MongoDB Atlas'))
   .catch(err => console.error('Error al conectar a MongoDB', err));
 
@@ -52,6 +49,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Estrategia de Passport Local
 passport.use(new LocalStrategy({
   usernameField: 'email',
   passwordField: 'password'
@@ -59,11 +57,11 @@ passport.use(new LocalStrategy({
   try {
     const user = await User.findOne({ email });
     if (!user) {
-      return done(null, false, { message: 'User not found' });
+      return done(null, false, { message: 'Usuario no encontrado' });
     }
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-      return done(null, false, { message: 'Incorrect password' });
+      return done(null, false, { message: 'Contraseña incorrecta' });
     }
     return done(null, user);
   } catch (err) {
@@ -77,13 +75,16 @@ passport.use(new GoogleStrategy({
   callbackURL: 'http://localhost:8080/auth/google/callback'
 }, async (token, tokenSecret, profile, done) => {
   try {
-    let user = await User.findOne({ googleId: profile.id });
+    let user = await User.findOne({ email: profile.emails[0].value });
     if (!user) {
       user = new User({
         googleId: profile.id,
         email: profile.emails[0].value,
         role: 'user'
       });
+      await user.save();
+    } else if (!user.googleId) {
+      user.googleId = profile.id;
       await user.save();
     }
     return done(null, user);
@@ -98,7 +99,7 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser(async (id, done) => {
   try {
-    const user = await User.findById(id);
+    const user = await User.findById(id).populate('cart');
     done(null, user);
   } catch (err) {
     done(err);
@@ -125,22 +126,47 @@ app.get('/register', (req, res) => {
 });
 
 app.get('/logout', (req, res) => {
-  req.logout(() => {
+  req.logout((err) => {
+    if (err) { return next(err); }
     res.redirect('/login');
   });
 });
 
-app.post('/login', passport.authenticate('local', {
-  successRedirect: '/products',
-  failureRedirect: '/login'
-}));
+app.post('/login', (req, res, next) => {
+  passport.authenticate('local', (err, user, info) => {
+    if (err) { return next(err); }
+    if (!user) { return res.render('login', { error: info.message }); }
+    req.logIn(user, (err) => {
+      if (err) { return next(err); }
+      return res.redirect('/products');
+    });
+  })(req, res, next);
+});
 
 app.post('/register', async (req, res) => {
-  const { email, password } = req.body;
-  const hashedPassword = await bcrypt.hash(password, 10);
-  const newUser = new User({ email, password: hashedPassword, role: 'user' });
-  await newUser.save();
-  res.redirect('/login');
+  const { first_name, last_name, email, age, password } = req.body;
+
+  try {
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.render('register', { error: 'El correo electrónico ya está registrado.' });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const newUser = new User({
+      first_name,
+      last_name,
+      email,
+      age,
+      password: hashedPassword,
+      role: 'user'
+    });
+    await newUser.save();
+    res.redirect('/login');
+  } catch (err) {
+    console.error('Error al registrar el usuario:', err);
+    res.render('register', { error: 'Error al registrar el usuario.' });
+  }
 });
 
 app.get('/auth/google',
@@ -198,6 +224,16 @@ app.get('/products', ensureAuthenticated, async (req, res) => {
     res.status(500).send('Error al obtener productos');
   }
 });
+
+const sessionRouter = express.Router();
+
+sessionRouter.get('/current', ensureAuthenticated, (req, res) => {
+  res.json({
+    user: req.user
+  });
+});
+
+app.use('/api/sessions', sessionRouter);
 
 const productosRouter = express.Router();
 
