@@ -4,16 +4,17 @@ const mongoose = require('mongoose');
 const path = require('path');
 const http = require('http');
 const socketIO = require('socket.io');
-const session = require('express-session');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser');
 
 const Product = require('../dao/models/Product');
 const Cart = require('../dao/models/Cart');
 const Message = require('../dao/models/Message');
-const User = require('../dao/models/User'); 
+const User = require('../dao/models/User');
 
 const mongoDBUri = 'mongodb+srv://leabackend:leabackend@lea32-backend.799yt4h.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
@@ -27,6 +28,10 @@ const io = socketIO(server);
 
 const PORT = 8080;
 
+
+const JWT_SECRET = 'jwt_secret';
+
+
 app.engine('handlebars', engine({
   runtimeOptions: {
     allowProtoPropertiesByDefault: true,
@@ -39,17 +44,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
 
-app.use(session({
-  secret: 'your_secret_key',
-  resave: false,
-  saveUninitialized: false
-}));
 
-app.use(passport.initialize());
-app.use(passport.session());
-
-// Estrategia de Passport Local
 passport.use(new LocalStrategy({
   usernameField: 'email',
   passwordField: 'password'
@@ -93,25 +90,22 @@ passport.use(new GoogleStrategy({
   }
 }));
 
-passport.serializeUser((user, done) => {
-  done(null, user.id);
-});
 
-passport.deserializeUser(async (id, done) => {
-  try {
-    const user = await User.findById(id).populate('cart');
-    done(null, user);
-  } catch (err) {
-    done(err);
+function verifyJWT(req, res, next) {
+  const token = req.cookies.jwt;
+  if (!token) {
+    return res.status(401).json({ message: 'No token provided' });
   }
-});
 
-function ensureAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-    return next();
-  }
-  res.redirect('/login');
+  jwt.verify(token, JWT_SECRET, (err, decoded) => {
+    if (err) {
+      return res.status(401).json({ message: 'Failed to authenticate token' });
+    }
+    req.user = decoded;
+    next();
+  });
 }
+
 
 app.get('/', (req, res) => {
   res.redirect('/login');
@@ -121,26 +115,25 @@ app.get('/login', (req, res) => {
   res.render('login');
 });
 
-app.get('/register', (req, res) => {
-  res.render('register');
-});
-
-app.get('/logout', (req, res) => {
-  req.logout((err) => {
-    if (err) { return next(err); }
-    res.redirect('/login');
-  });
-});
-
 app.post('/login', (req, res, next) => {
   passport.authenticate('local', (err, user, info) => {
     if (err) { return next(err); }
     if (!user) { return res.render('login', { error: info.message }); }
-    req.logIn(user, (err) => {
-      if (err) { return next(err); }
-      return res.redirect('/products');
+
+ 
+    const token = jwt.sign({ id: user._id, email: user.email, role: user.role }, JWT_SECRET, {
+      expiresIn: '1h',
     });
+
+
+    res.cookie('jwt', token, { httpOnly: true, secure: false });
+
+    return res.redirect('/products');
   })(req, res, next);
+});
+
+app.get('/register', (req, res) => {
+  res.render('register');
 });
 
 app.post('/register', async (req, res) => {
@@ -169,18 +162,13 @@ app.post('/register', async (req, res) => {
   }
 });
 
-app.get('/auth/google',
-  passport.authenticate('google', { scope: ['profile', 'email'] })
-);
+app.get('/logout', (req, res) => {
+  res.clearCookie('jwt');
+  res.redirect('/login');
+});
 
-app.get('/auth/google/callback', 
-  passport.authenticate('google', { failureRedirect: '/login' }),
-  (req, res) => {
-    res.redirect('/products');
-  }
-);
 
-app.get('/products', ensureAuthenticated, async (req, res) => {
+app.get('/products', verifyJWT, async (req, res) => {
   try {
     const { limit = 10, page = 1, sort, query } = req.query;
 
@@ -225,9 +213,10 @@ app.get('/products', ensureAuthenticated, async (req, res) => {
   }
 });
 
+
 const sessionRouter = express.Router();
 
-sessionRouter.get('/current', ensureAuthenticated, (req, res) => {
+sessionRouter.get('/current', verifyJWT, (req, res) => {
   res.json({
     user: req.user
   });
@@ -235,149 +224,186 @@ sessionRouter.get('/current', ensureAuthenticated, (req, res) => {
 
 app.use('/api/sessions', sessionRouter);
 
+
 const productosRouter = express.Router();
 
-productosRouter.get('/', ensureAuthenticated, async (req, res) => {
+productosRouter.get('/', verifyJWT, async (req, res) => {
+  const productos = await Product.find();
+  res.json(productos);
+});
+
+productosRouter.get('/:id', verifyJWT, async (req, res) => {
   try {
-    const { limit = 10, page = 1, sort, query } = req.query;
+    const { id } = req.params;
 
-    let filter = {};
-    if (query) {
-      filter = {
-        $or: [
-          { category: { $regex: query, $options: 'i' } },
-          { available: query.toLowerCase() === 'true' ? true : false }
-        ]
-      };
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).send('ID inválido');
     }
 
-    let sortOption = {};
-    if (sort) {
-      sortOption.price = sort.toLowerCase() === 'asc' ? 1 : -1;
+    const productId = new mongoose.Types.ObjectId(id);
+    const producto = await Product.findById(productId);
+
+    if (producto) {
+      res.json(producto);
+    } else {
+      res.status(404).send('Producto no encontrado');
     }
-
-    const options = {
-      page: parseInt(page, 10),
-      limit: parseInt(limit, 10),
-      sort: sortOption
-    };
-
-    const result = await Product.paginate(filter, options);
-
-    const response = {
-      status: 'success',
-      payload: result.docs,
-      totalPages: result.totalPages,
-      prevPage: result.hasPrevPage ? result.page - 1 : null,
-      nextPage: result.hasNextPage ? result.page + 1 : null,
-      page: result.page,
-      hasPrevPage: result.hasPrevPage,
-      hasNextPage: result.hasNextPage,
-      prevLink: result.hasPrevPage ? `/api/products?limit=${limit}&page=${result.page - 1}&sort=${sort}&query=${query}` : null,
-      nextLink: result.hasNextPage ? `/api/products?limit=${limit}&page=${result.page + 1}&sort=${sort}&query=${query}` : null
-    };
-
-    res.json(response);
   } catch (error) {
-    console.error('Error al obtener productos desde MongoDB Atlas:', error);
-    res.status(500).send({ status: 'error', message: 'Error al obtener productos desde MongoDB Atlas', error: error.message });
+    console.error('Error al obtener producto:', error);
+    res.status(500).send('Error en el servidor');
   }
 });
 
-productosRouter.get('/:id', ensureAuthenticated, async (req, res) => {
-  const producto = await Product.findById(req.params.id);
-  if (producto) {
-    res.json(producto);
-  } else {
-    res.status(404).send('Producto no encontrado');
+productosRouter.post('/', verifyJWT, async (req, res) => {
+  try {
+    const nuevoProducto = new Product(req.body);
+    await nuevoProducto.save();
+    res.status(201).json(nuevoProducto);
+  } catch (error) {
+    console.error('Error al crear producto:', error);
+    res.status(500).send('Error en el servidor');
   }
 });
 
-productosRouter.post('/', ensureAuthenticated, async (req, res) => {
-  const nuevoProducto = new Product(req.body);
-  await nuevoProducto.save();
-  res.status(201).json(nuevoProducto);
-});
+productosRouter.put('/:id', verifyJWT, async (req, res) => {
+  try {
+    const { id } = req.params;
 
-productosRouter.put('/:id', ensureAuthenticated, async (req, res) => {
-  const productoActualizado = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
-  if (productoActualizado) {
-    res.json(productoActualizado);
-  } else {
-    res.status(404).send('Producto no encontrado');
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).send('ID inválido');
+    }
+
+    const productId = new mongoose.Types.ObjectId(id);
+
+
+    const productoActualizado = await Product.findByIdAndUpdate(productId, req.body, { new: true });
+
+    if (productoActualizado) {
+      res.json(productoActualizado);
+    } else {
+      res.status(404).send('Producto no encontrado');
+    }
+  } catch (error) {
+    console.error('Error al actualizar producto:', error);
+    res.status(500).send('Error en el servidor');
   }
 });
 
-productosRouter.delete('/:id', ensureAuthenticated, async (req, res) => {
-  const productoEliminado = await Product.findByIdAndDelete(req.params.id);
-  if (productoEliminado) {
-    res.json(productoEliminado);
-  } else {
-    res.status(404).send('Producto no encontrado');
+
+productosRouter.delete('/:id', verifyJWT, async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).send('ID inválido');
+    }
+
+    const productId = new mongoose.Types.ObjectId(id);
+    const productoEliminado = await Product.findByIdAndDelete(productId);
+
+    if (productoEliminado) {
+      res.json(productoEliminado);
+    } else {
+      res.status(404).send('Producto no encontrado');
+    }
+  } catch (error) {
+    console.error('Error al eliminar producto:', error);
+    res.status(500).send('Error en el servidor');
   }
 });
 
 app.use('/api/products', productosRouter);
 
+
 const carritosRouter = express.Router();
 
-carritosRouter.post('/', ensureAuthenticated, async (req, res) => {
-  const nuevoCarrito = new Cart({ products: [] });
-  await nuevoCarrito.save();
-  res.status(201).json(nuevoCarrito);
-});
-
-carritosRouter.get('/:id', ensureAuthenticated, async (req, res) => {
-  const carrito = await Cart.findById(req.params.id).populate('products.product');
-  if (carrito) {
-    res.json(carrito);
-  } else {
-    res.status(404).send('Carrito no encontrado');
-  }
-});
-
-carritosRouter.post('/:id/productos', ensureAuthenticated, async (req, res) => {
-  const carrito = await Cart.findById(req.params.id);
-  if (!carrito) {
-    return res.status(404).send('Carrito no encontrado');
-  }
-  const producto = await Product.findById(req.body.productId);
-  if (!producto) {
-    return res.status(404).send('Producto no encontrado');
-  }
-  const existingProductIndex = carrito.products.findIndex(item => item.product.toString() === req.body.productId);
-  if (existingProductIndex >= 0) {
-    carrito.products[existingProductIndex].quantity += req.body.quantity;
-  } else {
-    carrito.products.push({ product: req.body.productId, quantity: req.body.quantity });
-  }
-  await carrito.save();
-  res.json(carrito);
-});
-
-carritosRouter.delete('/:cid/products/:pid', ensureAuthenticated, async (req, res) => {
+carritosRouter.post('/', verifyJWT, async (req, res) => {
   try {
-    const { cid, pid } = req.params;
+    const nuevoCarrito = new Cart({ products: [] });
+    await nuevoCarrito.save();
+    res.status(201).json(nuevoCarrito);
+  } catch (error) {
+    console.error('Error al crear carrito:', error);
+    res.status(500).send('Error en el servidor');
+  }
+});
+
+carritosRouter.get('/:id', verifyJWT, async (req, res) => {
+  try {
+    const carrito = await Cart.findById(req.params.id).populate('products.product');
+    if (carrito) {
+      res.json(carrito);
+    } else {
+      res.status(404).send('Carrito no encontrado');
+    }
+  } catch (error) {
+    console.error('Error al obtener carrito:', error);
+    res.status(500).send('Error en el servidor');
+  }
+});
+
+carritosRouter.post('/:id/productos', verifyJWT, async (req, res) => {
+  try {
+    const carrito = await Cart.findById(req.params.id);
+    if (!carrito) {
+      return res.status(404).send('Carrito no encontrado');
+    }
+    const producto = await Product.findById(req.body.productId);
+    if (!producto) {
+      return res.status(404).send('Producto no encontrado');
+    }
+
+    const existingProductIndex = carrito.products.findIndex(item => item.product.toString() === req.body.productId);
+    if (existingProductIndex >= 0) {
+      carrito.products[existingProductIndex].quantity += req.body.quantity;
+    } else {
+      carrito.products.push({ product: req.body.productId, quantity: req.body.quantity });
+    }
+
+    await carrito.save();
+    res.json(carrito);
+  } catch (error) {
+    console.error('Error al agregar producto al carrito:', error);
+    res.status(500).send('Error en el servidor');
+  }
+});
+
+carritosRouter.delete('/:cid/products', verifyJWT, async (req, res) => {
+  try {
+    const { cid } = req.params;
+
     const carrito = await Cart.findById(cid);
     if (!carrito) {
       return res.status(404).send('Carrito no encontrado');
     }
 
-    const productIndex = carrito.products.findIndex(item => item.product.toString() === pid);
-    if (productIndex >= 0) {
-      carrito.products.splice(productIndex, 1);
-      await carrito.save();
-      return res.status(204).send();
-    } else {
-      return res.status(404).send('Producto no encontrado en el carrito');
-    }
+    carrito.products = [];
+    await carrito.save();
+    res.status(200).json({ message: 'Productos eliminados del carrito' });
   } catch (error) {
-    console.error('Error al eliminar producto del carrito:', error);
-    res.status(500).send('Error al eliminar producto del carrito');
+    console.error('Error al eliminar productos del carrito:', error);
+    res.status(500).send('Error al eliminar productos del carrito');
   }
 });
 
-carritosRouter.put('/:cid', ensureAuthenticated, async (req, res) => {
+carritosRouter.delete('/:cid', verifyJWT, async (req, res) => {
+  try {
+    const { cid } = req.params;
+
+    const carritoEliminado = await Cart.findByIdAndDelete(cid);
+    if (!carritoEliminado) {
+      return res.status(404).send('Carrito no encontrado');
+    }
+
+    res.status(200).json({ message: 'Carrito eliminado correctamente' });
+  } catch (error) {
+    console.error('Error al eliminar el carrito:', error);
+    res.status(500).send('Error al eliminar el carrito');
+  }
+});
+
+carritosRouter.put('/:cid', verifyJWT, async (req, res) => {
   try {
     const { cid } = req.params;
     const { products } = req.body;
@@ -396,121 +422,47 @@ carritosRouter.put('/:cid', ensureAuthenticated, async (req, res) => {
   }
 });
 
-carritosRouter.put('/:cid/products/:pid', ensureAuthenticated, async (req, res) => {
-  try {
-    const { cid, pid } = req.params;
-    const { quantity } = req.body;
-
-    const carrito = await Cart.findById(cid);
-    if (!carrito) {
-      return res.status(404).send('Carrito no encontrado');
-    }
-
-    const productIndex = carrito.products.findIndex(item => item.product.toString() === pid);
-    if (productIndex >= 0) {
-      carrito.products[productIndex].quantity = quantity;
-      await carrito.save();
-      res.json(carrito);
-    } else {
-      res.status(404).send('Producto no encontrado en el carrito');
-    }
-  } catch (error) {
-    console.error('Error al actualizar cantidad del producto en el carrito:', error);
-    res.status(500).send('Error al actualizar cantidad del producto en el carrito');
-  }
-});
-
-carritosRouter.delete('/:cid', ensureAuthenticated, async (req, res) => {
-  try {
-    const { cid } = req.params;
-
-    const carrito = await Cart.findById(cid);
-    if (!carrito) {
-      return res.status(404).send('Carrito no encontrado');
-    }
-
-    carrito.products = [];
-    await carrito.save();
-    res.status(204).send();
-  } catch (error) {
-    console.error('Error al eliminar productos del carrito:', error);
-    res.status(500).send('Error al eliminar productos del carrito');
-  }
-});
 
 app.use('/api/carts', carritosRouter);
 
+
 const mensajesRouter = express.Router();
 
-mensajesRouter.post('/', ensureAuthenticated, async (req, res) => {
-  const nuevoMensaje = new Message(req.body);
-  await nuevoMensaje.save();
-  res.status(201).json(nuevoMensaje);
+mensajesRouter.post('/', verifyJWT, async (req, res) => {
+  try {
+    const nuevoMensaje = new Message(req.body);
+    await nuevoMensaje.save();
+    res.status(201).json(nuevoMensaje);
+  } catch (error) {
+    console.error('Error al crear mensaje:', error);
+    res.status(500).send('Error en el servidor');
+  }
 });
 
-mensajesRouter.get('/', ensureAuthenticated, async (req, res) => {
-  const mensajes = await Message.find();
-  res.json(mensajes);
+mensajesRouter.get('/', verifyJWT, async (req, res) => {
+  try {
+    const mensajes = await Message.find();
+    res.json(mensajes);
+  } catch (error) {
+    console.error('Error al obtener mensajes:', error);
+    res.status(500).send('Error en el servidor');
+  }
 });
 
 app.use('/api/messages', mensajesRouter);
 
-app.get('/chat', ensureAuthenticated, (req, res) => {
+
+app.get('/chat', verifyJWT, (req, res) => {
   res.render('chat');
 });
 
-app.get('/realtimeproducts', ensureAuthenticated, async (req, res) => {
+app.get('/realtimeproducts', verifyJWT, async (req, res) => {
   try {
     const productos = await Product.find();
     res.render('realTimeProducts', { productos });
   } catch (error) {
     console.error('Error al obtener productos desde MongoDB Atlas:', error);
     res.status(500).send('Error al obtener productos desde MongoDB Atlas');
-  }
-});
-
-app.get('/products', ensureAuthenticated, async (req, res) => {
-  try {
-    const { limit = 10, page = 1, sort, query } = req.query;
-
-    let filter = {};
-    if (query) {
-      filter = {
-        $or: [
-          { category: { $regex: query, $options: 'i' } },
-          { available: query.toLowerCase() === 'true' ? true : false }
-        ]
-      };
-    }
-
-    let sortOption = {};
-    if (sort) {
-      sortOption.price = sort.toLowerCase() === 'asc' ? 1 : -1;
-    }
-
-    const options = {
-      page: parseInt(page, 10),
-      limit: parseInt(limit, 10),
-      sort: sortOption
-    };
-
-    const result = await Product.paginate(filter, options);
-
-    res.render('products', {
-      productos: result.docs,
-      totalPages: result.totalPages,
-      prevPage: result.hasPrevPage ? result.page - 1 : null,
-      nextPage: result.hasNextPage ? result.page + 1 : null,
-      page: result.page,
-      hasPrevPage: result.hasPrevPage,
-      hasNextPage: result.hasNextPage,
-      prevLink: result.hasPrevPage ? `/products?limit=${limit}&page=${result.page - 1}&sort=${sort}&query=${query}` : null,
-      nextLink: result.hasNextPage ? `/products?limit=${limit}&page=${result.page + 1}&sort=${sort}&query=${query}` : null,
-      user: req.user
-    });
-  } catch (error) {
-    console.error('Error al obtener productos:', error);
-    res.status(500).send('Error al obtener productos');
   }
 });
 
@@ -521,7 +473,7 @@ io.on('connection', (socket) => {
     try {
       const message = new Message(data);
       await message.save();
-      io.emit('message', data); 
+      io.emit('message', data);
     } catch (error) {
       console.error('Error al guardar el mensaje:', error);
     }
@@ -529,7 +481,7 @@ io.on('connection', (socket) => {
 
   socket.on('updateRequest', async () => {
     const productos = await Product.find();
-    io.emit('updateProducts', productos); 
+    io.emit('updateProducts', productos);
   });
 
   socket.on('disconnect', () => {
