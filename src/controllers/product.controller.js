@@ -3,7 +3,7 @@ const Product = require('../../dao/models/Product');
 
 exports.getAllProducts = async (req, res) => {
   try {
-    const { limit = 10, page = 1, sort, query } = req.query;
+    const { limit = 10, page = 1, sort, query, format } = req.query; 
 
     let filter = {};
     if (query) {
@@ -20,16 +20,26 @@ exports.getAllProducts = async (req, res) => {
       sortOption.price = sort.toLowerCase() === 'asc' ? 1 : -1;
     }
 
-
     const options = {
       page: parseInt(page, 10),
       limit: parseInt(limit, 10),
       sort: sortOption
     };
 
-
     const result = await Product.paginate(filter, options);
 
+    
+    if (format === 'json') {
+      return res.json({
+        productos: result.docs,
+        totalPages: result.totalPages,
+        page: result.page,
+        hasPrevPage: result.hasPrevPage,
+        hasNextPage: result.hasNextPage,
+      });
+    }
+
+   
     res.render('products', {
       productos: result.docs,
       totalPages: result.totalPages,
@@ -45,6 +55,22 @@ exports.getAllProducts = async (req, res) => {
   } catch (error) {
     console.error('Error al obtener productos:', error);
     res.status(500).send('Error al obtener productos');
+  }
+};
+
+exports.getProductById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const producto = await Product.findById(id);
+
+    if (!producto) {
+      return res.status(404).json({ message: 'Producto no encontrado' });
+    }
+
+    res.json(producto);  
+  } catch (error) {
+    console.error('Error al obtener el producto:', error);
+    res.status(500).send('Error al obtener el producto');
   }
 };
 

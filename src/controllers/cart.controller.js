@@ -75,3 +75,79 @@ exports.deleteCart = async (req, res) => {
     res.status(500).send('Error en el servidor');
   }
 };
+
+exports.updateProductQuantityInCart = async (req, res) => {
+  try {
+    const { id, pid } = req.params; 
+    const { quantity } = req.body; 
+
+    const carrito = await Cart.findById(id);
+    if (!carrito) {
+      return res.status(404).send('Carrito no encontrado');
+    }
+
+    const productIndex = carrito.products.findIndex(item => item.product.toString() === pid);
+    if (productIndex === -1) {
+      return res.status(404).send('Producto no encontrado en el carrito');
+    }
+
+    carrito.products[productIndex].quantity = quantity; 
+
+    await carrito.save();
+    res.json(carrito);
+  } catch (error) {
+    console.error('Error al actualizar cantidad de producto en carrito:', error);
+    res.status(500).send('Error en el servidor');
+  }
+};
+exports.removeProductFromCart = async (req, res) => {
+  try {
+    const { cid, pid } = req.params;
+
+    const carrito = await Cart.findById(cid);
+    if (!carrito) {
+      return res.status(404).send('Carrito no encontrado');
+    }
+
+    const productIndex = carrito.products.findIndex(item => item.product.toString() === pid);
+    if (productIndex === -1) {
+      return res.status(404).send('Producto no encontrado en el carrito');
+    }
+
+    carrito.products.splice(productIndex, 1);
+    await carrito.save();
+
+    res.status(200).json({ message: 'Producto eliminado del carrito', carrito });
+  } catch (error) {
+    console.error('Error al eliminar producto del carrito:', error);
+    res.status(500).send('Error en el servidor');
+  }
+};
+exports.updateCartProducts = async (req, res) => {
+  try {
+    const { cid } = req.params;
+    const { products } = req.body; 
+
+    const carrito = await Cart.findById(cid);
+    if (!carrito) {
+      return res.status(404).send('Carrito no encontrado');
+    }
+
+   
+    products.forEach(({ product, quantity }) => {
+      const productIndex = carrito.products.findIndex(item => item.product.toString() === product);
+
+      if (productIndex >= 0) {
+        carrito.products[productIndex].quantity = quantity; 
+      } else {
+        carrito.products.push({ product, quantity }); 
+      }
+    });
+
+    await carrito.save();
+    res.json(carrito); 
+  } catch (error) {
+    console.error('Error al actualizar productos del carrito:', error);
+    res.status(500).send('Error en el servidor');
+  }
+};

@@ -1,5 +1,6 @@
+
 const express = require('express');
-const verifyJWT = require('../middlewares/auth');
+const verifyJWT = require('../middlewares/verifyJWT');
 const router = express.Router();
 
 router.get('/current', verifyJWT, (req, res) => {
