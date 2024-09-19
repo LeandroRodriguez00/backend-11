@@ -1,9 +1,8 @@
-const Product = require('../../dao/models/Product');
-
+const ProductDao = require('../../dao/mongo/ProductMongoDAO');
 
 exports.getAllProducts = async (req, res) => {
   try {
-    const { limit = 10, page = 1, sort, query, format } = req.query; 
+    const { limit = 10, page = 1, sort, query, format } = req.query;
 
     let filter = {};
     if (query) {
@@ -26,9 +25,9 @@ exports.getAllProducts = async (req, res) => {
       sort: sortOption
     };
 
-    const result = await Product.paginate(filter, options);
+    const result = await ProductDao.getAllProducts(filter, options);
 
-    
+   
     if (format === 'json') {
       return res.json({
         productos: result.docs,
@@ -39,7 +38,7 @@ exports.getAllProducts = async (req, res) => {
       });
     }
 
-   
+ 
     res.render('products', {
       productos: result.docs,
       totalPages: result.totalPages,
@@ -61,7 +60,7 @@ exports.getAllProducts = async (req, res) => {
 exports.getProductById = async (req, res) => {
   try {
     const { id } = req.params;
-    const producto = await Product.findById(id);
+    const producto = await ProductDao.getProductById(id);
 
     if (!producto) {
       return res.status(404).json({ message: 'Producto no encontrado' });
@@ -76,8 +75,7 @@ exports.getProductById = async (req, res) => {
 
 exports.createProduct = async (req, res) => {
   try {
-    const nuevoProducto = new Product(req.body);
-    await nuevoProducto.save();
+    const nuevoProducto = await ProductDao.createProduct(req.body);
     res.status(201).json(nuevoProducto);
   } catch (error) {
     console.error('Error al crear producto:', error);
@@ -88,7 +86,7 @@ exports.createProduct = async (req, res) => {
 exports.updateProduct = async (req, res) => {
   try {
     const { id } = req.params;
-    const productoActualizado = await Product.findByIdAndUpdate(id, req.body, { new: true });
+    const productoActualizado = await ProductDao.updateProduct(id, req.body);
     if (productoActualizado) {
       res.json(productoActualizado);
     } else {
@@ -103,7 +101,7 @@ exports.updateProduct = async (req, res) => {
 exports.deleteProduct = async (req, res) => {
   try {
     const { id } = req.params;
-    const productoEliminado = await Product.findByIdAndDelete(id);
+    const productoEliminado = await ProductDao.deleteProduct(id);
     if (productoEliminado) {
       res.json(productoEliminado);
     } else {
