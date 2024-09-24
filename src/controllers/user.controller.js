@@ -1,9 +1,10 @@
 const UserDao = require('../../dao/mongo/UserMongoDAO'); 
-
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
 const { jwtSecret } = require('../config/config');
+const CustomError = require('../middlewares/customError'); 
+const errorDictionary = require('../config/errorDictionary'); 
 
 const userDTO = (user) => ({
   id: user._id,
@@ -13,17 +14,18 @@ const userDTO = (user) => ({
   role: user.role,
 });
 
-exports.registerUser = async (req, res) => {
+exports.registerUser = async (req, res, next) => {
   const { first_name, last_name, email, age, password } = req.body;
 
+
   if (!first_name || !last_name || !email || !age || !password) {
-    return res.render('register', { error: 'Todos los campos son obligatorios.' });
+    return next(new CustomError(errorDictionary.USER_ERRORS.MISSING_FIELDS));
   }
 
   try {
     const existingUser = await UserDao.getUserByEmail(email);
     if (existingUser) {
-      return res.render('register', { error: 'El correo electrónico ya está registrado.' });
+      return next(new CustomError(errorDictionary.USER_ERRORS.EMAIL_ALREADY_REGISTERED));
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
@@ -38,22 +40,20 @@ exports.registerUser = async (req, res) => {
     };
 
     await UserDao.createUser(newUser);
-
     res.redirect('/login');
-  } catch (err) {
-    console.error('Error al registrar el usuario:', err);
-    res.render('register', { error: 'Hubo un error al registrar el usuario. Intenta nuevamente.' });
+  } catch (error) {
+
+    next(error);
   }
 };
 
 exports.loginUser = (req, res, next) => {
   passport.authenticate('local', (err, user, info) => {
     if (err) {
-      console.error('Error de autenticación:', err);
       return next(err);
     }
     if (!user) {
-      return res.render('login', { error: 'Credenciales inválidas. Inténtalo nuevamente.' });
+      return next(new CustomError(errorDictionary.USER_ERRORS.INVALID_CREDENTIALS));
     }
 
     const token = jwt.sign({ id: user._id, email: user.email, role: user.role }, jwtSecret, {
@@ -76,29 +76,22 @@ exports.logoutUser = (req, res) => {
   res.redirect('/login');
 };
 
-
-exports.getCurrentUser = (req, res) => {
+exports.getCurrentUser = async (req, res, next) => {
   const token = req.cookies.jwt;
   if (!token) {
-    return res.status(401).json({ message: 'No autorizado' });
+    return next(new CustomError(errorDictionary.AUTH_ERRORS.TOKEN_INVALID));
   }
 
   try {
     const decoded = jwt.verify(token, jwtSecret);
-    UserDao.getUserById(decoded.id)
-      .then(user => {
-        if (!user) {
-          return res.status(404).json({ message: 'Usuario no encontrado' });
-        }
-        return res.json(userDTO(user)); 
-      })
-      .catch(err => {
-        console.error('Error al obtener usuario actual:', err);
-        res.status(500).json({ message: 'Error al obtener usuario' });
-      });
-  } catch (err) {
-    console.error('Error de token:', err);
-    res.status(401).json({ message: 'Token inválido o expirado' });
+    const user = await UserDao.getUserById(decoded.id);
+    if (!user) {
+      return next(new CustomError(errorDictionary.USER_ERRORS.USER_NOT_FOUND));
+    }
+    res.json(userDTO(user));
+  } catch (error) {
+
+    next(error);
   }
 };
 

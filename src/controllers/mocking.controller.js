@@ -1,12 +1,25 @@
 const { faker } = require('@faker-js/faker');
-
+const CustomError = require('../middlewares/customError');
+const errorDictionary = require('../config/errorDictionary'); // Importamos el diccionario de errores
 
 const generateMockProduct = () => {
+  const title = faker.commerce.productName();
+  const price = faker.commerce.price();
+
+  
+  if (!title || !price) {
+    throw new CustomError({
+      message: 'Error al generar producto mockeado. Faltan campos obligatorios.',
+      type: 'MockingError',
+      status: 500,
+    });
+  }
+
   return {
     _id: faker.string.uuid(),
-    title: faker.commerce.productName(),
+    title,
     description: faker.commerce.productDescription(), 
-    price: faker.commerce.price(), 
+    price, 
     thumbnail: faker.image.url(), 
     code: faker.string.alphanumeric(8), 
     stock: faker.number.int({ min: 0, max: 100 }), 
@@ -16,13 +29,19 @@ const generateMockProduct = () => {
 };
 
 exports.getMockProducts = (req, res) => {
-  const products = [];
-  
+  try {
+    const products = [];
 
-  for (let i = 0; i < 100; i++) {
-    products.push(generateMockProduct());
+    for (let i = 0; i < 100; i++) {
+      products.push(generateMockProduct());
+    }
+
+    res.status(200).json(products);
+  } catch (error) {
+    if (error instanceof CustomError) {
+      return res.status(error.status).json({ message: error.message });
+    }
+    console.error('Error al generar productos mockeados:', error);
+    res.status(500).json({ message: 'Error en el servidor al generar productos mockeados.' });
   }
-  
-
-  res.status(200).json(products);
 };

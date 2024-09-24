@@ -1,4 +1,6 @@
 const ProductDao = require('../../dao/mongo/ProductMongoDAO');
+const CustomError = require('../middlewares/customError'); 
+const errorDictionary = require('../config/errorDictionary');
 
 exports.getAllProducts = async (req, res) => {
   try {
@@ -27,7 +29,6 @@ exports.getAllProducts = async (req, res) => {
 
     const result = await ProductDao.getAllProducts(filter, options);
 
-   
     if (format === 'json') {
       return res.json({
         productos: result.docs,
@@ -38,7 +39,6 @@ exports.getAllProducts = async (req, res) => {
       });
     }
 
- 
     res.render('products', {
       productos: result.docs,
       totalPages: result.totalPages,
@@ -63,11 +63,14 @@ exports.getProductById = async (req, res) => {
     const producto = await ProductDao.getProductById(id);
 
     if (!producto) {
-      return res.status(404).json({ message: 'Producto no encontrado' });
+      throw new CustomError(errorDictionary.PRODUCT_ERRORS.PRODUCT_NOT_FOUND);
     }
 
     res.json(producto);  
   } catch (error) {
+    if (error instanceof CustomError) {
+      return res.status(error.status).json({ message: error.message });
+    }
     console.error('Error al obtener el producto:', error);
     res.status(500).send('Error al obtener el producto');
   }
@@ -75,9 +78,22 @@ exports.getProductById = async (req, res) => {
 
 exports.createProduct = async (req, res) => {
   try {
+    const { title, price } = req.body;
+    
+  
+    if (!title) {
+      throw new CustomError(errorDictionary.PRODUCT_ERRORS.MISSING_TITLE);
+    }
+    if (!price) {
+      throw new CustomError(errorDictionary.PRODUCT_ERRORS.MISSING_PRICE);
+    }
+
     const nuevoProducto = await ProductDao.createProduct(req.body);
     res.status(201).json(nuevoProducto);
   } catch (error) {
+    if (error instanceof CustomError) {
+      return res.status(error.status).json({ message: error.message });
+    }
     console.error('Error al crear producto:', error);
     res.status(500).send('Error en el servidor');
   }
@@ -87,12 +103,14 @@ exports.updateProduct = async (req, res) => {
   try {
     const { id } = req.params;
     const productoActualizado = await ProductDao.updateProduct(id, req.body);
-    if (productoActualizado) {
-      res.json(productoActualizado);
-    } else {
-      res.status(404).send('Producto no encontrado');
+    if (!productoActualizado) {
+      throw new CustomError(errorDictionary.PRODUCT_ERRORS.PRODUCT_NOT_FOUND);
     }
+    res.json(productoActualizado);
   } catch (error) {
+    if (error instanceof CustomError) {
+      return res.status(error.status).json({ message: error.message });
+    }
     console.error('Error al actualizar producto:', error);
     res.status(500).send('Error en el servidor');
   }
@@ -102,12 +120,14 @@ exports.deleteProduct = async (req, res) => {
   try {
     const { id } = req.params;
     const productoEliminado = await ProductDao.deleteProduct(id);
-    if (productoEliminado) {
-      res.json(productoEliminado);
-    } else {
-      res.status(404).send('Producto no encontrado');
+    if (!productoEliminado) {
+      throw new CustomError(errorDictionary.PRODUCT_ERRORS.PRODUCT_NOT_FOUND);
     }
+    res.json(productoEliminado);
   } catch (error) {
+    if (error instanceof CustomError) {
+      return res.status(error.status).json({ message: error.message });
+    }
     console.error('Error al eliminar producto:', error);
     res.status(500).send('Error en el servidor');
   }

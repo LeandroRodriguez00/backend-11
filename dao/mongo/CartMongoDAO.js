@@ -1,8 +1,14 @@
 const Cart = require('../models/Cart');
+const CustomError = require('../../src/middlewares/customError');
+const errorDictionary = require('../../src/config/errorDictionary');
 
 class CartMongoDAO {
   async getCartById(id) {
-    return await Cart.findById(id).populate('products.product');
+    const cart = await Cart.findById(id).populate('products.product');
+    if (!cart) {
+      throw new CustomError(errorDictionary.CART_ERRORS.CART_NOT_FOUND);
+    }
+    return cart;
   }
 
   async createCart(cartData) {
@@ -11,39 +17,75 @@ class CartMongoDAO {
   }
 
   async updateCart(id, cartData) {
-    return await Cart.findByIdAndUpdate(id, cartData, { new: true });
+    const updatedCart = await Cart.findByIdAndUpdate(id, cartData, { new: true });
+    if (!updatedCart) {
+      throw new CustomError(errorDictionary.CART_ERRORS.CART_NOT_FOUND);
+    }
+    return updatedCart;
   }
 
   async deleteCart(id) {
-    return await Cart.findByIdAndDelete(id);
+    const deletedCart = await Cart.findByIdAndDelete(id);
+    if (!deletedCart) {
+      throw new CustomError(errorDictionary.CART_ERRORS.CART_NOT_FOUND);
+    }
+    return deletedCart;
   }
-
 
   async addProductToCart(cartId, productId, quantity) {
     const cart = await this.getCartById(cartId);
-    if (!cart) throw new Error('Carrito no encontrado');
-
+    
     const productIndex = cart.products.findIndex(p => p.product.equals(productId));
 
     if (productIndex >= 0) {
-    
       cart.products[productIndex].quantity += quantity;
     } else {
-  
       cart.products.push({ product: productId, quantity });
     }
 
-    return await cart.save(); 
+    return await cart.save();
   }
 
   async updateCartProducts(id, products) {
-
-    return await Cart.findByIdAndUpdate(id, { products }, { new: true });
+    const updatedCart = await Cart.findByIdAndUpdate(id, { products }, { new: true });
+    if (!updatedCart) {
+      throw new CustomError(errorDictionary.CART_ERRORS.CART_NOT_FOUND);
+    }
+    return updatedCart;
   }
 
-
   async clearCart(id) {
-    return await Cart.findByIdAndUpdate(id, { products: [] }, { new: true });
+    const clearedCart = await Cart.findByIdAndUpdate(id, { products: [] }, { new: true });
+    if (!clearedCart) {
+      throw new CustomError(errorDictionary.CART_ERRORS.CART_NOT_FOUND);
+    }
+    return clearedCart;
+  }
+
+  async updateProductQuantityInCart(cartId, productId, quantity) {
+    const cart = await this.getCartById(cartId);
+    
+    const productIndex = cart.products.findIndex(p => p.product.equals(productId));
+    if (productIndex === -1) {
+      throw new CustomError(errorDictionary.CART_ERRORS.PRODUCT_NOT_FOUND_IN_CART);
+    }
+
+    cart.products[productIndex].quantity = quantity;
+
+    return await cart.save();
+  }
+
+  async removeProductFromCart(cartId, productId) {
+    const cart = await this.getCartById(cartId);
+    
+    const productIndex = cart.products.findIndex(p => p.product.equals(productId));
+    if (productIndex === -1) {
+      throw new CustomError(errorDictionary.CART_ERRORS.PRODUCT_NOT_FOUND_IN_CART);
+    }
+
+    cart.products.splice(productIndex, 1);
+
+    return await cart.save();
   }
 }
 

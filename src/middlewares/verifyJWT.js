@@ -1,21 +1,23 @@
-
 const jwt = require('jsonwebtoken');
 const { jwtSecret } = require('../config/config');
-
+const CustomError = require('../middlewares/customError'); 
+const errorDictionary = require('../config/errorDictionary'); 
 function verifyJWT(req, res, next) {
   const token = req.cookies.jwt;
+
   if (!token) {
-    return res.status(401).json({ message: 'No token provided' });
+    throw new CustomError(errorDictionary.AUTH_ERRORS.TOKEN_INVALID); 
   }
 
   jwt.verify(token, jwtSecret, (err, decoded) => {
     if (err) {
       if (err.name === 'TokenExpiredError') {
-        return res.status(401).json({ message: 'Token expired' });
+        throw new CustomError(errorDictionary.AUTH_ERRORS.TOKEN_EXPIRED); 
       } else {
-        return res.status(401).json({ message: 'Failed to authenticate token' });
+        throw new CustomError(errorDictionary.AUTH_ERRORS.TOKEN_INVALID); 
       }
     }
+
     req.user = decoded;
     next();
   });

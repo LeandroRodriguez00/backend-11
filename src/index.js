@@ -4,18 +4,27 @@ const passport = require('passport');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const path = require('path');
-const jwt = require('jsonwebtoken');  
+const jwt = require('jsonwebtoken');
+const logger = require('./middlewares/logger'); 
+const CustomError = require('./middlewares/customError');
 const { port, mongoUri, sessionSecret, jwtSecret } = require('./config/config'); 
-const errorHandler = require('./middlewares/errorHandler'); 
-const mockingRoutes = require('./routes/mocking.routes');  
+const errorHandler = require('./middlewares/errorHandler');
+const mockingRoutes = require('./routes/mocking.routes');
 
-require('./config/passport.config')(passport); 
+require('./config/passport.config')(passport);
 
 mongoose.connect(mongoUri)
-  .then(() => console.log('Conectado a MongoDB Atlas'))
-  .catch(err => console.error('Error al conectar a MongoDB', err));
+  .then(() => { 
+    logger.info('Conectado a MongoDB Atlas');
+    console.log('Conectado a MongoDB Atlas');
+  })
+  .catch(err => {
+    logger.error('Error al conectar a MongoDB: %o', err); 
+    console.error('Error al conectar a MongoDB', err);
+  });
 
 const app = express();
+
 
 app.use(session({
   secret: sessionSecret,  
@@ -43,6 +52,7 @@ app.engine('handlebars', engine({
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'views'));
 
+
 app.get('/', (req, res) => {
   res.redirect('/login');
 });
@@ -50,6 +60,7 @@ app.get('/', (req, res) => {
 app.get('/login', (req, res) => {
   res.render('login');
 });
+
 
 app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 
@@ -62,25 +73,56 @@ app.get('/auth/google/callback',
   }
 );
 
+
 const productsRoutes = require('./routes/products.routes');
 const cartsRoutes = require('./routes/carts.routes');
 const messagesRoutes = require('./routes/messages.routes');
 const usersRoutes = require('./routes/users.routes');
 const sessionsRoutes = require('./routes/sessions.routes');
-const verifyJWT = require('./middlewares/verifyJWT');  
+const verifyJWT = require('./middlewares/verifyJWT');
 
 app.use('/products', verifyJWT, productsRoutes);  
-app.use('/carts', cartsRoutes);
-app.use('/messages', messagesRoutes);
+app.use('/carts', verifyJWT, cartsRoutes); 
+app.use('/messages', verifyJWT, messagesRoutes); 
 app.use('/', usersRoutes);
 app.use('/sessions', sessionsRoutes);
-
-
 app.use('/', mockingRoutes);
 
 
-app.use(errorHandler); 
+app.use((err, req, res, next) => {
+  if (err instanceof CustomError) {
+
+    logger.error(`Error controlado: ${err.message}`, {
+      type: err.name,
+      status: err.status,
+      stack: err.stack,
+      service: 'user-service', 
+      timestamp: new Date().toISOString()
+    });
+
+ 
+    return res.status(err.status).json({
+      message: err.message,
+      type: err.name
+    });
+  }
+
+
+  logger.error('Error no controlado: %o', err, {
+    stack: err.stack,
+    message: err.message,
+    service: 'user-service',
+    timestamp: new Date().toISOString()
+  });
+
+
+  res.status(500).json({
+    message: 'Error interno del servidor',
+    details: err.message 
+  });
+});
 
 app.listen(port, () => {
+  logger.info(`Servidor escuchando en el puerto ${port}`); 
   console.log(`Servidor escuchando en el puerto ${port}`);
 });

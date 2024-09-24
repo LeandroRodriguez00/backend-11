@@ -1,4 +1,4 @@
-const Message = require('../models/Message'); // Correcta importación del modelo Message
+const Message = require('../models/Message'); 
 
 class MessageMongoDAO {
   async getAllMessages() {
