@@ -1,4 +1,5 @@
-const CustomError = require('./customError'); 
+const CustomError = require('./customError');
+const logger = require('./logger');  
 
 const errorHandler = (err, req, res, next) => {
   if (err instanceof CustomError) {
@@ -6,7 +7,7 @@ const errorHandler = (err, req, res, next) => {
     return res.status(err.status).json({ message: err.message });
   }
   
-  console.error('Error no controlado:', err);
+  logger.error('Error no controlado: %o', err);  
   return res.status(500).json({ message: 'Error interno del servidor' });
 };
 

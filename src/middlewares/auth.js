@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const { jwtSecret } = require('../config/config');
-const CustomError = require('../middlewares/customError'); // Importamos el manejador de errores
-const errorDictionary = require('../config/errorDictionary'); // Importamos el diccionario de errores
+const CustomError = require('../middlewares/customError'); 
+const errorDictionary = require('../config/errorDictionary'); 
 
 function verifyJWT(req, res, next) {
   console.log("Cookies recibidas:", req.cookies);

@@ -1,35 +1,42 @@
+const dotenv = require('dotenv');
+dotenv.config();  
+
+console.log(`Entorno actual: ${process.env.NODE_ENV}`);
+
 const express = require('express');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const session = require('express-session');
+const MongoStore = require('connect-mongo');  
 const cookieParser = require('cookie-parser');
 const path = require('path');
 const jwt = require('jsonwebtoken');
-const logger = require('./middlewares/logger'); 
+const logger = require('./middlewares/logger');  
 const CustomError = require('./middlewares/customError');
-const { port, mongoUri, sessionSecret, jwtSecret } = require('./config/config'); 
-const errorHandler = require('./middlewares/errorHandler');
-const mockingRoutes = require('./routes/mocking.routes');
+const { port, sessionSecret, jwtSecret } = process.env;  
+
+const mockingRoutes = require('./routes/mocking.routes');  
+const loggerTestRoutes = require('./routes/loggerTest.routes');  
 
 require('./config/passport.config')(passport);
 
-mongoose.connect(mongoUri)
+
+mongoose.connect(process.env.MONGO_URI)
   .then(() => { 
-    logger.info('Conectado a MongoDB Atlas');
-    console.log('Conectado a MongoDB Atlas');
+    logger.info('Conectado a MongoDB Atlas');  
   })
   .catch(err => {
-    logger.error('Error al conectar a MongoDB: %o', err); 
-    console.error('Error al conectar a MongoDB', err);
+    logger.error('Error al conectar a MongoDB: %o', err);  
   });
 
 const app = express();
 
 
 app.use(session({
-  secret: sessionSecret,  
+  secret: process.env.SESSION_SECRET,  
   resave: false,
   saveUninitialized: false,  
+  store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }), 
   cookie: { secure: process.env.NODE_ENV === 'production', sameSite: 'Lax' }
 }));
 
@@ -52,7 +59,6 @@ app.engine('handlebars', engine({
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'views'));
 
-
 app.get('/', (req, res) => {
   res.redirect('/login');
 });
@@ -60,7 +66,6 @@ app.get('/', (req, res) => {
 app.get('/login', (req, res) => {
   res.render('login');
 });
-
 
 app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 
@@ -72,7 +77,6 @@ app.get('/auth/google/callback',
     res.redirect('/products');
   }
 );
-
 
 const productsRoutes = require('./routes/products.routes');
 const cartsRoutes = require('./routes/carts.routes');
@@ -86,13 +90,12 @@ app.use('/carts', verifyJWT, cartsRoutes);
 app.use('/messages', verifyJWT, messagesRoutes); 
 app.use('/', usersRoutes);
 app.use('/sessions', sessionsRoutes);
-app.use('/', mockingRoutes);
-
+app.use('/', mockingRoutes);  
+app.use('/', loggerTestRoutes);  
 
 app.use((err, req, res, next) => {
   if (err instanceof CustomError) {
-
-    logger.error(`Error controlado: ${err.message}`, {
+    logger.error(`Error controlado: ${err.message}`, {  
       type: err.name,
       status: err.status,
       stack: err.stack,
@@ -100,21 +103,18 @@ app.use((err, req, res, next) => {
       timestamp: new Date().toISOString()
     });
 
- 
     return res.status(err.status).json({
       message: err.message,
       type: err.name
     });
   }
 
-
-  logger.error('Error no controlado: %o', err, {
+  logger.error('Error no controlado: %o', err, {  
     stack: err.stack,
     message: err.message,
     service: 'user-service',
     timestamp: new Date().toISOString()
   });
-
 
   res.status(500).json({
     message: 'Error interno del servidor',
@@ -123,6 +123,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(port, () => {
-  logger.info(`Servidor escuchando en el puerto ${port}`); 
-  console.log(`Servidor escuchando en el puerto ${port}`);
+  logger.info(`Servidor escuchando en el puerto ${port}`);  
 });

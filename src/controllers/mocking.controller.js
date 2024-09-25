@@ -1,6 +1,6 @@
 const { faker } = require('@faker-js/faker');
 const CustomError = require('../middlewares/customError');
-const errorDictionary = require('../config/errorDictionary'); // Importamos el diccionario de errores
+const errorDictionary = require('../config/errorDictionary'); 
 
 const generateMockProduct = () => {
   const title = faker.commerce.productName();

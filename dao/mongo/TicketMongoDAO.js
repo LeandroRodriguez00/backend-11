@@ -1,6 +1,6 @@
 const Ticket = require('../models/Ticket');
-const CustomError = require('../../src/middlewares/customError'); // Asegúrate de que esta ruta sea correcta
-const errorDictionary = require('../../src/config/errorDictionary'); // Asegúrate de que esta ruta sea correcta
+const CustomError = require('../../src/middlewares/customError'); 
+const errorDictionary = require('../../src/config/errorDictionary'); 
 
 class TicketMongoDAO {
 
