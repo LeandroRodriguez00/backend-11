@@ -1,6 +1,7 @@
 const ProductDao = require('../../dao/mongo/ProductMongoDAO');
 const CustomError = require('../middlewares/customError'); 
 const errorDictionary = require('../config/errorDictionary');
+const logger = require('../middlewares/logger'); 
 
 exports.getAllProducts = async (req, res) => {
   try {
@@ -52,7 +53,7 @@ exports.getAllProducts = async (req, res) => {
       user: req.user
     });
   } catch (error) {
-    console.error('Error al obtener productos:', error);
+    logger.error('Error al obtener productos:', { error }); 
     res.status(500).send('Error al obtener productos');
   }
 };
@@ -71,7 +72,7 @@ exports.getProductById = async (req, res) => {
     if (error instanceof CustomError) {
       return res.status(error.status).json({ message: error.message });
     }
-    console.error('Error al obtener el producto:', error);
+    logger.error('Error al obtener el producto:', { error }); 
     res.status(500).send('Error al obtener el producto');
   }
 };
@@ -80,7 +81,6 @@ exports.createProduct = async (req, res) => {
   try {
     const { title, price } = req.body;
     
-  
     if (!title) {
       throw new CustomError(errorDictionary.PRODUCT_ERRORS.MISSING_TITLE);
     }
@@ -94,7 +94,7 @@ exports.createProduct = async (req, res) => {
     if (error instanceof CustomError) {
       return res.status(error.status).json({ message: error.message });
     }
-    console.error('Error al crear producto:', error);
+    logger.error('Error al crear producto:', { error }); 
     res.status(500).send('Error en el servidor');
   }
 };
@@ -111,7 +111,7 @@ exports.updateProduct = async (req, res) => {
     if (error instanceof CustomError) {
       return res.status(error.status).json({ message: error.message });
     }
-    console.error('Error al actualizar producto:', error);
+    logger.error(`Error al actualizar producto con ID ${id}:`, { error }); 
     res.status(500).send('Error en el servidor');
   }
 };
@@ -128,7 +128,7 @@ exports.deleteProduct = async (req, res) => {
     if (error instanceof CustomError) {
       return res.status(error.status).json({ message: error.message });
     }
-    console.error('Error al eliminar producto:', error);
+    logger.error(`Error al eliminar producto con ID ${id}:`, { error }); 
     res.status(500).send('Error en el servidor');
   }
 };

@@ -5,13 +5,14 @@ const TicketDao = require('../../dao/mongo/TicketMongoDAO');
 const { v4: uuidv4 } = require('uuid');
 const CustomError = require('../middlewares/customError');
 const errorDictionary = require('../config/errorDictionary');
+const logger = require('../middlewares/logger'); 
 
 exports.createCart = async (req, res) => {
   try {
     const nuevoCarrito = await CartDao.createCart();
     res.status(201).json(nuevoCarrito);
   } catch (error) {
-    console.error('Error al crear carrito:', error);
+    logger.error('Error al crear carrito:', { error });
     res.status(500).send('Error en el servidor');
   }
 };
@@ -27,7 +28,7 @@ exports.getCartById = async (req, res) => {
     if (error instanceof CustomError) {
       return res.status(error.status).json({ message: error.message });
     }
-    console.error('Error al obtener carrito:', error);
+    logger.error('Error al obtener carrito:', { error });
     res.status(500).send('Error en el servidor');
   }
 };
@@ -49,7 +50,7 @@ exports.addProductToCart = async (req, res) => {
     if (error instanceof CustomError) {
       return res.status(error.status).json({ message: error.message });
     }
-    console.error('Error al agregar producto al carrito:', error);
+    logger.error('Error al agregar producto al carrito:', { error });
     res.status(500).send('Error en el servidor');
   }
 };
@@ -59,7 +60,7 @@ exports.clearCart = async (req, res) => {
     await CartDao.clearCart(req.params.cid);
     res.status(200).json({ message: 'Productos eliminados del carrito' });
   } catch (error) {
-    console.error('Error al eliminar productos del carrito:', error);
+    logger.error('Error al eliminar productos del carrito:', { error });
     res.status(500).send('Error en el servidor');
   }
 };
@@ -75,7 +76,7 @@ exports.deleteCart = async (req, res) => {
     if (error instanceof CustomError) {
       return res.status(error.status).json({ message: error.message });
     }
-    console.error('Error al eliminar el carrito:', error);
+    logger.error('Error al eliminar el carrito:', { error });
     res.status(500).send('Error en el servidor');
   }
 };
@@ -94,7 +95,7 @@ exports.updateProductQuantityInCart = async (req, res) => {
     if (error instanceof CustomError) {
       return res.status(error.status).json({ message: error.message });
     }
-    console.error('Error al actualizar cantidad de producto en carrito:', error);
+    logger.error('Error al actualizar cantidad de producto en carrito:', { error });
     res.status(500).send('Error en el servidor');
   }
 };
@@ -112,7 +113,7 @@ exports.removeProductFromCart = async (req, res) => {
     if (error instanceof CustomError) {
       return res.status(error.status).json({ message: error.message });
     }
-    console.error('Error al eliminar producto del carrito:', error);
+    logger.error('Error al eliminar producto del carrito:', { error });
     res.status(500).send('Error en el servidor');
   }
 };
@@ -131,7 +132,7 @@ exports.updateCartProducts = async (req, res) => {
     if (error instanceof CustomError) {
       return res.status(error.status).json({ message: error.message });
     }
-    console.error('Error al actualizar productos del carrito:', error);
+    logger.error('Error al actualizar productos del carrito:', { error });
     res.status(500).send('Error en el servidor');
   }
 };
@@ -193,7 +194,7 @@ exports.purchaseCart = async (req, res) => {
     if (error instanceof CustomError) {
       return res.status(error.status).json({ message: error.message });
     }
-    console.error('Error al finalizar la compra:', error);
+    logger.error('Error al finalizar la compra:', { error });
     res.status(500).send(`Error al finalizar la compra: ${error.message}`);
   }
 };

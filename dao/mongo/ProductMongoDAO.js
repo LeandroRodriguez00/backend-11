@@ -2,20 +2,20 @@ const mongoose = require('mongoose');
 const Product = require('../models/Product');  
 const CustomError = require('../../src/middlewares/customError');
 const errorDictionary = require('../../src/config/errorDictionary');
+const logger = require('../../src/middlewares/logger'); 
 
 class ProductMongoDAO {
   async getAllProducts(filter = {}, options = {}) {
     try {
       return await Product.paginate(filter, options);
     } catch (error) {
-      console.error('Error al obtener productos:', error);
+      logger.error('Error al obtener productos:', { error });
       throw new CustomError(errorDictionary.PRODUCT_ERRORS.PRODUCT_RETRIEVAL_FAILED); 
     }
   }
 
   async getProductById(id) {
     try {
-     
       if (!mongoose.Types.ObjectId.isValid(id)) {
         throw new CustomError(errorDictionary.PRODUCT_ERRORS.INVALID_PRODUCT_ID); 
       }
@@ -28,7 +28,7 @@ class ProductMongoDAO {
 
       return product;
     } catch (error) {
-      console.error(`Error al obtener el producto con ID ${id}:`, error);
+      logger.error(`Error al obtener el producto con ID ${id}:`, { error });
       throw new CustomError(errorDictionary.PRODUCT_ERRORS.PRODUCT_RETRIEVAL_FAILED); 
     }
   }
@@ -38,14 +38,13 @@ class ProductMongoDAO {
       const newProduct = new Product(productData);
       return await newProduct.save();
     } catch (error) {
-      console.error('Error al crear producto:', error);
+      logger.error('Error al crear producto:', { error });
       throw new CustomError(errorDictionary.PRODUCT_ERRORS.PRODUCT_CREATION_FAILED); 
     }
   }
 
   async updateProduct(id, productData) {
     try {
-
       if (!mongoose.Types.ObjectId.isValid(id)) {
         throw new CustomError(errorDictionary.PRODUCT_ERRORS.INVALID_PRODUCT_ID); 
       }
@@ -58,14 +57,13 @@ class ProductMongoDAO {
 
       return updatedProduct;
     } catch (error) {
-      console.error(`Error al actualizar el producto con ID ${id}:`, error);
+      logger.error(`Error al actualizar el producto con ID ${id}:`, { error });
       throw new CustomError(errorDictionary.PRODUCT_ERRORS.PRODUCT_UPDATE_FAILED); 
     }
   }
 
   async deleteProduct(id) {
     try {
- 
       if (!mongoose.Types.ObjectId.isValid(id)) {
         throw new CustomError(errorDictionary.PRODUCT_ERRORS.INVALID_PRODUCT_ID); 
       }
@@ -78,7 +76,7 @@ class ProductMongoDAO {
 
       return deletedProduct;
     } catch (error) {
-      console.error(`Error al eliminar el producto con ID ${id}:`, error);
+      logger.error(`Error al eliminar el producto con ID ${id}:`, { error });
       throw new CustomError(errorDictionary.PRODUCT_ERRORS.PRODUCT_DELETE_FAILED); 
     }
   }

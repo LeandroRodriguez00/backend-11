@@ -20,15 +20,12 @@ const customLevels = {
   }
 };
 
-
 require('winston').addColors(customLevels.colors);
-
 
 const logFormat = format.combine(
   format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
   format.printf(({ timestamp, level, message }) => `${timestamp} [${level}]: ${message}`)
 );
-
 
 const loggerTransports = [
   new transports.Console({
@@ -38,10 +35,19 @@ const loggerTransports = [
       logFormat
     )
   }),
-  new transports.File({ filename: path.join(__dirname, 'logs/errors.log'), level: 'error' }),
-  new transports.File({ filename: path.join(__dirname, 'logs/combined.log'), level: 'info' })
+  
+  new transports.File({
+    filename: path.join(__dirname, 'logs/errors.log'),
+    level: 'error', 
+    format: logFormat  
+  }),
+ 
+  new transports.File({
+    filename: path.join(__dirname, 'logs/combined.log'),
+    level: 'info',  
+    format: logFormat 
+  })
 ];
-
 
 const logger = createLogger({
   levels: customLevels.levels,
@@ -49,7 +55,6 @@ const logger = createLogger({
   transports: loggerTransports,
 });
 
-
-console.log(`Configuración del logger: Entorno -> ${process.env.NODE_ENV}, Nivel de log -> ${logger.level}`);
+logger.info(`Configuración del logger: Entorno -> ${process.env.NODE_ENV}, Nivel de log -> ${logger.level}`);
 
 module.exports = logger;

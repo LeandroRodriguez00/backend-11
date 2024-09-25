@@ -1,6 +1,7 @@
 const Ticket = require('../models/Ticket');
 const CustomError = require('../../src/middlewares/customError'); 
 const errorDictionary = require('../../src/config/errorDictionary'); 
+const logger = require('../../src/middlewares/logger'); 
 
 class TicketMongoDAO {
 
@@ -10,7 +11,7 @@ class TicketMongoDAO {
       await newTicket.save();
       return newTicket;
     } catch (error) {
-      console.error('Error al crear el ticket:', error);
+      logger.error('Error al crear el ticket:', { error });
       throw new CustomError({
         message: errorDictionary.GENERAL_ERRORS.SERVER_ERROR.message,
         type: errorDictionary.GENERAL_ERRORS.SERVER_ERROR.type,
@@ -31,7 +32,7 @@ class TicketMongoDAO {
       }
       return ticket;
     } catch (error) {
-      console.error('Error al obtener el ticket:', error);
+      logger.error('Error al obtener el ticket:', { error });
       throw new CustomError({
         message: errorDictionary.GENERAL_ERRORS.SERVER_ERROR.message,
         type: errorDictionary.GENERAL_ERRORS.SERVER_ERROR.type,
@@ -45,7 +46,7 @@ class TicketMongoDAO {
       const tickets = await Ticket.find();
       return tickets;
     } catch (error) {
-      console.error('Error al obtener los tickets:', error);
+      logger.error('Error al obtener los tickets:', { error });
       throw new CustomError({
         message: errorDictionary.GENERAL_ERRORS.SERVER_ERROR.message,
         type: errorDictionary.GENERAL_ERRORS.SERVER_ERROR.type,
