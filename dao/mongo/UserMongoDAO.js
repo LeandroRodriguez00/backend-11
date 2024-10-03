@@ -21,6 +21,10 @@ class UserMongoDAO {
   async deleteUser(id) {
     return await User.findByIdAndDelete(id);
   }
+
+  async updateUserRole(id, newRole) {
+    return await User.findByIdAndUpdate(id, { role: newRole }, { new: true });
+  }
 }
 
 module.exports = new UserMongoDAO();

@@ -9,8 +9,7 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: function() { return !this.googleId; }},
   googleId: { type: String, default: null },
   cart: { type: mongoose.Schema.Types.ObjectId, ref: 'Cart' },
-  role: { type: String, default: 'user' }
+  role: { type: String, enum: ['user', 'admin', 'premium'], default: 'user' } 
 });
-
 
 module.exports = mongoose.model('User', userSchema);

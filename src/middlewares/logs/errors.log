@@ -4,3 +4,112 @@
 2024-09-25 15:30:16 [error]: Error controlado: Credenciales inválidas. Intenta nuevamente.
 2024-09-25 15:32:19 [error]: 400 - AuthenticationError: Credenciales inválidas. Intenta nuevamente.
 2024-09-25 15:32:19 [error]: Error controlado: Credenciales inválidas. Intenta nuevamente.
+2024-09-30 13:41:55 [error]: Error al enviar el correo de recuperación de contraseña
+2024-09-30 13:54:51 [error]: Error al enviar el correo de recuperación de contraseña
+2024-09-30 13:54:53 [error]: Error al enviar el correo de recuperación de contraseña
+2024-09-30 13:55:23 [error]: Error al enviar el correo de recuperación de contraseña
+2024-09-30 13:59:10 [error]: Error al enviar el correo de recuperación de contraseña
+2024-10-01 13:45:48 [error]: Error al enviar el correo de recuperación de contraseña
+2024-10-01 13:54:52 [error]: Error al enviar el correo de recuperación de contraseña
+2024-10-01 13:58:11 [error]: Error al enviar el correo de recuperación de contraseña
+2024-10-01 14:24:14 [error]: Error al enviar el correo de recuperación de contraseña
+2024-10-01 14:24:52 [error]: Error al enviar el correo de recuperación de contraseña
+2024-10-02 16:05:01 [error]: 400 - NotFoundError: Usuario no encontrado.
+2024-10-02 16:05:01 [error]: Error controlado: Usuario no encontrado.
+2024-10-02 16:19:19 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-02 16:19:19 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-02 16:35:47 [error]: Error no controlado: %o
+2024-10-02 16:35:47 [error]: Error no controlado: %o
+2024-10-02 16:36:03 [error]: Error no controlado: %o
+2024-10-02 16:38:19 [error]: 400 - ValidationError: El correo electrónico ya está registrado.
+2024-10-02 16:38:19 [error]: Error controlado: El correo electrónico ya está registrado.
+2024-10-02 16:42:13 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-02 16:42:13 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-02 18:31:08 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-02 18:31:08 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-02 18:31:36 [error]: Este es un mensaje de ERROR
+2024-10-02 18:31:36 [fatal]: Este es un mensaje de FATAL
+2024-10-02 18:32:50 [error]: 400 - StockError: No hay productos suficientes para realizar la compra
+2024-10-02 19:44:22 [error]: 400 - ValidationError: El correo electrónico ya está registrado.
+2024-10-02 19:44:22 [error]: Error controlado: El correo electrónico ya está registrado.
+2024-10-02 19:44:56 [error]: 400 - ValidationError: El correo electrónico ya está registrado.
+2024-10-02 19:44:56 [error]: Error controlado: El correo electrónico ya está registrado.
+2024-10-02 20:00:07 [error]: 400 - ValidationError: El correo electrónico ya está registrado.
+2024-10-02 20:00:07 [error]: Error controlado: El correo electrónico ya está registrado.
+2024-10-02 20:16:31 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-02 20:21:42 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-02 20:25:53 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-02 20:32:27 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-02 20:42:20 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-02 20:43:22 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-02 20:45:45 [error]: 400 - ValidationError: El correo electrónico ya está registrado.
+2024-10-02 20:45:45 [error]: Error controlado: El correo electrónico ya está registrado.
+2024-10-02 20:46:12 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-02 20:54:35 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-02 21:03:30 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-02 21:04:34 [error]: 400 - ValidationError: El correo electrónico ya está registrado.
+2024-10-02 21:04:34 [error]: Error controlado: El correo electrónico ya está registrado.
+2024-10-02 21:05:20 [error]: Error no controlado: Bad Request
+2024-10-02 21:05:22 [error]: Error no controlado: Bad Request
+2024-10-02 21:05:25 [error]: Error no controlado: Bad Request
+2024-10-02 21:05:29 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-02 22:15:34 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-02 22:49:09 [error]: 400 - ValidationError: El correo electrónico ya está registrado.
+2024-10-02 22:49:09 [error]: Error controlado: El correo electrónico ya está registrado.
+2024-10-02 22:50:00 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-02 22:58:02 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-03 01:08:17 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-03 01:11:21 [error]: Error en la autenticación con Google: jwt is not defined
+2024-10-03 01:11:21 [error]: 500 - GoogleAuthError: Error al autenticar con Google
+2024-10-03 01:11:21 [error]: Error controlado: Error al autenticar con Google
+2024-10-03 01:13:11 [error]: Error no controlado: Bad Request
+2024-10-03 01:13:27 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-03 01:14:07 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-03 01:22:06 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-03 01:31:12 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-03 01:34:24 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-03 01:40:39 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-03 01:44:37 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-03 01:44:37 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-03 01:44:51 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-03 01:44:51 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-03 01:44:52 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-03 01:44:52 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-03 01:44:53 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-03 01:44:53 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-03 01:45:00 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-03 01:45:00 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-03 01:45:38 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-03 01:45:38 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-03 01:51:38 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-03 01:51:38 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-03 01:54:55 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-03 01:55:36 [error]: Error no controlado: Bad Request
+2024-10-03 01:55:40 [error]: Error no controlado: Bad Request
+2024-10-03 01:55:59 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-03 02:08:18 [error]: 400 - NotFoundError: Usuario no encontrado.
+2024-10-03 02:08:18 [error]: Error en la autenticación local: Usuario no encontrado.
+2024-10-03 02:08:18 [error]: Error al autenticar el usuario:
+2024-10-03 02:08:18 [error]: Error controlado: Usuario no encontrado.
+2024-10-03 02:09:11 [error]: 400 - NotFoundError: Usuario no encontrado.
+2024-10-03 02:09:11 [error]: Error en la autenticación local: Usuario no encontrado.
+2024-10-03 02:09:11 [error]: Error al autenticar el usuario:
+2024-10-03 02:09:11 [error]: Error controlado: Usuario no encontrado.
+2024-10-03 02:13:02 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-03 02:22:17 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-03 14:34:00 [error]: Error al conectar a MongoDB: %o
+2024-10-03 14:35:27 [error]: Error al conectar a MongoDB: %o
+2024-10-03 14:39:02 [error]: Error al conectar a MongoDB: %o
+2024-10-03 14:53:31 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-03 15:03:28 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-03 15:18:51 [error]: 400 - ValidationError: El correo electrónico ya está registrado.
+2024-10-03 15:18:51 [error]: Error controlado: El correo electrónico ya está registrado.
+2024-10-03 15:49:10 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-03 15:49:10 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-03 15:49:30 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-03 15:49:30 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-03 16:02:57 [error]: 400 - AuthenticationError: Credenciales inválidas. Intenta nuevamente.
+2024-10-03 16:02:57 [error]: Error en la autenticación local: Credenciales inválidas. Intenta nuevamente.
+2024-10-03 16:02:57 [error]: Error al autenticar el usuario:
+2024-10-03 16:02:57 [error]: Error controlado: Credenciales inválidas. Intenta nuevamente.
+2024-10-03 16:03:25 [error]: Error no controlado: Bad Request

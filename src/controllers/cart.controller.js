@@ -5,7 +5,7 @@ const TicketDao = require('../../dao/mongo/TicketMongoDAO');
 const { v4: uuidv4 } = require('uuid');
 const CustomError = require('../middlewares/customError');
 const errorDictionary = require('../config/errorDictionary');
-const logger = require('../middlewares/logger'); 
+const logger = require('../middlewares/logger');
 
 exports.createCart = async (req, res) => {
   try {
@@ -37,11 +37,18 @@ exports.addProductToCart = async (req, res) => {
   try {
     const carrito = await CartDao.getCartById(req.params.id);
     const producto = await ProductDao.getProductById(req.body.productId);
+    const user = req.user; 
+
     if (!carrito) {
       throw new CustomError(errorDictionary.CART_ERRORS.CART_NOT_FOUND);
     }
     if (!producto) {
       throw new CustomError(errorDictionary.CART_ERRORS.PRODUCT_NOT_FOUND_IN_CART);
+    }
+
+  
+    if (user.role === 'premium' && producto.owner === user.email) {
+      return res.status(400).json({ message: 'No puedes agregar tu propio producto al carrito' });
     }
 
     const updatedCart = await CartDao.addProductToCart(req.params.id, req.body.productId, req.body.quantity);

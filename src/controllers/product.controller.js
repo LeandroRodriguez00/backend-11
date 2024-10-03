@@ -79,17 +79,27 @@ exports.getProductById = async (req, res) => {
 
 exports.createProduct = async (req, res) => {
   try {
-    const { title, price } = req.body;
+    const { title, price, description, category, stock, code } = req.body;
+    const user = req.user; 
+
     
-    if (!title) {
-      throw new CustomError(errorDictionary.PRODUCT_ERRORS.MISSING_TITLE);
-    }
-    if (!price) {
-      throw new CustomError(errorDictionary.PRODUCT_ERRORS.MISSING_PRICE);
+    let owner = 'admin';  
+    if (user.role === 'premium') {
+      owner = user.email;  
     }
 
-    const nuevoProducto = await ProductDao.createProduct(req.body);
-    res.status(201).json(nuevoProducto);
+    const nuevoProducto = await ProductDao.createProduct({
+      title,
+      price,
+      description,
+      category,
+      stock,
+      code,
+      owner,  
+      available: true  
+    });
+
+    res.status(201).json(nuevoProducto);  
   } catch (error) {
     if (error instanceof CustomError) {
       return res.status(error.status).json({ message: error.message });
@@ -102,10 +112,18 @@ exports.createProduct = async (req, res) => {
 exports.updateProduct = async (req, res) => {
   try {
     const { id } = req.params;
-    const productoActualizado = await ProductDao.updateProduct(id, req.body);
-    if (!productoActualizado) {
-      throw new CustomError(errorDictionary.PRODUCT_ERRORS.PRODUCT_NOT_FOUND);
+    const product = await ProductDao.getProductById(id);
+    const user = req.user;
+
+    if (!product) {
+      return res.status(404).json({ message: 'Producto no encontrado' });
     }
+
+    if (user.role === 'premium' && product.owner !== user.email) {
+      return res.status(403).json({ message: 'No puedes modificar productos que no te pertenecen' });
+    }
+
+    const productoActualizado = await ProductDao.updateProduct(id, req.body);
     res.json(productoActualizado);
   } catch (error) {
     if (error instanceof CustomError) {
@@ -119,16 +137,24 @@ exports.updateProduct = async (req, res) => {
 exports.deleteProduct = async (req, res) => {
   try {
     const { id } = req.params;
-    const productoEliminado = await ProductDao.deleteProduct(id);
-    if (!productoEliminado) {
-      throw new CustomError(errorDictionary.PRODUCT_ERRORS.PRODUCT_NOT_FOUND);
+    const product = await ProductDao.getProductById(id);
+    const user = req.user;
+
+    if (!product) {
+      return res.status(404).json({ message: 'Producto no encontrado' });
     }
-    res.json(productoEliminado);
+
+    if (user.role === 'premium' && product.owner !== user.email) {
+      return res.status(403).json({ message: 'No puedes eliminar productos que no te pertenecen' });
+    }
+
+    await ProductDao.deleteProduct(id);
+    res.status(200).json({ message: 'Producto eliminado' });
   } catch (error) {
     if (error instanceof CustomError) {
       return res.status(error.status).json({ message: error.message });
     }
-    logger.error(`Error al eliminar producto con ID ${id}:`, { error }); 
-    res.status(500).send('Error en el servidor');
+    logger.error(`Error al eliminar producto con ID ${id}:`, { error });
+    res.status(500).json({ message: 'Error al eliminar el producto' });
   }
 };

@@ -43,3 +43,692 @@
 2024-09-25 15:32:03 [info]: Conectado a MongoDB Atlas
 2024-09-25 15:32:19 [error]: 400 - AuthenticationError: Credenciales inválidas. Intenta nuevamente.
 2024-09-25 15:32:19 [error]: Error controlado: Credenciales inválidas. Intenta nuevamente.
+2024-09-30 12:06:33 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-09-30 12:06:33 [info]: Servidor escuchando en el puerto 8080
+2024-09-30 12:06:34 [info]: Conectado a MongoDB Atlas
+2024-09-30 12:38:18 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-09-30 12:38:18 [info]: Servidor escuchando en el puerto 8080
+2024-09-30 12:38:19 [info]: Conectado a MongoDB Atlas
+2024-09-30 13:41:55 [error]: Error al enviar el correo de recuperación de contraseña
+2024-09-30 13:54:06 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-09-30 13:54:06 [info]: Servidor escuchando en el puerto 8080
+2024-09-30 13:54:07 [info]: Conectado a MongoDB Atlas
+2024-09-30 13:54:51 [error]: Error al enviar el correo de recuperación de contraseña
+2024-09-30 13:54:53 [error]: Error al enviar el correo de recuperación de contraseña
+2024-09-30 13:55:23 [error]: Error al enviar el correo de recuperación de contraseña
+2024-09-30 13:59:10 [error]: Error al enviar el correo de recuperación de contraseña
+2024-09-30 14:33:43 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-09-30 14:33:43 [info]: Servidor escuchando en el puerto 8080
+2024-10-01 13:45:38 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-01 13:45:39 [info]: Servidor escuchando en el puerto 8080
+2024-10-01 13:45:40 [info]: Conectado a MongoDB Atlas
+2024-10-01 13:45:48 [info]: Token generado para el usuario: leandrorodriguez1130@gmail.com
+2024-10-01 13:45:48 [info]: URL de restablecimiento generada: http://localhost:8080/reset-password/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWE5OGI1YjgxNjViMTAzYTQwNGU1YSIsImlhdCI6MTcyNzgwMTE0OCwiZXhwIjoxNzI3ODA0NzQ4fQ.w-vAQ50vcDyJO8ChmDpdJxNpDWSa2hpIfBEy-IBNRT4
+2024-10-01 13:45:48 [error]: Error al enviar el correo de recuperación de contraseña
+2024-10-01 13:54:36 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-01 13:54:37 [info]: Servidor escuchando en el puerto 8080
+2024-10-01 13:54:37 [info]: Conectado a MongoDB Atlas
+2024-10-01 13:54:52 [info]: Token generado para el usuario: leandrorodriguez1130@gmail.com
+2024-10-01 13:54:52 [info]: URL de restablecimiento generada: http://localhost:8080/reset-password/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWE5OGI1YjgxNjViMTAzYTQwNGU1YSIsImlhdCI6MTcyNzgwMTY5MiwiZXhwIjoxNzI3ODA1MjkyfQ.Y-AAVoly2VmQED6Wq1EJ_aDLy6WCNHoZ6FKhF6eJcIM
+2024-10-01 13:54:52 [error]: Error al enviar el correo de recuperación de contraseña
+2024-10-01 13:57:19 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-01 13:57:20 [info]: Servidor escuchando en el puerto 8080
+2024-10-01 13:57:20 [info]: Conectado a MongoDB Atlas
+2024-10-01 13:58:11 [error]: Error al enviar el correo de recuperación de contraseña
+2024-10-01 14:24:07 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-01 14:24:08 [info]: Servidor escuchando en el puerto 8080
+2024-10-01 14:24:09 [info]: Conectado a MongoDB Atlas
+2024-10-01 14:24:14 [error]: Error al enviar el correo de recuperación de contraseña
+2024-10-01 14:24:48 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-01 14:24:48 [info]: Servidor escuchando en el puerto 8080
+2024-10-01 14:24:49 [info]: Conectado a MongoDB Atlas
+2024-10-01 14:24:52 [error]: Error al enviar el correo de recuperación de contraseña
+2024-10-01 14:25:52 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-01 14:25:53 [info]: Servidor escuchando en el puerto 8080
+2024-10-01 14:25:54 [info]: Conectado a MongoDB Atlas
+2024-10-01 14:26:47 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-01 14:26:48 [info]: Servidor escuchando en el puerto 8080
+2024-10-01 14:26:49 [info]: Conectado a MongoDB Atlas
+2024-10-01 14:28:50 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-01 14:28:51 [info]: Servidor escuchando en el puerto 8080
+2024-10-01 14:28:52 [info]: Conectado a MongoDB Atlas
+2024-10-01 14:30:15 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-01 14:30:15 [info]: Servidor escuchando en el puerto 8080
+2024-10-01 14:30:16 [info]: Conectado a MongoDB Atlas
+2024-10-01 14:30:34 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-01 14:30:34 [info]: Servidor escuchando en el puerto 8080
+2024-10-01 14:30:35 [info]: Conectado a MongoDB Atlas
+2024-10-02 16:04:00 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 16:04:00 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 16:04:01 [info]: Conectado a MongoDB Atlas
+2024-10-02 16:05:01 [error]: 400 - NotFoundError: Usuario no encontrado.
+2024-10-02 16:05:01 [error]: Error controlado: Usuario no encontrado.
+2024-10-02 16:19:19 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-02 16:19:19 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-02 16:29:02 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 16:29:03 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 16:29:03 [info]: Conectado a MongoDB Atlas
+2024-10-02 16:32:20 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 16:32:21 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 16:32:22 [info]: Conectado a MongoDB Atlas
+2024-10-02 16:35:14 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 16:35:15 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 16:35:16 [info]: Conectado a MongoDB Atlas
+2024-10-02 16:35:47 [error]: Error no controlado: %o
+2024-10-02 16:35:47 [error]: Error no controlado: %o
+2024-10-02 16:36:03 [error]: Error no controlado: %o
+2024-10-02 16:38:06 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 16:38:07 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 16:38:08 [info]: Conectado a MongoDB Atlas
+2024-10-02 16:38:19 [error]: 400 - ValidationError: El correo electrónico ya está registrado.
+2024-10-02 16:38:19 [error]: Error controlado: El correo electrónico ya está registrado.
+2024-10-02 16:42:13 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-02 16:42:13 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-02 18:31:08 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-02 18:31:08 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-02 18:31:36 [info]: Este es un mensaje de INFO
+2024-10-02 18:31:36 [warn]: Este es un mensaje de WARN
+2024-10-02 18:31:36 [error]: Este es un mensaje de ERROR
+2024-10-02 18:31:36 [fatal]: Este es un mensaje de FATAL
+2024-10-02 18:32:38 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 18:32:39 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 18:32:39 [info]: Conectado a MongoDB Atlas
+2024-10-02 18:32:50 [error]: 400 - StockError: No hay productos suficientes para realizar la compra
+2024-10-02 18:49:54 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 18:49:54 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 18:49:55 [info]: Conectado a MongoDB Atlas
+2024-10-02 19:03:16 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 19:03:17 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 19:03:18 [info]: Conectado a MongoDB Atlas
+2024-10-02 19:04:03 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 19:04:04 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 19:04:04 [info]: Conectado a MongoDB Atlas
+2024-10-02 19:04:45 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 19:04:46 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 19:04:47 [info]: Conectado a MongoDB Atlas
+2024-10-02 19:05:46 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 19:05:46 [info]: Entorno actual: development
+2024-10-02 19:05:46 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 19:05:47 [info]: Conectado a MongoDB Atlas
+2024-10-02 19:05:56 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 19:05:56 [info]: Entorno actual: development
+2024-10-02 19:05:57 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 19:05:57 [info]: Conectado a MongoDB Atlas
+2024-10-02 19:39:43 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 19:39:43 [info]: Entorno actual: development
+2024-10-02 19:39:43 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 19:39:44 [info]: Conectado a MongoDB Atlas
+2024-10-02 19:44:22 [error]: 400 - ValidationError: El correo electrónico ya está registrado.
+2024-10-02 19:44:22 [error]: Error controlado: El correo electrónico ya está registrado.
+2024-10-02 19:44:40 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-02 19:44:56 [error]: 400 - ValidationError: El correo electrónico ya está registrado.
+2024-10-02 19:44:56 [error]: Error controlado: El correo electrónico ya está registrado.
+2024-10-02 19:59:55 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-02 20:00:07 [error]: 400 - ValidationError: El correo electrónico ya está registrado.
+2024-10-02 20:00:07 [error]: Error controlado: El correo electrónico ya está registrado.
+2024-10-02 20:16:00 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 20:16:01 [info]: Entorno actual: development
+2024-10-02 20:16:01 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 20:16:02 [info]: Conectado a MongoDB Atlas
+2024-10-02 20:16:31 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-02 20:21:42 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-02 20:25:34 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 20:25:34 [info]: Entorno actual: development
+2024-10-02 20:25:35 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 20:25:36 [info]: Conectado a MongoDB Atlas
+2024-10-02 20:25:53 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-02 20:32:01 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 20:32:01 [info]: Entorno actual: development
+2024-10-02 20:32:01 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 20:32:02 [info]: Conectado a MongoDB Atlas
+2024-10-02 20:32:27 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-02 20:39:20 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 20:39:20 [info]: Entorno actual: development
+2024-10-02 20:39:21 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 20:39:22 [info]: Conectado a MongoDB Atlas
+2024-10-02 20:40:06 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 20:40:06 [info]: Entorno actual: development
+2024-10-02 20:40:06 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 20:40:07 [info]: Conectado a MongoDB Atlas
+2024-10-02 20:41:32 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 20:41:32 [info]: Entorno actual: development
+2024-10-02 20:41:33 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 20:41:33 [info]: Conectado a MongoDB Atlas
+2024-10-02 20:41:42 [info]: Usuario deserializado con éxito: leandrorodriguez1130@gmail.com
+2024-10-02 20:42:10 [info]: Usuario deserializado con éxito: leandrorodriguez1130@gmail.com
+2024-10-02 20:42:19 [info]: Usuario deserializado con éxito: leandrorodriguez1130@gmail.com
+2024-10-02 20:42:19 [info]: Usuario autenticado correctamente con Google: leandrorodriguez1130@gmail.com
+2024-10-02 20:42:20 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-02 20:42:33 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 20:42:34 [info]: Entorno actual: development
+2024-10-02 20:42:34 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 20:42:35 [info]: Conectado a MongoDB Atlas
+2024-10-02 20:42:35 [info]: Usuario deserializado con éxito: leandrorodriguez1130@gmail.com
+2024-10-02 20:42:46 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 20:42:46 [info]: Entorno actual: development
+2024-10-02 20:42:47 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 20:42:47 [info]: Conectado a MongoDB Atlas
+2024-10-02 20:42:58 [info]: Usuario deserializado con éxito: leandrorodriguez1130@gmail.com
+2024-10-02 20:43:06 [info]: Usuario deserializado con éxito: leandrorodriguez1130@gmail.com
+2024-10-02 20:43:21 [info]: Usuario deserializado con éxito: leandrorodriguez1130@gmail.com
+2024-10-02 20:43:22 [info]: Creando nuevo usuario con Google ID: 100866051051608047280
+2024-10-02 20:43:22 [info]: Usuario autenticado correctamente con Google: pruebasbackend231@gmail.com
+2024-10-02 20:43:22 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-02 20:45:32 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 20:45:32 [info]: Entorno actual: development
+2024-10-02 20:45:32 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 20:45:33 [info]: Conectado a MongoDB Atlas
+2024-10-02 20:45:45 [error]: 400 - ValidationError: El correo electrónico ya está registrado.
+2024-10-02 20:45:45 [error]: Error controlado: El correo electrónico ya está registrado.
+2024-10-02 20:45:54 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 20:45:55 [info]: Entorno actual: development
+2024-10-02 20:45:55 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 20:45:55 [info]: Conectado a MongoDB Atlas
+2024-10-02 20:45:58 [info]: Usuario deserializado con éxito: pruebasbackend231@gmail.com
+2024-10-02 20:46:03 [info]: Usuario deserializado con éxito: pruebasbackend231@gmail.com
+2024-10-02 20:46:11 [info]: Usuario deserializado con éxito: pruebasbackend231@gmail.com
+2024-10-02 20:46:12 [info]: Usuario autenticado correctamente con Google: leandrorodriguez1130@gmail.com
+2024-10-02 20:46:12 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-02 20:54:14 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 20:54:15 [info]: Entorno actual: development
+2024-10-02 20:54:16 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 20:54:16 [info]: Conectado a MongoDB Atlas
+2024-10-02 20:54:23 [info]: Usuario deserializado con éxito: leandrorodriguez1130@gmail.com
+2024-10-02 20:54:28 [info]: Usuario deserializado con éxito: leandrorodriguez1130@gmail.com
+2024-10-02 20:54:34 [info]: Usuario deserializado con éxito: leandrorodriguez1130@gmail.com
+2024-10-02 20:54:34 [info]: Usuario autenticado correctamente con Google: leandrorodriguez1130@gmail.com
+2024-10-02 20:54:35 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-02 20:55:07 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 20:55:08 [info]: Entorno actual: development
+2024-10-02 20:55:08 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 20:55:08 [info]: Conectado a MongoDB Atlas
+2024-10-02 20:55:15 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 20:55:15 [info]: Entorno actual: development
+2024-10-02 20:55:15 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 20:55:16 [info]: Conectado a MongoDB Atlas
+2024-10-02 20:55:44 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 20:55:44 [info]: Entorno actual: development
+2024-10-02 20:55:45 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 20:55:45 [info]: Conectado a MongoDB Atlas
+2024-10-02 21:00:36 [info]: Usuario deserializado con éxito: leandrorodriguez1130@gmail.com
+2024-10-02 21:01:34 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 21:01:34 [info]: Entorno actual: development
+2024-10-02 21:01:34 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 21:01:35 [info]: Conectado a MongoDB Atlas
+2024-10-02 21:03:17 [info]: Usuario deserializado con éxito: leandrorodriguez1130@gmail.com
+2024-10-02 21:03:22 [info]: Usuario deserializado con éxito: leandrorodriguez1130@gmail.com
+2024-10-02 21:03:27 [info]: Usuario deserializado con éxito: leandrorodriguez1130@gmail.com
+2024-10-02 21:03:30 [info]: Usuario autenticado correctamente con Google: leandrorodriguez1130@gmail.com
+2024-10-02 21:03:30 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-02 21:04:34 [error]: 400 - ValidationError: El correo electrónico ya está registrado.
+2024-10-02 21:04:34 [error]: Error controlado: El correo electrónico ya está registrado.
+2024-10-02 21:04:45 [info]: Usuario autenticado correctamente: 555@gmail.com
+2024-10-02 21:04:45 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-02 21:04:45 [info]: Token verificado con éxito
+2024-10-02 21:04:45 [info]: Token verificado con éxito
+2024-10-02 21:05:20 [info]: Usuario deserializado con éxito: leandrorodriguez1130@gmail.com
+2024-10-02 21:05:20 [error]: Error no controlado: Bad Request
+2024-10-02 21:05:22 [info]: Usuario deserializado con éxito: leandrorodriguez1130@gmail.com
+2024-10-02 21:05:22 [error]: Error no controlado: Bad Request
+2024-10-02 21:05:24 [info]: Usuario deserializado con éxito: leandrorodriguez1130@gmail.com
+2024-10-02 21:05:25 [error]: Error no controlado: Bad Request
+2024-10-02 21:05:28 [info]: Usuario deserializado con éxito: leandrorodriguez1130@gmail.com
+2024-10-02 21:05:29 [info]: Usuario autenticado correctamente con Google: leandrorodriguez1130@gmail.com
+2024-10-02 21:05:29 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-02 21:06:15 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 21:06:16 [info]: Entorno actual: development
+2024-10-02 21:06:16 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 21:06:17 [info]: Conectado a MongoDB Atlas
+2024-10-02 21:06:20 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 21:06:20 [info]: Entorno actual: development
+2024-10-02 21:06:20 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 21:06:21 [info]: Conectado a MongoDB Atlas
+2024-10-02 21:06:40 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 21:06:41 [info]: Entorno actual: development
+2024-10-02 21:06:41 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 21:06:42 [info]: Conectado a MongoDB Atlas
+2024-10-02 22:15:17 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 22:15:18 [info]: Entorno actual: development
+2024-10-02 22:15:18 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 22:15:19 [info]: Conectado a MongoDB Atlas
+2024-10-02 22:15:34 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-02 22:33:53 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 22:33:54 [info]: Entorno actual: development
+2024-10-02 22:33:54 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 22:33:55 [info]: Conectado a MongoDB Atlas
+2024-10-02 22:36:16 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 22:36:17 [info]: Entorno actual: development
+2024-10-02 22:36:17 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 22:36:18 [info]: Conectado a MongoDB Atlas
+2024-10-02 22:41:34 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 22:41:34 [info]: Entorno actual: development
+2024-10-02 22:41:35 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 22:41:36 [info]: Conectado a MongoDB Atlas
+2024-10-02 22:43:21 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 22:43:22 [info]: Entorno actual: development
+2024-10-02 22:43:22 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 22:43:23 [info]: Conectado a MongoDB Atlas
+2024-10-02 22:43:25 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 22:43:25 [info]: Entorno actual: development
+2024-10-02 22:43:25 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 22:43:26 [info]: Conectado a MongoDB Atlas
+2024-10-02 22:46:05 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 22:46:05 [info]: Entorno actual: development
+2024-10-02 22:46:05 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 22:46:06 [info]: Conectado a MongoDB Atlas
+2024-10-02 22:48:01 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 22:48:02 [info]: Entorno actual: development
+2024-10-02 22:48:02 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 22:48:03 [info]: Conectado a MongoDB Atlas
+2024-10-02 22:49:00 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-02 22:49:00 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-02 22:49:00 [info]: Token verificado con éxito
+2024-10-02 22:49:00 [info]: Token verificado con éxito
+2024-10-02 22:49:09 [error]: 400 - ValidationError: El correo electrónico ya está registrado.
+2024-10-02 22:49:09 [error]: Error controlado: El correo electrónico ya está registrado.
+2024-10-02 22:49:20 [info]: Usuario ha cerrado sesión.
+2024-10-02 22:50:00 [info]: Usuario autenticado con éxito mediante Google: leandrorodriguez1130@gmail.com
+2024-10-02 22:50:00 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-02 22:57:21 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-02 22:57:21 [info]: Entorno actual: development
+2024-10-02 22:57:21 [info]: Servidor escuchando en el puerto 8080
+2024-10-02 22:57:22 [info]: Conectado a MongoDB Atlas
+2024-10-02 22:58:02 [info]: Usuario autenticado con éxito mediante Google: leandrorodriguez1130@gmail.com
+2024-10-02 22:58:02 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-03 01:04:58 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 01:04:59 [info]: Entorno actual: development
+2024-10-03 01:04:59 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 01:05:00 [info]: Conectado a MongoDB Atlas
+2024-10-03 01:08:07 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 01:08:08 [info]: Entorno actual: development
+2024-10-03 01:08:08 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 01:08:09 [info]: Conectado a MongoDB Atlas
+2024-10-03 01:08:17 [info]: Usuario autenticado con éxito mediante Google: leandrorodriguez1130@gmail.com
+2024-10-03 01:08:17 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-03 01:11:09 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 01:11:09 [info]: Entorno actual: development
+2024-10-03 01:11:09 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 01:11:10 [info]: Conectado a MongoDB Atlas
+2024-10-03 01:11:21 [info]: Usuario autenticado con éxito mediante Google: leandrorodriguez1130@gmail.com
+2024-10-03 01:11:21 [error]: Error en la autenticación con Google: jwt is not defined
+2024-10-03 01:11:21 [error]: 500 - GoogleAuthError: Error al autenticar con Google
+2024-10-03 01:11:21 [error]: Error controlado: Error al autenticar con Google
+2024-10-03 01:13:05 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 01:13:05 [info]: Entorno actual: development
+2024-10-03 01:13:05 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 01:13:06 [info]: Conectado a MongoDB Atlas
+2024-10-03 01:13:11 [error]: Error no controlado: Bad Request
+2024-10-03 01:13:27 [info]: Usuario autenticado con éxito mediante Google: leandrorodriguez1130@gmail.com
+2024-10-03 01:13:27 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-03 01:13:50 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 01:13:50 [info]: Entorno actual: development
+2024-10-03 01:13:51 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 01:13:51 [info]: Conectado a MongoDB Atlas
+2024-10-03 01:14:07 [info]: Usuario autenticado con éxito mediante Google: leandrorodriguez1130@gmail.com
+2024-10-03 01:14:07 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-03 01:21:48 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 01:21:48 [info]: Entorno actual: development
+2024-10-03 01:21:48 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 01:21:49 [info]: Conectado a MongoDB Atlas
+2024-10-03 01:22:06 [info]: Usuario creado con éxito mediante Google OAuth: leandropgs1130@gmail.com
+2024-10-03 01:22:06 [info]: Usuario autenticado con éxito mediante Google: leandropgs1130@gmail.com
+2024-10-03 01:22:06 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-03 01:30:44 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 01:30:45 [info]: Entorno actual: development
+2024-10-03 01:30:45 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 01:30:46 [info]: Conectado a MongoDB Atlas
+2024-10-03 01:30:50 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 01:30:50 [info]: Entorno actual: development
+2024-10-03 01:30:50 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 01:30:51 [info]: Conectado a MongoDB Atlas
+2024-10-03 01:31:12 [info]: Usuario autenticado con éxito mediante Google: pruebasbackend231@gmail.com
+2024-10-03 01:31:12 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-03 01:34:00 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 01:34:01 [info]: Entorno actual: development
+2024-10-03 01:34:01 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 01:34:02 [info]: Conectado a MongoDB Atlas
+2024-10-03 01:34:24 [info]: Usuario autenticado con éxito mediante Google: leandropgs1130@gmail.com
+2024-10-03 01:34:24 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-03 01:37:12 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 01:37:12 [info]: Entorno actual: development
+2024-10-03 01:37:12 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 01:37:13 [info]: Conectado a MongoDB Atlas
+2024-10-03 01:37:37 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 01:37:37 [info]: Entorno actual: development
+2024-10-03 01:37:37 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 01:37:38 [info]: Conectado a MongoDB Atlas
+2024-10-03 01:40:38 [info]: Usuario autenticado con éxito mediante Google: leandrorodriguez1130@gmail.com
+2024-10-03 01:40:39 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-03 01:44:37 [warn]: Token no encontrado en las cookies
+2024-10-03 01:44:37 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-03 01:44:37 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-03 01:44:49 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-03 01:44:49 [info]: Usuario 555@gmail.com autenticado con éxito. Token firmado correctamente.
+2024-10-03 01:44:49 [info]: Token verificado con éxito
+2024-10-03 01:44:49 [info]: Token verificado con éxito
+2024-10-03 01:44:51 [warn]: Token no encontrado en las cookies
+2024-10-03 01:44:51 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-03 01:44:51 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-03 01:44:52 [warn]: Token no encontrado en las cookies
+2024-10-03 01:44:52 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-03 01:44:52 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-03 01:44:53 [warn]: Token no encontrado en las cookies
+2024-10-03 01:44:53 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-03 01:44:53 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-03 01:44:57 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-03 01:44:57 [info]: Usuario 555@gmail.com autenticado con éxito. Token firmado correctamente.
+2024-10-03 01:44:57 [info]: Token verificado con éxito
+2024-10-03 01:44:57 [info]: Token verificado con éxito
+2024-10-03 01:45:00 [warn]: Token no encontrado en las cookies
+2024-10-03 01:45:00 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-03 01:45:00 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-03 01:45:10 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-03 01:45:10 [info]: Usuario 555@gmail.com autenticado con éxito. Token firmado correctamente.
+2024-10-03 01:45:10 [info]: Token verificado con éxito
+2024-10-03 01:45:10 [info]: Token verificado con éxito
+2024-10-03 01:45:38 [warn]: Token no encontrado en las cookies
+2024-10-03 01:45:38 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-03 01:45:38 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-03 01:51:32 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 01:51:32 [info]: Entorno actual: development
+2024-10-03 01:51:33 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 01:51:34 [info]: Conectado a MongoDB Atlas
+2024-10-03 01:51:38 [warn]: Token no encontrado en las cookies
+2024-10-03 01:51:38 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-03 01:51:38 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-03 01:53:07 [info]: Token verificado con éxito
+2024-10-03 01:54:55 [info]: Usuario autenticado con éxito mediante Google: pruebasbackend231@gmail.com
+2024-10-03 01:54:55 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-03 01:55:33 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 01:55:33 [info]: Entorno actual: development
+2024-10-03 01:55:34 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 01:55:34 [info]: Conectado a MongoDB Atlas
+2024-10-03 01:55:36 [error]: Error no controlado: Bad Request
+2024-10-03 01:55:40 [error]: Error no controlado: Bad Request
+2024-10-03 01:55:49 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 01:55:49 [info]: Entorno actual: development
+2024-10-03 01:55:49 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 01:55:50 [info]: Conectado a MongoDB Atlas
+2024-10-03 01:55:59 [info]: Usuario autenticado con éxito mediante Google: leandrorodriguez1130@gmail.com
+2024-10-03 01:55:59 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-03 02:07:23 [info]: Token verificado con éxito
+2024-10-03 02:08:18 [warn]: Usuario no encontrado: 555@GMAIL.COM
+2024-10-03 02:08:18 [error]: 400 - NotFoundError: Usuario no encontrado.
+2024-10-03 02:08:18 [error]: Error en la autenticación local: Usuario no encontrado.
+2024-10-03 02:08:18 [error]: Error al autenticar el usuario:
+2024-10-03 02:08:18 [error]: Error controlado: Usuario no encontrado.
+2024-10-03 02:09:01 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-03 02:09:01 [info]: Usuario 555@gmail.com autenticado con éxito. Token firmado correctamente.
+2024-10-03 02:09:01 [info]: Token verificado con éxito
+2024-10-03 02:09:01 [info]: Token verificado con éxito
+2024-10-03 02:09:11 [warn]: Usuario no encontrado: 555@GMAIL.COM
+2024-10-03 02:09:11 [error]: 400 - NotFoundError: Usuario no encontrado.
+2024-10-03 02:09:11 [error]: Error en la autenticación local: Usuario no encontrado.
+2024-10-03 02:09:11 [error]: Error al autenticar el usuario:
+2024-10-03 02:09:11 [error]: Error controlado: Usuario no encontrado.
+2024-10-03 02:09:27 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 02:09:27 [info]: Entorno actual: development
+2024-10-03 02:09:27 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 02:09:28 [info]: Conectado a MongoDB Atlas
+2024-10-03 02:13:02 [info]: Usuario autenticado con éxito mediante Google: leandrorodriguez1130@gmail.com
+2024-10-03 02:13:02 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-03 02:17:31 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-03 02:17:31 [info]: Usuario 555@gmail.com autenticado con éxito. Token firmado correctamente.
+2024-10-03 02:17:31 [info]: Token verificado con éxito
+2024-10-03 02:17:31 [info]: Token verificado con éxito
+2024-10-03 02:18:35 [info]: Token verificado con éxito
+2024-10-03 02:21:41 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 02:21:41 [info]: Entorno actual: development
+2024-10-03 02:21:41 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 02:21:42 [info]: Conectado a MongoDB Atlas
+2024-10-03 02:22:17 [info]: Usuario autenticado con éxito mediante Google: leandrorodriguez1130@gmail.com
+2024-10-03 02:22:17 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-03 02:24:23 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 02:24:23 [info]: Entorno actual: development
+2024-10-03 02:24:24 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 02:24:25 [info]: Conectado a MongoDB Atlas
+2024-10-03 02:24:53 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 02:24:54 [info]: Entorno actual: development
+2024-10-03 02:24:54 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 02:24:55 [info]: Conectado a MongoDB Atlas
+2024-10-03 14:33:29 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 14:33:30 [info]: Entorno actual: development
+2024-10-03 14:33:30 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 14:34:00 [error]: Error al conectar a MongoDB: %o
+2024-10-03 14:34:56 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 14:34:56 [info]: Entorno actual: development
+2024-10-03 14:34:56 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 14:35:27 [error]: Error al conectar a MongoDB: %o
+2024-10-03 14:36:54 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 14:36:54 [info]: Entorno actual: development
+2024-10-03 14:36:54 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 14:37:23 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 14:37:23 [info]: Entorno actual: development
+2024-10-03 14:37:23 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 14:38:18 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 14:38:18 [info]: Entorno actual: development
+2024-10-03 14:38:19 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 14:38:31 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 14:38:31 [info]: Entorno actual: development
+2024-10-03 14:38:31 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 14:39:02 [error]: Error al conectar a MongoDB: %o
+2024-10-03 14:49:08 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 14:49:08 [info]: Entorno actual: development
+2024-10-03 14:49:08 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 14:49:10 [info]: Conectado a MongoDB Atlas
+2024-10-03 14:53:31 [info]: Usuario autenticado con éxito mediante Google: leandrorodriguez1130@gmail.com
+2024-10-03 14:53:31 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-03 15:02:54 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 15:02:54 [info]: Entorno actual: development
+2024-10-03 15:02:55 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 15:02:56 [info]: Conectado a MongoDB Atlas
+2024-10-03 15:03:28 [info]: Usuario autenticado con éxito mediante Google: leandrorodriguez1130@gmail.com
+2024-10-03 15:03:28 [error]: Error no controlado: secretOrPrivateKey must have a value
+2024-10-03 15:08:19 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 15:08:19 [info]: Entorno actual: development
+2024-10-03 15:08:19 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 15:08:21 [info]: Conectado a MongoDB Atlas
+2024-10-03 15:11:40 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 15:11:40 [info]: Entorno actual: development
+2024-10-03 15:11:40 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 15:11:42 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 15:11:42 [info]: Entorno actual: development
+2024-10-03 15:11:42 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 15:11:43 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 15:11:43 [info]: Entorno actual: development
+2024-10-03 15:11:44 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 15:11:45 [info]: Conectado a MongoDB Atlas
+2024-10-03 15:13:29 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 15:13:30 [info]: Entorno actual: development
+2024-10-03 15:13:30 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 15:13:31 [info]: Conectado a MongoDB Atlas
+2024-10-03 15:16:08 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 15:16:08 [info]: Entorno actual: development
+2024-10-03 15:16:08 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 15:16:09 [info]: Conectado a MongoDB Atlas
+2024-10-03 15:16:25 [info]: Usuario autenticado con éxito mediante Google: leandrorodriguez1130@gmail.com
+2024-10-03 15:16:25 [info]: Usuario autenticado con Google: leandrorodriguez1130@gmail.com
+2024-10-03 15:16:26 [info]: Token verificado con éxito
+2024-10-03 15:16:26 [info]: Token verificado con éxito
+2024-10-03 15:18:45 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-03 15:18:45 [info]: Usuario 555@gmail.com autenticado con éxito. Token firmado correctamente.
+2024-10-03 15:18:45 [info]: Token verificado con éxito
+2024-10-03 15:18:45 [info]: Token verificado con éxito
+2024-10-03 15:18:51 [warn]: Correo ya registrado: juann1@gmail.com
+2024-10-03 15:18:51 [error]: 400 - ValidationError: El correo electrónico ya está registrado.
+2024-10-03 15:18:51 [error]: Error controlado: El correo electrónico ya está registrado.
+2024-10-03 15:19:01 [info]: Usuario registrado con éxito: juannl1@gmail.com
+2024-10-03 15:48:34 [info]: Token verificado con éxito
+2024-10-03 15:48:55 [info]: Token verificado con éxito
+2024-10-03 15:48:55 [info]: Token verificado con éxito
+2024-10-03 15:49:00 [info]: Token verificado con éxito
+2024-10-03 15:49:00 [info]: Token verificado con éxito
+2024-10-03 15:49:03 [info]: Token verificado con éxito
+2024-10-03 15:49:03 [info]: Token verificado con éxito
+2024-10-03 15:49:10 [info]: Token verificado con éxito
+2024-10-03 15:49:10 [info]: Token verificado con éxito
+2024-10-03 15:49:10 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-03 15:49:10 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-03 15:49:30 [info]: Token verificado con éxito
+2024-10-03 15:49:30 [info]: Token verificado con éxito
+2024-10-03 15:49:30 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-03 15:49:30 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-03 15:49:53 [info]: Token verificado con éxito
+2024-10-03 15:49:53 [info]: Token verificado con éxito
+2024-10-03 15:53:16 [info]: Token de recuperación generado para el usuario: leandrorodriguez1130@gmail.com
+2024-10-03 15:53:16 [info]: URL de restablecimiento generada: http://localhost:8080/reset-password/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWE5OGI1YjgxNjViMTAzYTQwNGU1YSIsImlhdCI6MTcyNzk4MTU5NiwiZXhwIjoxNzI3OTg1MTk2fQ.wCXqvoMGtX9HRDPxl9qMxay9mQTUi_HunPA07jqu2LA
+2024-10-03 15:53:21 [info]: Correo de recuperación enviado a: leandrorodriguez1130@gmail.com
+2024-10-03 16:02:13 [info]: Contraseña actualizada exitosamente para el usuario: leandrorodriguez1130@gmail.com
+2024-10-03 16:02:43 [info]: Usuario autenticado con éxito: leandrorodriguez1130@gmail.com
+2024-10-03 16:02:43 [info]: Usuario leandrorodriguez1130@gmail.com autenticado con éxito. Token firmado correctamente.
+2024-10-03 16:02:43 [info]: Token verificado con éxito
+2024-10-03 16:02:43 [info]: Token verificado con éxito
+2024-10-03 16:02:57 [warn]: Credenciales inválidas para el email: leandrorodriguez1130@gmail.com
+2024-10-03 16:02:57 [error]: 400 - AuthenticationError: Credenciales inválidas. Intenta nuevamente.
+2024-10-03 16:02:57 [error]: Error en la autenticación local: Credenciales inválidas. Intenta nuevamente.
+2024-10-03 16:02:57 [error]: Error al autenticar el usuario:
+2024-10-03 16:02:57 [error]: Error controlado: Credenciales inválidas. Intenta nuevamente.
+2024-10-03 16:03:02 [info]: Usuario autenticado con éxito: leandrorodriguez1130@gmail.com
+2024-10-03 16:03:02 [info]: Usuario leandrorodriguez1130@gmail.com autenticado con éxito. Token firmado correctamente.
+2024-10-03 16:03:02 [info]: Token verificado con éxito
+2024-10-03 16:03:02 [info]: Token verificado con éxito
+2024-10-03 16:03:25 [error]: Error no controlado: Bad Request
+2024-10-03 16:10:48 [info]: Token de recuperación generado para el usuario: leandrorodriguez1130@gmail.com
+2024-10-03 16:10:48 [info]: URL de restablecimiento generada: http://localhost:8080/reset-password/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWE5OGI1YjgxNjViMTAzYTQwNGU1YSIsImlhdCI6MTcyNzk4MjY0OCwiZXhwIjoxNzI3OTg2MjQ4fQ.Dn7O5ZkmzjMURZSlntVgvuUaIir98D7VX4LCPskgAZk
+2024-10-03 16:10:51 [info]: Correo de recuperación enviado a: leandrorodriguez1130@gmail.com
+2024-10-03 16:12:12 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 16:12:12 [info]: Entorno actual: development
+2024-10-03 16:12:13 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:12:14 [info]: Conectado a MongoDB Atlas
+2024-10-03 16:12:19 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 16:12:20 [info]: Entorno actual: development
+2024-10-03 16:12:20 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:12:21 [info]: Conectado a MongoDB Atlas
+2024-10-03 16:13:48 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 16:13:48 [info]: Entorno actual: development
+2024-10-03 16:13:49 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:13:50 [info]: Conectado a MongoDB Atlas
+2024-10-03 16:13:55 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 16:13:55 [info]: Entorno actual: development
+2024-10-03 16:13:55 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:13:57 [info]: Conectado a MongoDB Atlas
+2024-10-03 16:15:41 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 16:15:42 [info]: Entorno actual: development
+2024-10-03 16:15:42 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:15:43 [info]: Conectado a MongoDB Atlas
+2024-10-03 16:16:11 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 16:16:11 [info]: Entorno actual: development
+2024-10-03 16:16:11 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:16:12 [info]: Conectado a MongoDB Atlas
+2024-10-03 16:19:43 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 16:19:44 [info]: Entorno actual: development
+2024-10-03 16:19:44 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:19:45 [info]: Conectado a MongoDB Atlas
+2024-10-03 16:19:50 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 16:19:50 [info]: Entorno actual: development
+2024-10-03 16:19:51 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:19:52 [info]: Conectado a MongoDB Atlas
+2024-10-03 16:20:01 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 16:20:01 [info]: Entorno actual: development
+2024-10-03 16:20:01 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:20:02 [info]: Conectado a MongoDB Atlas
+2024-10-03 16:20:16 [info]: Usuario autenticado con Google: pruebasbackend231@gmail.com
+2024-10-03 16:20:17 [info]: Token verificado con éxito
+2024-10-03 16:20:17 [info]: Token verificado con éxito
+2024-10-03 16:20:45 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 16:20:46 [info]: Entorno actual: development
+2024-10-03 16:20:46 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:20:47 [info]: Conectado a MongoDB Atlas
+2024-10-03 16:20:58 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 16:20:59 [info]: Entorno actual: development
+2024-10-03 16:20:59 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:21:00 [info]: Conectado a MongoDB Atlas
+2024-10-03 16:21:16 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 16:21:17 [info]: Entorno actual: development
+2024-10-03 16:21:17 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:21:18 [info]: Conectado a MongoDB Atlas
+2024-10-03 16:21:32 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 16:21:32 [info]: Entorno actual: development
+2024-10-03 16:21:32 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:21:33 [info]: Conectado a MongoDB Atlas
+2024-10-03 16:22:53 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 16:22:53 [info]: Entorno actual: development
+2024-10-03 16:22:54 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:22:55 [info]: Conectado a MongoDB Atlas
+2024-10-03 16:23:16 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 16:23:16 [info]: Entorno actual: development
+2024-10-03 16:23:17 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:23:18 [info]: Conectado a MongoDB Atlas
+2024-10-03 16:26:33 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 16:26:33 [info]: Entorno actual: development
+2024-10-03 16:26:33 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:26:35 [info]: Conectado a MongoDB Atlas
+2024-10-03 16:26:40 [info]: Usuario autenticado con éxito: leandrorodriguez1130@gmail.com
+2024-10-03 16:26:40 [info]: Usuario leandrorodriguez1130@gmail.com autenticado con éxito.
+2024-10-03 16:26:40 [info]: Token verificado con éxito
+2024-10-03 16:26:40 [info]: Token verificado con éxito
+2024-10-03 16:27:27 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 16:27:27 [info]: Entorno actual: development
+2024-10-03 16:27:27 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:27:28 [info]: Conectado a MongoDB Atlas
+2024-10-03 16:27:39 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 16:27:39 [info]: Entorno actual: development
+2024-10-03 16:27:39 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:27:41 [info]: Conectado a MongoDB Atlas
+2024-10-03 16:27:45 [info]: Usuario autenticado con éxito: leandrorodriguez1130@gmail.com
+2024-10-03 16:27:45 [info]: Usuario leandrorodriguez1130@gmail.com autenticado con éxito.
+2024-10-03 16:27:45 [info]: Token verificado con éxito
+2024-10-03 16:27:45 [info]: Token verificado con éxito
+2024-10-03 16:45:21 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 16:45:22 [info]: Entorno actual: development
+2024-10-03 16:45:22 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:45:23 [info]: Conectado a MongoDB Atlas
+2024-10-03 16:45:43 [info]: Usuario autenticado con Google: leandrorodriguez1130@gmail.com
+2024-10-03 16:45:43 [info]: Token verificado con éxito
+2024-10-03 16:45:43 [info]: Token verificado con éxito
+2024-10-03 16:46:09 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 16:46:09 [info]: Entorno actual: development
+2024-10-03 16:46:10 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:46:11 [info]: Conectado a MongoDB Atlas
+2024-10-03 16:47:22 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 16:47:23 [info]: Entorno actual: development
+2024-10-03 16:47:23 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:47:24 [info]: Conectado a MongoDB Atlas
+2024-10-03 16:47:37 [info]: Usuario autenticado con Google: leandrorodriguez1130@gmail.com
+2024-10-03 16:48:04 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 16:48:04 [info]: Entorno actual: development
+2024-10-03 16:48:04 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:48:06 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 16:48:07 [info]: Entorno actual: development
+2024-10-03 16:48:07 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:48:08 [info]: Conectado a MongoDB Atlas
+2024-10-03 16:49:43 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 16:49:43 [info]: Entorno actual: development
+2024-10-03 16:49:44 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:49:45 [info]: Conectado a MongoDB Atlas
+2024-10-03 16:50:16 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-03 16:50:16 [info]: Entorno actual: development
+2024-10-03 16:50:17 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:50:18 [info]: Conectado a MongoDB Atlas
+2024-10-03 16:50:43 [info]: Usuario autenticado con Google: leandrorodriguez1130@gmail.com
+2024-10-03 16:55:21 [info]: Configuración del logger: Entorno -> undefined, Nivel de log -> info
+2024-10-03 16:55:22 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:55:23 [info]: Conectado a MongoDB Atlas
+2024-10-03 16:58:32 [info]: Configuración del logger: Entorno -> undefined, Nivel de log -> info
+2024-10-03 16:58:32 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:58:34 [info]: Conectado a MongoDB Atlas
+2024-10-03 16:58:45 [info]: Configuración del logger: Entorno -> undefined, Nivel de log -> info
+2024-10-03 16:58:45 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:58:46 [info]: Conectado a MongoDB Atlas
+2024-10-03 16:58:56 [info]: Configuración del logger: Entorno -> undefined, Nivel de log -> info
+2024-10-03 16:58:56 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 16:58:57 [info]: Conectado a MongoDB Atlas
+2024-10-03 17:23:40 [info]: Configuración del logger: Entorno -> undefined, Nivel de log -> info
+2024-10-03 17:23:40 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 17:23:42 [info]: Conectado a MongoDB Atlas
+2024-10-03 17:23:53 [info]: Configuración del logger: Entorno -> undefined, Nivel de log -> info
+2024-10-03 17:23:53 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 17:23:54 [info]: Conectado a MongoDB Atlas
+2024-10-03 17:24:56 [info]: Configuración del logger: Entorno -> undefined, Nivel de log -> info
+2024-10-03 17:24:57 [info]: Servidor escuchando en el puerto 8080
+2024-10-03 17:24:58 [info]: Conectado a MongoDB Atlas
