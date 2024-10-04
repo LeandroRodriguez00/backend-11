@@ -10,7 +10,6 @@ const logger = require('./middlewares/logger');
 const CustomError = require('./middlewares/customError');
 const { port, sessionSecret, jwtSecret, mongoUri } = require('./config/config');
 
-
 require('./config/passport.config')(passport);
 
 mongoose.connect(mongoUri)
@@ -23,7 +22,6 @@ mongoose.connect(mongoUri)
   });
 
 const app = express();
-
 
 app.use(session({
   secret: sessionSecret,
@@ -45,7 +43,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));
-
 
 const { engine } = require('express-handlebars');
 app.engine('handlebars', engine({
@@ -89,12 +86,15 @@ const usersRoutes = require('./routes/users.routes');
 const sessionsRoutes = require('./routes/sessions.routes');
 const verifyJWT = require('./middlewares/verifyJWT');
 
+const swaggerConfig = require('./config/swaggerConfig');
+
+swaggerConfig(app); 
+
 app.use('/products', verifyJWT, productsRoutes);
 app.use('/carts', verifyJWT, cartsRoutes);
 app.use('/messages', verifyJWT, messagesRoutes);
 app.use('/', usersRoutes);
 app.use('/sessions', sessionsRoutes);
-
 
 app.use((err, req, res, next) => {
   if (err instanceof CustomError) {
