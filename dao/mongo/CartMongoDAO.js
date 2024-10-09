@@ -1,6 +1,6 @@
-const Cart = require('../models/Cart');
-const CustomError = require('../../src/middlewares/customError');
-const errorDictionary = require('../../src/config/errorDictionary');
+import Cart from '../models/Cart.js';
+import CustomError from '../../src/middlewares/customError.js';
+import errorDictionary from '../../src/config/errorDictionary.js';
 
 class CartMongoDAO {
   async getCartById(id) {
@@ -89,4 +89,4 @@ class CartMongoDAO {
   }
 }
 
-module.exports = new CartMongoDAO();
+export default new CartMongoDAO();

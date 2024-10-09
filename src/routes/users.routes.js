@@ -1,13 +1,14 @@
-const express = require('express');
-const passport = require('passport');
+import express from 'express';
+import passport from 'passport';
+import { registerUser, loginUser, logoutUser, forgotPassword, resetPassword } from '../controllers/user.controller.js';
+import verifyJWT from '../middlewares/verifyJWT.js';
+import UserDTO from '../../dto/UserDTO.js';
+import logger from '../middlewares/logger.js';
+
 const router = express.Router();
-const { registerUser, loginUser, logoutUser, forgotPassword, resetPassword } = require('../controllers/user.controller');
-const verifyJWT = require('../middlewares/verifyJWT');
-const UserDTO = require('../../dto/UserDTO');
-const logger = require('../middlewares/logger');
 
 router.get('/register', (req, res) => {
-  res.render('register'); 
+  res.render('register');
 });
 
 router.post('/register', (req, res, next) => {
@@ -26,7 +27,7 @@ router.get('/current', verifyJWT, (req, res) => {
   const userDTO = new UserDTO(req.user);
   res.json({
     message: 'Acceso autorizado',
-    user: userDTO
+    user: userDTO,
   });
 });
 
@@ -60,4 +61,4 @@ router.get('/forgot-password', (req, res) => {
   res.render('forgotPassword', { expired: expired === 'true', email });
 });
 
-module.exports = router;
+export default router;

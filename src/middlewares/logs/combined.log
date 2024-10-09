@@ -789,3 +789,65 @@
 2024-10-04 01:25:47 [info]: Configuración del logger: Entorno -> undefined, Nivel de log -> info
 2024-10-04 01:25:48 [info]: Servidor escuchando en el puerto 8080
 2024-10-04 01:25:49 [info]: Conectado a MongoDB Atlas
+2024-10-09 03:16:36 [info]: Configuración del logger: Entorno -> undefined, Nivel de log -> info
+2024-10-09 03:16:37 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 03:16:38 [info]: Conectado a MongoDB Atlas
+2024-10-09 03:16:41 [info]: Usuario autenticado con éxito: leandrorodriguez1130@gmail.com
+2024-10-09 03:16:41 [info]: Usuario leandrorodriguez1130@gmail.com autenticado con éxito.
+2024-10-09 04:15:30 [info]: Configuración del logger: Entorno -> undefined, Nivel de log -> info
+2024-10-09 04:15:31 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 04:15:32 [info]: Conectado a MongoDB Atlas
+2024-10-09 04:15:49 [info]: Usuario autenticado con éxito: leandrorodriguez1130@gmail.com
+2024-10-09 04:15:49 [info]: Usuario leandrorodriguez1130@gmail.com autenticado con éxito.
+2024-10-09 04:16:02 [warn]: Correo ya registrado: juannFl1@gmail.com
+2024-10-09 04:16:02 [error]: 400 - ValidationError: El correo electrónico ya está registrado.
+2024-10-09 04:16:02 [error]: Error controlado: El correo electrónico ya está registrado.
+2024-10-09 04:17:03 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-09 04:17:03 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-09 04:17:08 [error]: Error no controlado: Cannot destructure property 'message' of 'undefined' as it is undefined.
+2024-10-09 04:17:14 [error]: 400 - NotFoundError: Producto no encontrado en el carrito.
+2024-10-09 04:17:24 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-09 04:17:24 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-09 04:17:29 [error]: 400 - StockError: No hay productos suficientes para realizar la compra
+2024-10-09 04:22:46 [info]: Configuración del logger: Entorno -> undefined, Nivel de log -> info
+2024-10-09 04:22:46 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 04:22:48 [info]: Conectado a MongoDB Atlas
+2024-10-09 04:29:10 [info]: Usuario autenticado con éxito: leandrorodriguez1130@gmail.com
+2024-10-09 04:29:10 [info]: Usuario leandrorodriguez1130@gmail.com autenticado con éxito.
+2024-10-09 04:31:34 [info]: Configuración del logger: Entorno -> undefined, Nivel de log -> info
+2024-10-09 04:31:35 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 04:31:36 [info]: Conectado a MongoDB Atlas
+2024-10-09 04:36:32 [info]: Configuración del logger: Entorno -> undefined, Nivel de log -> info
+2024-10-09 04:36:32 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 04:36:34 [info]: Conectado a MongoDB Atlas
+2024-10-09 04:36:37 [info]: Este es un mensaje de INFO
+2024-10-09 04:36:37 [warn]: Este es un mensaje de WARN
+2024-10-09 04:36:37 [error]: Este es un mensaje de ERROR
+2024-10-09 04:36:37 [fatal]: Este es un mensaje de FATAL
+2024-10-09 04:38:29 [info]: Configuración del logger: Entorno -> undefined, Nivel de log -> info
+2024-10-09 04:38:29 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 04:38:31 [info]: Conectado a MongoDB Atlas
+2024-10-09 04:39:23 [info]: Configuración del logger: Entorno -> undefined, Nivel de log -> info
+2024-10-09 04:39:24 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 04:39:25 [info]: Conectado a MongoDB Atlas
+2024-10-09 04:39:46 [info]: Configuración del logger: Entorno -> undefined, Nivel de log -> info
+2024-10-09 04:39:47 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 04:39:48 [info]: Conectado a MongoDB Atlas
+2024-10-09 04:40:12 [info]: Configuración del logger: Entorno -> undefined, Nivel de log -> info
+2024-10-09 04:40:12 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 04:40:13 [info]: Conectado a MongoDB Atlas
+2024-10-09 04:40:33 [info]: Configuración del logger: Entorno -> undefined, Nivel de log -> info
+2024-10-09 04:40:34 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 04:40:35 [info]: Conectado a MongoDB Atlas
+2024-10-09 04:41:28 [info]: Configuración del logger: Entorno -> undefined, Nivel de log -> info
+2024-10-09 04:41:29 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 04:41:30 [info]: Conectado a MongoDB Atlas
+2024-10-09 04:41:38 [info]: Configuración del logger: Entorno -> undefined, Nivel de log -> info
+2024-10-09 04:41:39 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 04:41:40 [info]: Conectado a MongoDB Atlas
+2024-10-09 04:41:43 [info]: Configuración del logger: Entorno -> undefined, Nivel de log -> info
+2024-10-09 04:41:43 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 04:41:44 [info]: Conectado a MongoDB Atlas
+2024-10-09 04:41:53 [info]: Configuración del logger: Entorno -> undefined, Nivel de log -> info
+2024-10-09 04:41:54 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 04:41:55 [info]: Conectado a MongoDB Atlas

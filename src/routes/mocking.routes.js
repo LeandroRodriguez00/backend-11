@@ -1,8 +1,8 @@
-const express = require('express');
+import express from 'express';
+import { getMockProducts } from '../controllers/mocking.controller.js';
+
 const router = express.Router();
-const { getMockProducts } = require('../controllers/mocking.controller');
 
+router.get('/mockingproducts', getMockProducts);
 
-router.get('/mockingproducts', getMockProducts);  
-
-module.exports = router;
+export default router;

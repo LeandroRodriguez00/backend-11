@@ -1,13 +1,14 @@
-const UserDao = require('../../dao/mongo/UserMongoDAO'); 
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const passport = require('passport');
-const nodemailer = require('nodemailer');
-const { jwtSecret } = require('../config/config');
-const CustomError = require('../middlewares/customError'); 
-const errorDictionary = require('../config/errorDictionary');
-const logger = require('../middlewares/logger');
+import UserDao from '../../dao/mongo/UserMongoDAO.js';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+import passport from 'passport';
+import nodemailer from 'nodemailer';
+import config from '../config/config.js'; 
+import CustomError from '../middlewares/customError.js';
+import errorDictionary from '../config/errorDictionary.js';
+import logger from '../middlewares/logger.js';
 
+const jwtSecret = config.jwtSecret;
 
 const userDTO = (user) => ({
   id: user._id,
@@ -17,7 +18,7 @@ const userDTO = (user) => ({
   role: user.role,
 });
 
-exports.registerUser = async (req, res, next) => {
+export const registerUser = async (req, res, next) => {
   const { first_name, last_name, email, age, password } = req.body;
 
   if (!first_name || !last_name || !email || !age || !password) {
@@ -39,7 +40,7 @@ exports.registerUser = async (req, res, next) => {
       email,
       age,
       password: hashedPassword,
-      role: 'user'
+      role: 'user',
     };
 
     await UserDao.createUser(newUser);
@@ -51,7 +52,7 @@ exports.registerUser = async (req, res, next) => {
   }
 };
 
-exports.loginUser = (req, res, next) => {
+export const loginUser = (req, res, next) => {
   passport.authenticate('local', (err, user, info) => {
     if (err) {
       logger.error('Error al autenticar el usuario:', err);
@@ -70,7 +71,7 @@ exports.loginUser = (req, res, next) => {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'Lax',
-      maxAge: 3600000 
+      maxAge: 3600000,
     });
 
     logger.info(`Usuario ${user.email} autenticado con éxito.`);
@@ -78,14 +79,13 @@ exports.loginUser = (req, res, next) => {
   })(req, res, next);
 };
 
-
-exports.logoutUser = (req, res) => {
+export const logoutUser = (req, res) => {
   res.clearCookie('jwt');
   logger.info('Usuario ha cerrado sesión.');
   res.redirect('/login');
 };
 
-exports.getCurrentUser = async (req, res, next) => {
+export const getCurrentUser = async (req, res, next) => {
   const token = req.cookies.jwt;
   if (!token) {
     logger.warn('Token no encontrado en la solicitud.');
@@ -107,12 +107,12 @@ exports.getCurrentUser = async (req, res, next) => {
   }
 };
 
-exports.googleCallback = passport.authenticate('google', {
+export const googleCallback = passport.authenticate('google', {
   failureRedirect: '/login',
-  successRedirect: '/products'
+  successRedirect: '/products',
 });
 
-exports.forgotPassword = async (req, res, next) => {
+export const forgotPassword = async (req, res, next) => {
   const { email } = req.body;
 
   try {
@@ -130,12 +130,12 @@ exports.forgotPassword = async (req, res, next) => {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: config.emailUser,
+        pass: config.emailPass,
       },
       tls: {
-        rejectUnauthorized: false
-      }
+        rejectUnauthorized: false,
+      },
     });
 
     const mailOptions = {
@@ -157,7 +157,7 @@ exports.forgotPassword = async (req, res, next) => {
   }
 };
 
-exports.resetPassword = async (req, res, next) => {
+export const resetPassword = async (req, res, next) => {
   const { token } = req.params;
   const { newPassword } = req.body;
 
@@ -190,7 +190,7 @@ exports.resetPassword = async (req, res, next) => {
   }
 };
 
-exports.changeUserRole = async (req, res) => {
+export const changeUserRole = async (req, res) => {
   try {
     const { uid } = req.params;
     const user = await UserDao.getUserById(uid);
@@ -207,7 +207,7 @@ exports.changeUserRole = async (req, res) => {
     logger.info(`El rol del usuario ${user.email} ha sido actualizado a ${newRole}`);
     res.status(200).json({
       message: `El rol del usuario ha sido actualizado a ${newRole}`,
-      user: userDTO(user)
+      user: userDTO(user),
     });
   } catch (error) {
     logger.error('Error al cambiar el rol del usuario:', error);

@@ -1,5 +1,9 @@
-const { createLogger, transports, format } = require('winston');
-const path = require('path');
+import { createLogger, transports, format } from 'winston';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const customLevels = {
   levels: {
@@ -8,7 +12,7 @@ const customLevels = {
     warn: 2,
     info: 3,
     http: 4,
-    debug: 5
+    debug: 5,
   },
   colors: {
     fatal: 'magenta',
@@ -16,11 +20,12 @@ const customLevels = {
     warn: 'yellow',
     info: 'green',
     http: 'cyan',
-    debug: 'blue'
-  }
+    debug: 'blue',
+  },
 };
 
-require('winston').addColors(customLevels.colors);
+import winston from 'winston';
+winston.addColors(customLevels.colors);
 
 const logFormat = format.combine(
   format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
@@ -29,32 +34,32 @@ const logFormat = format.combine(
 
 const loggerTransports = [
   new transports.Console({
-    level: process.env.NODE_ENV === 'development' ? 'debug' : 'info', 
+    level: process.env.NODE_ENV === 'development' ? 'debug' : 'info',
     format: format.combine(
-      format.colorize({ all: true }), 
+      format.colorize({ all: true }),
       logFormat
-    )
+    ),
   }),
-  
+
   new transports.File({
     filename: path.join(__dirname, 'logs/errors.log'),
-    level: 'error', 
-    format: logFormat  
+    level: 'error',
+    format: logFormat,
   }),
- 
+
   new transports.File({
     filename: path.join(__dirname, 'logs/combined.log'),
-    level: 'info',  
-    format: logFormat 
-  })
+    level: 'info',
+    format: logFormat,
+  }),
 ];
 
 const logger = createLogger({
   levels: customLevels.levels,
-  level: process.env.NODE_ENV === 'development' ? 'debug' : 'info', 
+  level: process.env.NODE_ENV === 'development' ? 'debug' : 'info',
   transports: loggerTransports,
 });
 
 logger.info(`Configuración del logger: Entorno -> ${process.env.NODE_ENV}, Nivel de log -> ${logger.level}`);
 
-module.exports = logger;
+export default logger;

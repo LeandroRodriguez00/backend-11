@@ -1,4 +1,4 @@
-const User = require('../models/User');
+import User from '../models/User.js';
 
 class UserMongoDAO {
   async getUserByEmail(email) {
@@ -27,4 +27,4 @@ class UserMongoDAO {
   }
 }
 
-module.exports = new UserMongoDAO();
+export default new UserMongoDAO();

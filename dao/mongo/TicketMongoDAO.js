@@ -1,7 +1,7 @@
-const Ticket = require('../models/Ticket');
-const CustomError = require('../../src/middlewares/customError'); 
-const errorDictionary = require('../../src/config/errorDictionary'); 
-const logger = require('../../src/middlewares/logger'); 
+import Ticket from '../models/Ticket.js';
+import CustomError from '../../src/middlewares/customError.js';
+import errorDictionary from '../../src/config/errorDictionary.js';
+import logger from '../../src/middlewares/logger.js';
 
 class TicketMongoDAO {
 
@@ -56,4 +56,4 @@ class TicketMongoDAO {
   }
 }
 
-module.exports = new TicketMongoDAO();
+export default new TicketMongoDAO();

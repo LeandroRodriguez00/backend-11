@@ -1,19 +1,23 @@
+import ProductMongoDAO from '../mongo/ProductMongoDAO.js';
+import UserMongoDAO from '../mongo/UserMongoDAO.js';
+import CartMongoDAO from '../mongo/CartMongoDAO.js';
+import MessageMongoDAO from '../mongo/MessageMongoDAO.js';
+
 class DAOFactory {
-    static getDAO(entity) {
-      switch (entity) {
-        case 'Product':
-          return require('../mongo/ProductMongoDAO');
-        case 'User':
-          return require('../mongo/UserMongoDAO');
-        case 'Cart':
-          return require('../mongo/CartMongoDAO');
-        case 'Message':
-          return require('../mongo/MessageMongoDAO');
-        default:
-          throw new Error('DAO not found');
-      }
+  static getDAO(entity) {
+    switch (entity) {
+      case 'Product':
+        return ProductMongoDAO;
+      case 'User':
+        return UserMongoDAO;
+      case 'Cart':
+        return CartMongoDAO;
+      case 'Message':
+        return MessageMongoDAO;
+      default:
+        throw new Error('DAO not found');
     }
   }
-  
-  module.exports = DAOFactory;
-  
+}
+
+export default DAOFactory;

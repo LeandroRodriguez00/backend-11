@@ -1,22 +1,21 @@
-const { isValidObjectId } = require('mongoose');
-const CustomError = require('../middlewares/customError'); 
-const errorDictionary = require('../config/errorDictionary'); 
+import { isValidObjectId } from 'mongoose';
+import CustomError from '../middlewares/customError.js';
+import errorDictionary from '../config/errorDictionary.js';
 
 const validateObjectId = (req, res, next) => {
   const { id, cid, pid } = req.params;
 
-
   if (id && !isValidObjectId(id)) {
-    throw new CustomError(errorDictionary.CART_ERRORS.INVALID_CART_ID); 
+    throw new CustomError(errorDictionary.CART_ERRORS.INVALID_CART_ID);
   }
   if (cid && !isValidObjectId(cid)) {
-    throw new CustomError(errorDictionary.CART_ERRORS.INVALID_CART_ID); 
+    throw new CustomError(errorDictionary.CART_ERRORS.INVALID_CART_ID);
   }
   if (pid && !isValidObjectId(pid)) {
-    throw new CustomError(errorDictionary.PRODUCT_ERRORS.INVALID_PRODUCT_ID); 
+    throw new CustomError(errorDictionary.PRODUCT_ERRORS.INVALID_PRODUCT_ID);
   }
 
   next();
 };
 
-module.exports = validateObjectId;
+export default validateObjectId;

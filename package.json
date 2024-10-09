@@ -1,4 +1,8 @@
 {
+  "name": "backend-desafios--rodriguez-leandro",
+  "version": "1.0.0",
+  "type": "module",  
+  "main": "index.js",
   "dependencies": {
     "@faker-js/faker": "^9.0.1",
     "bcryptjs": "^2.4.3",
@@ -22,9 +26,6 @@
     "uuid": "^10.0.0",
     "winston": "^3.14.2"
   },
-  "name": "backend-desafios--rodriguez-leandro",
-  "version": "1.0.0",
-  "main": "nodemon index.js",
   "devDependencies": {
     "nodemon": "^3.0.3"
   },

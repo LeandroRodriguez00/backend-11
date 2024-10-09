@@ -1,16 +1,31 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const passport = require('passport');
-const session = require('express-session');
-const MongoStore = require('connect-mongo');
-const cookieParser = require('cookie-parser');
-const path = require('path');
-const jwt = require('jsonwebtoken');
-const logger = require('./middlewares/logger');
-const CustomError = require('./middlewares/customError');
-const { port, sessionSecret, jwtSecret, mongoUri } = require('./config/config');
+import express from 'express';
+import mongoose from 'mongoose';
+import passport from 'passport';
+import session from 'express-session';
+import MongoStore from 'connect-mongo';
+import cookieParser from 'cookie-parser';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import jwt from 'jsonwebtoken';
+import logger from './middlewares/logger.js';
+import CustomError from './middlewares/customError.js';
+import config from './config/config.js'; 
+import initializePassport from './config/passport.config.js';
+import swaggerConfig from './config/swaggerConfig.js';
+import productsRoutes from './routes/products.routes.js';
+import cartsRoutes from './routes/carts.routes.js';
+import messagesRoutes from './routes/messages.routes.js';
+import usersRoutes from './routes/users.routes.js';
+import sessionsRoutes from './routes/sessions.routes.js';
+import loggerTestRoutes from './routes/loggerTest.routes.js'; 
+import verifyJWT from './middlewares/verifyJWT.js';
 
-require('./config/passport.config')(passport);
+const { port, sessionSecret, jwtSecret, mongoUri } = config; 
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+initializePassport(passport);
 
 mongoose.connect(mongoUri)
   .then(() => {
@@ -44,7 +59,7 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-const { engine } = require('express-handlebars');
+import { engine } from 'express-handlebars';
 app.engine('handlebars', engine({
   runtimeOptions: {
     allowProtoPropertiesByDefault: true,
@@ -79,22 +94,15 @@ app.get('/auth/google/callback',
   }
 );
 
-const productsRoutes = require('./routes/products.routes');
-const cartsRoutes = require('./routes/carts.routes');
-const messagesRoutes = require('./routes/messages.routes');
-const usersRoutes = require('./routes/users.routes');
-const sessionsRoutes = require('./routes/sessions.routes');
-const verifyJWT = require('./middlewares/verifyJWT');
+swaggerConfig(app);
 
-const swaggerConfig = require('./config/swaggerConfig');
-
-swaggerConfig(app); 
 
 app.use('/products', verifyJWT, productsRoutes);
 app.use('/carts', verifyJWT, cartsRoutes);
 app.use('/messages', verifyJWT, messagesRoutes);
 app.use('/', usersRoutes);
 app.use('/sessions', sessionsRoutes);
+app.use('/', loggerTestRoutes); 
 
 app.use((err, req, res, next) => {
   if (err instanceof CustomError) {

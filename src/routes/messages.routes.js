@@ -1,13 +1,12 @@
-const express = require('express');
-const { createMessage, getAllMessages } = require('../controllers/message.controller');
-const verifyJWT = require('../middlewares/verifyJWT'); 
-const verifyRole = require('../middlewares/verifyRole'); 
-const router = express.Router();
+import express from 'express';
+import { createMessage, getAllMessages } from '../controllers/message.controller.js';
+import verifyJWT from '../middlewares/verifyJWT.js';
+import verifyRole from '../middlewares/verifyRole.js';
 
+const router = express.Router();
 
 router.post('/', verifyJWT, verifyRole(['user']), createMessage);
 
-
 router.get('/', verifyJWT, getAllMessages);
 
-module.exports = router;
+export default router;

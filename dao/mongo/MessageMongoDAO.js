@@ -1,4 +1,4 @@
-const Message = require('../models/Message'); 
+import Message from '../models/Message.js';
 
 class MessageMongoDAO {
   async getAllMessages() {
@@ -11,4 +11,4 @@ class MessageMongoDAO {
   }
 }
 
-module.exports = new MessageMongoDAO();
+export default new MessageMongoDAO();

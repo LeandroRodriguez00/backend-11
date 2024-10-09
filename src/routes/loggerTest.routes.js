@@ -1,6 +1,7 @@
-const express = require('express');
+import express from 'express';
+import logger from '../middlewares/logger.js';
+
 const router = express.Router();
-const logger = require('../middlewares/logger'); 
 
 router.get('/loggerTest', (req, res) => {
   logger.debug('Este es un mensaje de DEBUG');
@@ -10,9 +11,7 @@ router.get('/loggerTest', (req, res) => {
   logger.error('Este es un mensaje de ERROR');
   logger.fatal('Este es un mensaje de FATAL');
 
-
-  
   res.status(200).json({ message: 'Logs generados. Verifica la consola y los archivos.' });
 });
 
-module.exports = router;
+export default router;

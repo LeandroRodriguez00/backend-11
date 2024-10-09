@@ -1,9 +1,9 @@
-const MessageDao = require('../../dao/mongo/MessageMongoDAO');
-const CustomError = require('../middlewares/customError'); 
-const errorDictionary = require('../config/errorDictionary');
-const logger = require('../middlewares/logger'); // Importamos el logger
+import MessageDao from '../../dao/mongo/MessageMongoDAO.js';
+import CustomError from '../middlewares/customError.js';
+import errorDictionary from '../config/errorDictionary.js';
+import logger from '../middlewares/logger.js'; 
 
-exports.createMessage = async (req, res) => {
+export const createMessage = async (req, res) => {
   const { user, message } = req.body;
 
   if (!user || !message) {
@@ -18,17 +18,17 @@ exports.createMessage = async (req, res) => {
     if (error instanceof CustomError) {
       return res.status(error.status).json({ message: error.message });
     }
-    logger.error('Error al crear mensaje:', { error }); 
+    logger.error('Error al crear mensaje:', { error });
     res.status(500).send('Error en el servidor');
   }
 };
 
-exports.getAllMessages = async (req, res) => {
+export const getAllMessages = async (req, res) => {
   try {
     const mensajes = await MessageDao.getAllMessages();
     res.json(mensajes);
   } catch (error) {
-    logger.error('Error al obtener mensajes:', { error }); 
+    logger.error('Error al obtener mensajes:', { error });
     res.status(500).send('Error en el servidor');
   }
 };

@@ -113,3 +113,14 @@
 2024-10-03 16:02:57 [error]: Error al autenticar el usuario:
 2024-10-03 16:02:57 [error]: Error controlado: Credenciales inválidas. Intenta nuevamente.
 2024-10-03 16:03:25 [error]: Error no controlado: Bad Request
+2024-10-09 04:16:02 [error]: 400 - ValidationError: El correo electrónico ya está registrado.
+2024-10-09 04:16:02 [error]: Error controlado: El correo electrónico ya está registrado.
+2024-10-09 04:17:03 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-09 04:17:03 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-09 04:17:08 [error]: Error no controlado: Cannot destructure property 'message' of 'undefined' as it is undefined.
+2024-10-09 04:17:14 [error]: 400 - NotFoundError: Producto no encontrado en el carrito.
+2024-10-09 04:17:24 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-09 04:17:24 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-09 04:17:29 [error]: 400 - StockError: No hay productos suficientes para realizar la compra
+2024-10-09 04:36:37 [error]: Este es un mensaje de ERROR
+2024-10-09 04:36:37 [fatal]: Este es un mensaje de FATAL

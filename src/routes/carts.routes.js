@@ -1,18 +1,19 @@
-const express = require('express');
-const { 
-    createCart, 
-    getCartById, 
-    addProductToCart, 
-    clearCart, 
-    deleteCart, 
-    updateProductQuantityInCart, 
-    removeProductFromCart, 
-    updateCartProducts, 
-    purchaseCart
-} = require('../controllers/cart.controller');
-const verifyJWT = require('../middlewares/verifyJWT'); 
-const verifyRole = require('../middlewares/verifyRole'); 
-const validateObjectId = require('../middlewares/validateObjectId'); 
+import express from 'express';
+import { 
+  createCart, 
+  getCartById, 
+  addProductToCart, 
+  clearCart, 
+  deleteCart, 
+  updateProductQuantityInCart, 
+  removeProductFromCart, 
+  updateCartProducts, 
+  purchaseCart 
+} from '../controllers/cart.controller.js';
+import verifyJWT from '../middlewares/verifyJWT.js';
+import verifyRole from '../middlewares/verifyRole.js';
+import validateObjectId from '../middlewares/validateObjectId.js';
+
 const router = express.Router();
 
 /**
@@ -299,4 +300,4 @@ router.put('/:cid/products', verifyJWT, verifyRole(['user']), validateObjectId, 
  */
 router.post('/:cid/purchase', verifyJWT, verifyRole(['user']), validateObjectId, purchaseCart);
 
-module.exports = router;
+export default router;

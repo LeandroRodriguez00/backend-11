@@ -1,9 +1,9 @@
-const ProductDao = require('../../dao/mongo/ProductMongoDAO');
-const CustomError = require('../middlewares/customError'); 
-const errorDictionary = require('../config/errorDictionary');
-const logger = require('../middlewares/logger'); 
+import ProductDao from '../../dao/mongo/ProductMongoDAO.js';
+import CustomError from '../middlewares/customError.js';
+import errorDictionary from '../config/errorDictionary.js';
+import logger from '../middlewares/logger.js';
 
-exports.getAllProducts = async (req, res) => {
+export const getAllProducts = async (req, res) => {
   try {
     const { limit = 10, page = 1, sort, query, format } = req.query;
 
@@ -12,8 +12,8 @@ exports.getAllProducts = async (req, res) => {
       filter = {
         $or: [
           { category: { $regex: query, $options: 'i' } },
-          { available: query.toLowerCase() === 'true' ? true : false }
-        ]
+          { available: query.toLowerCase() === 'true' ? true : false },
+        ],
       };
     }
 
@@ -25,7 +25,7 @@ exports.getAllProducts = async (req, res) => {
     const options = {
       page: parseInt(page, 10),
       limit: parseInt(limit, 10),
-      sort: sortOption
+      sort: sortOption,
     };
 
     const result = await ProductDao.getAllProducts(filter, options);
@@ -50,15 +50,15 @@ exports.getAllProducts = async (req, res) => {
       hasNextPage: result.hasNextPage,
       prevLink: result.hasPrevPage ? `/products?limit=${limit}&page=${result.page - 1}&sort=${sort}&query=${query}` : null,
       nextLink: result.hasNextPage ? `/products?limit=${limit}&page=${result.page + 1}&sort=${sort}&query=${query}` : null,
-      user: req.user
+      user: req.user,
     });
   } catch (error) {
-    logger.error('Error al obtener productos:', { error }); 
+    logger.error('Error al obtener productos:', { error });
     res.status(500).send('Error al obtener productos');
   }
 };
 
-exports.getProductById = async (req, res) => {
+export const getProductById = async (req, res) => {
   try {
     const { id } = req.params;
     const producto = await ProductDao.getProductById(id);
@@ -67,25 +67,24 @@ exports.getProductById = async (req, res) => {
       throw new CustomError(errorDictionary.PRODUCT_ERRORS.PRODUCT_NOT_FOUND);
     }
 
-    res.json(producto);  
+    res.json(producto);
   } catch (error) {
     if (error instanceof CustomError) {
       return res.status(error.status).json({ message: error.message });
     }
-    logger.error('Error al obtener el producto:', { error }); 
+    logger.error('Error al obtener el producto:', { error });
     res.status(500).send('Error al obtener el producto');
   }
 };
 
-exports.createProduct = async (req, res) => {
+export const createProduct = async (req, res) => {
   try {
     const { title, price, description, category, stock, code } = req.body;
-    const user = req.user; 
+    const user = req.user;
 
-    
-    let owner = 'admin';  
+    let owner = 'admin';
     if (user.role === 'premium') {
-      owner = user.email;  
+      owner = user.email;
     }
 
     const nuevoProducto = await ProductDao.createProduct({
@@ -95,21 +94,21 @@ exports.createProduct = async (req, res) => {
       category,
       stock,
       code,
-      owner,  
-      available: true  
+      owner,
+      available: true,
     });
 
-    res.status(201).json(nuevoProducto);  
+    res.status(201).json(nuevoProducto);
   } catch (error) {
     if (error instanceof CustomError) {
       return res.status(error.status).json({ message: error.message });
     }
-    logger.error('Error al crear producto:', { error }); 
+    logger.error('Error al crear producto:', { error });
     res.status(500).send('Error en el servidor');
   }
 };
 
-exports.updateProduct = async (req, res) => {
+export const updateProduct = async (req, res) => {
   try {
     const { id } = req.params;
     const product = await ProductDao.getProductById(id);
@@ -129,12 +128,12 @@ exports.updateProduct = async (req, res) => {
     if (error instanceof CustomError) {
       return res.status(error.status).json({ message: error.message });
     }
-    logger.error(`Error al actualizar producto con ID ${id}:`, { error }); 
+    logger.error(`Error al actualizar producto con ID ${id}:`, { error });
     res.status(500).send('Error en el servidor');
   }
 };
 
-exports.deleteProduct = async (req, res) => {
+export const deleteProduct = async (req, res) => {
   try {
     const { id } = req.params;
     const product = await ProductDao.getProductById(id);

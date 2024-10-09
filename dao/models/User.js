@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
+import mongoose from 'mongoose';
+import bcrypt from 'bcryptjs';
 
 const userSchema = new mongoose.Schema({
   first_name: { type: String, required: function() { return !this.googleId; }},
@@ -9,7 +9,8 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: function() { return !this.googleId; }},
   googleId: { type: String, default: null },
   cart: { type: mongoose.Schema.Types.ObjectId, ref: 'Cart' },
-  role: { type: String, enum: ['user', 'admin', 'premium'], default: 'user' } 
+  role: { type: String, enum: ['user', 'admin', 'premium'], default: 'user' }
 });
 
-module.exports = mongoose.model('User', userSchema);
+const User = mongoose.model('User', userSchema);
+export default User;

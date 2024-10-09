@@ -1,13 +1,13 @@
-const mongoose = require('mongoose');
-const CartDao = require('../../dao/mongo/CartMongoDAO');
-const ProductDao = require('../../dao/mongo/ProductMongoDAO');
-const TicketDao = require('../../dao/mongo/TicketMongoDAO');
-const { v4: uuidv4 } = require('uuid');
-const CustomError = require('../middlewares/customError');
-const errorDictionary = require('../config/errorDictionary');
-const logger = require('../middlewares/logger');
+import mongoose from 'mongoose';
+import CartDao from '../../dao/mongo/CartMongoDAO.js';
+import ProductDao from '../../dao/mongo/ProductMongoDAO.js';
+import TicketDao from '../../dao/mongo/TicketMongoDAO.js';
+import { v4 as uuidv4 } from 'uuid';
+import CustomError from '../middlewares/customError.js';
+import errorDictionary from '../config/errorDictionary.js';
+import logger from '../middlewares/logger.js';
 
-exports.createCart = async (req, res) => {
+export const createCart = async (req, res) => {
   try {
     const nuevoCarrito = await CartDao.createCart();
     res.status(201).json(nuevoCarrito);
@@ -17,7 +17,7 @@ exports.createCart = async (req, res) => {
   }
 };
 
-exports.getCartById = async (req, res) => {
+export const getCartById = async (req, res) => {
   try {
     const carrito = await CartDao.getCartById(req.params.id);
     if (!carrito) {
@@ -33,11 +33,11 @@ exports.getCartById = async (req, res) => {
   }
 };
 
-exports.addProductToCart = async (req, res) => {
+export const addProductToCart = async (req, res) => {
   try {
     const carrito = await CartDao.getCartById(req.params.id);
     const producto = await ProductDao.getProductById(req.body.productId);
-    const user = req.user; 
+    const user = req.user;
 
     if (!carrito) {
       throw new CustomError(errorDictionary.CART_ERRORS.CART_NOT_FOUND);
@@ -46,7 +46,6 @@ exports.addProductToCart = async (req, res) => {
       throw new CustomError(errorDictionary.CART_ERRORS.PRODUCT_NOT_FOUND_IN_CART);
     }
 
-  
     if (user.role === 'premium' && producto.owner === user.email) {
       return res.status(400).json({ message: 'No puedes agregar tu propio producto al carrito' });
     }
@@ -62,7 +61,7 @@ exports.addProductToCart = async (req, res) => {
   }
 };
 
-exports.clearCart = async (req, res) => {
+export const clearCart = async (req, res) => {
   try {
     await CartDao.clearCart(req.params.cid);
     res.status(200).json({ message: 'Productos eliminados del carrito' });
@@ -72,7 +71,7 @@ exports.clearCart = async (req, res) => {
   }
 };
 
-exports.deleteCart = async (req, res) => {
+export const deleteCart = async (req, res) => {
   try {
     const carritoEliminado = await CartDao.deleteCart(req.params.cid);
     if (!carritoEliminado) {
@@ -88,7 +87,7 @@ exports.deleteCart = async (req, res) => {
   }
 };
 
-exports.updateProductQuantityInCart = async (req, res) => {
+export const updateProductQuantityInCart = async (req, res) => {
   try {
     const { id, pid } = req.params;
     const { quantity } = req.body;
@@ -107,7 +106,7 @@ exports.updateProductQuantityInCart = async (req, res) => {
   }
 };
 
-exports.removeProductFromCart = async (req, res) => {
+export const removeProductFromCart = async (req, res) => {
   try {
     const { cid, pid } = req.params;
 
@@ -125,7 +124,7 @@ exports.removeProductFromCart = async (req, res) => {
   }
 };
 
-exports.updateCartProducts = async (req, res) => {
+export const updateCartProducts = async (req, res) => {
   try {
     const { cid } = req.params;
     const { products } = req.body;
@@ -144,7 +143,7 @@ exports.updateCartProducts = async (req, res) => {
   }
 };
 
-exports.purchaseCart = async (req, res) => {
+export const purchaseCart = async (req, res) => {
   try {
     const { cid } = req.params;
 

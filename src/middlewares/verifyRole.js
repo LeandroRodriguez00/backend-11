@@ -1,14 +1,16 @@
-const CustomError = require('../middlewares/customError'); 
-const errorDictionary = require('../config/errorDictionary'); 
+import CustomError from '../middlewares/customError.js';
+import errorDictionary from '../config/errorDictionary.js';
 
-module.exports = (rolesPermitidos) => {
+const verifyRole = (rolesPermitidos) => {
   return (req, res, next) => {
-    const { role } = req.user; 
+    const { role } = req.user;
 
     if (!rolesPermitidos.includes(role)) {
       throw new CustomError(errorDictionary.AUTH_ERRORS.ROLE_UNAUTHORIZED);
     }
-    
+
     next();
   };
 };
+
+export default verifyRole;

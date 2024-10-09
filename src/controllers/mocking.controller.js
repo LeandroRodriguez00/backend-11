@@ -1,7 +1,7 @@
-const { faker } = require('@faker-js/faker');
-const CustomError = require('../middlewares/customError');
-const errorDictionary = require('../config/errorDictionary');
-const logger = require('../middlewares/logger'); 
+import { faker } from '@faker-js/faker';
+import CustomError from '../middlewares/customError.js';
+import errorDictionary from '../config/errorDictionary.js';
+import logger from '../middlewares/logger.js';
 
 const generateMockProduct = () => {
   const title = faker.commerce.productName();
@@ -28,7 +28,7 @@ const generateMockProduct = () => {
   };
 };
 
-exports.getMockProducts = (req, res) => {
+export const getMockProducts = (req, res) => {
   try {
     const products = [];
 

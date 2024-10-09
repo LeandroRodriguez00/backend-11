@@ -1,15 +1,17 @@
-const LocalStrategy = require('passport-local').Strategy;
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const User = require('../../dao/models/User'); 
-const { googleClientID, googleClientSecret, jwtSecret } = require('./config');
-const CustomError = require('../middlewares/customError'); 
-const errorDictionary = require('../config/errorDictionary');
-const logger = require('../middlewares/logger');
+import LocalStrategy from 'passport-local';
+import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+import User from '../../dao/models/User.js';
+import config from './config.js'; 
+import CustomError from '../middlewares/customError.js';
+import errorDictionary from '../config/errorDictionary.js';
+import logger from '../middlewares/logger.js';
 
-module.exports = function(passport) {
-  
+const { googleClientID, googleClientSecret, jwtSecret } = config; 
+
+export default function(passport) {
+
   passport.use(new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password'
@@ -31,12 +33,12 @@ module.exports = function(passport) {
       return done(null, user);
     } catch (err) {
       logger.error(`Error en la autenticación local: ${err.message}`);
-      return done(err); 
+      return done(err);
     }
   }));
 
-  const callbackURL = process.env.NODE_ENV === 'production' 
-    ? 'https://el-dominio-en-produccion.com/auth/google/callback' 
+  const callbackURL = process.env.NODE_ENV === 'production'
+    ? 'https://el-dominio-en-produccion.com/auth/google/callback'
     : 'http://localhost:8080/auth/google/callback';
 
   passport.use(new GoogleStrategy({
@@ -46,7 +48,7 @@ module.exports = function(passport) {
   }, async (token, tokenSecret, profile, done) => {
     try {
       let user = await User.findOne({ email: profile.emails[0].value });
-      
+
       if (!user) {
         user = new User({
           googleId: profile.id,
@@ -90,4 +92,4 @@ module.exports = function(passport) {
       done(err);
     }
   });
-};
+}

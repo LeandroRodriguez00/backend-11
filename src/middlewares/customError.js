@@ -1,4 +1,4 @@
-const logger = require('./logger'); 
+import logger from './logger.js';
 
 class CustomError extends Error {
   constructor({ message, type, status = 400 }) {
@@ -9,13 +9,12 @@ class CustomError extends Error {
     this.name = type;
     this.status = status;
 
-   
     this.logError();
   }
 
   logError() {
-    logger.error(`${this.status} - ${this.name}: ${this.message}`); 
+    logger.error(`${this.status} - ${this.name}: ${this.message}`);
   }
 }
 
-module.exports = CustomError;
+export default CustomError;

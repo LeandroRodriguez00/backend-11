@@ -1,7 +1,8 @@
-const express = require('express');
-const { getAllProducts, getProductById, createProduct, updateProduct, deleteProduct } = require('../controllers/product.controller');
-const verifyJWT = require('../middlewares/verifyJWT');
-const verifyRole = require('../middlewares/verifyRole'); 
+import express from 'express';
+import { getAllProducts, getProductById, createProduct, updateProduct, deleteProduct } from '../controllers/product.controller.js';
+import verifyJWT from '../middlewares/verifyJWT.js';
+import verifyRole from '../middlewares/verifyRole.js';
+
 const router = express.Router();
 
 /**
@@ -152,4 +153,4 @@ router.put('/:id', verifyJWT, verifyRole(['admin']), updateProduct);
  */
 router.delete('/:id', verifyJWT, verifyRole(['admin']), deleteProduct);
 
-module.exports = router;
+export default router;
