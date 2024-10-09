@@ -1,7 +1,7 @@
 {
   "name": "backend-desafios--rodriguez-leandro",
   "version": "1.0.0",
-  "type": "module",  
+  "type": "module",
   "main": "index.js",
   "dependencies": {
     "@faker-js/faker": "^9.0.1",
@@ -27,7 +27,10 @@
     "winston": "^3.14.2"
   },
   "devDependencies": {
-    "nodemon": "^3.0.3"
+    "chai": "^5.1.1",
+    "mocha": "^10.7.3",
+    "nodemon": "^3.0.3",
+    "supertest": "^7.0.0"
   },
   "scripts": {
     "start": "nodemon src/index.js",

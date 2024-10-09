@@ -124,3 +124,9 @@
 2024-10-09 04:17:29 [error]: 400 - StockError: No hay productos suficientes para realizar la compra
 2024-10-09 04:36:37 [error]: Este es un mensaje de ERROR
 2024-10-09 04:36:37 [fatal]: Este es un mensaje de FATAL
+2024-10-09 04:46:38 [error]: Este es un mensaje de ERROR
+2024-10-09 04:46:38 [fatal]: Este es un mensaje de FATAL
+2024-10-09 11:56:57 [error]: Este es un mensaje de ERROR
+2024-10-09 11:56:57 [fatal]: Este es un mensaje de FATAL
+2024-10-09 11:57:05 [error]: 400 - ValidationError: El correo electrónico ya está registrado.
+2024-10-09 11:57:05 [error]: Error controlado: El correo electrónico ya está registrado.

@@ -851,3 +851,116 @@
 2024-10-09 04:41:53 [info]: Configuración del logger: Entorno -> undefined, Nivel de log -> info
 2024-10-09 04:41:54 [info]: Servidor escuchando en el puerto 8080
 2024-10-09 04:41:55 [info]: Conectado a MongoDB Atlas
+2024-10-09 04:44:01 [info]: Configuración del logger: Entorno -> undefined, Nivel de log -> info
+2024-10-09 04:44:02 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 04:44:03 [info]: Conectado a MongoDB Atlas
+2024-10-09 04:46:26 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 04:46:26 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 04:46:27 [info]: Conectado a MongoDB Atlas
+2024-10-09 04:46:38 [info]: Este es un mensaje de INFO
+2024-10-09 04:46:38 [warn]: Este es un mensaje de WARN
+2024-10-09 04:46:38 [error]: Este es un mensaje de ERROR
+2024-10-09 04:46:38 [fatal]: Este es un mensaje de FATAL
+2024-10-09 11:50:16 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 11:50:17 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 11:50:18 [info]: Conectado a MongoDB Atlas
+2024-10-09 11:51:13 [info]: Configuración del logger: Entorno -> undefined, Nivel de log -> info
+2024-10-09 11:51:13 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 11:51:14 [info]: Conectado a MongoDB Atlas
+2024-10-09 11:52:59 [info]: Configuración del logger: Entorno -> undefined, Nivel de log -> info
+2024-10-09 11:52:59 [info]: NODE_ENV: development
+2024-10-09 11:52:59 [info]: JWT_SECRET: Cargado correctamente
+2024-10-09 11:52:59 [info]: MONGO_URI: Cargado correctamente
+2024-10-09 11:52:59 [info]: GOOGLE_CLIENT_ID: Cargado correctamente
+2024-10-09 11:52:59 [info]: GOOGLE_CLIENT_SECRET: Cargado correctamente
+2024-10-09 11:52:59 [info]: SESSION_SECRET: Cargado correctamente
+2024-10-09 11:52:59 [info]: EMAIL_USER: Cargado correctamente
+2024-10-09 11:52:59 [info]: EMAIL_PASS: Cargado correctamente
+2024-10-09 11:52:59 [info]: PORT: 8080
+2024-10-09 11:52:59 [info]: Variable de entorno JWT_SECRET cargada correctamente.
+2024-10-09 11:52:59 [info]: Variable de entorno MONGO_URI cargada correctamente.
+2024-10-09 11:52:59 [info]: Variable de entorno GOOGLE_CLIENT_ID cargada correctamente.
+2024-10-09 11:52:59 [info]: Variable de entorno GOOGLE_CLIENT_SECRET cargada correctamente.
+2024-10-09 11:52:59 [info]: Variable de entorno SESSION_SECRET cargada correctamente.
+2024-10-09 11:52:59 [info]: Variable de entorno EMAIL_USER cargada correctamente.
+2024-10-09 11:52:59 [info]: Variable de entorno EMAIL_PASS cargada correctamente.
+2024-10-09 11:52:59 [info]: Variable de entorno PORT cargada correctamente.
+2024-10-09 11:52:59 [info]: Variable de entorno NODE_ENV cargada correctamente.
+2024-10-09 11:52:59 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 11:53:00 [info]: Conectado a MongoDB Atlas
+2024-10-09 11:56:11 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 11:56:11 [info]: NODE_ENV: development
+2024-10-09 11:56:11 [info]: JWT_SECRET: Cargado correctamente
+2024-10-09 11:56:11 [info]: MONGO_URI: Cargado correctamente
+2024-10-09 11:56:11 [info]: GOOGLE_CLIENT_ID: Cargado correctamente
+2024-10-09 11:56:11 [info]: GOOGLE_CLIENT_SECRET: Cargado correctamente
+2024-10-09 11:56:11 [info]: SESSION_SECRET: Cargado correctamente
+2024-10-09 11:56:11 [info]: EMAIL_USER: Cargado correctamente
+2024-10-09 11:56:11 [info]: EMAIL_PASS: Cargado correctamente
+2024-10-09 11:56:11 [info]: PORT: 8080
+2024-10-09 11:56:11 [info]: Variable de entorno JWT_SECRET cargada correctamente.
+2024-10-09 11:56:11 [info]: Variable de entorno MONGO_URI cargada correctamente.
+2024-10-09 11:56:11 [info]: Variable de entorno GOOGLE_CLIENT_ID cargada correctamente.
+2024-10-09 11:56:11 [info]: Variable de entorno GOOGLE_CLIENT_SECRET cargada correctamente.
+2024-10-09 11:56:11 [info]: Variable de entorno SESSION_SECRET cargada correctamente.
+2024-10-09 11:56:11 [info]: Variable de entorno EMAIL_USER cargada correctamente.
+2024-10-09 11:56:11 [info]: Variable de entorno EMAIL_PASS cargada correctamente.
+2024-10-09 11:56:11 [info]: Variable de entorno PORT cargada correctamente.
+2024-10-09 11:56:11 [info]: Variable de entorno NODE_ENV cargada correctamente.
+2024-10-09 11:56:11 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 11:56:12 [info]: Conectado a MongoDB Atlas
+2024-10-09 11:56:35 [info]: Configuración del logger: Entorno -> production, Nivel de log -> info
+2024-10-09 11:56:35 [info]: NODE_ENV: production
+2024-10-09 11:56:35 [info]: JWT_SECRET: Cargado correctamente
+2024-10-09 11:56:35 [info]: MONGO_URI: Cargado correctamente
+2024-10-09 11:56:35 [info]: GOOGLE_CLIENT_ID: Cargado correctamente
+2024-10-09 11:56:35 [info]: GOOGLE_CLIENT_SECRET: Cargado correctamente
+2024-10-09 11:56:35 [info]: SESSION_SECRET: Cargado correctamente
+2024-10-09 11:56:35 [info]: EMAIL_USER: Cargado correctamente
+2024-10-09 11:56:35 [info]: EMAIL_PASS: Cargado correctamente
+2024-10-09 11:56:35 [info]: PORT: 8080
+2024-10-09 11:56:35 [info]: Variable de entorno JWT_SECRET cargada correctamente.
+2024-10-09 11:56:35 [info]: Variable de entorno MONGO_URI cargada correctamente.
+2024-10-09 11:56:35 [info]: Variable de entorno GOOGLE_CLIENT_ID cargada correctamente.
+2024-10-09 11:56:35 [info]: Variable de entorno GOOGLE_CLIENT_SECRET cargada correctamente.
+2024-10-09 11:56:35 [info]: Variable de entorno SESSION_SECRET cargada correctamente.
+2024-10-09 11:56:35 [info]: Variable de entorno EMAIL_USER cargada correctamente.
+2024-10-09 11:56:35 [info]: Variable de entorno EMAIL_PASS cargada correctamente.
+2024-10-09 11:56:35 [info]: Variable de entorno PORT cargada correctamente.
+2024-10-09 11:56:35 [info]: Variable de entorno NODE_ENV cargada correctamente.
+2024-10-09 11:56:36 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 11:56:36 [info]: Conectado a MongoDB Atlas
+2024-10-09 11:56:57 [info]: Este es un mensaje de INFO
+2024-10-09 11:56:57 [warn]: Este es un mensaje de WARN
+2024-10-09 11:56:57 [error]: Este es un mensaje de ERROR
+2024-10-09 11:56:57 [fatal]: Este es un mensaje de FATAL
+2024-10-09 11:57:05 [warn]: Correo ya registrado: juannFl1@gmail.com
+2024-10-09 11:57:05 [error]: 400 - ValidationError: El correo electrónico ya está registrado.
+2024-10-09 11:57:05 [error]: Error controlado: El correo electrónico ya está registrado.
+2024-10-09 12:01:19 [info]: Configuración del logger: Entorno -> production, Nivel de log -> info
+2024-10-09 12:01:19 [info]: NODE_ENV: production
+2024-10-09 12:01:19 [info]: JWT_SECRET: Cargado correctamente
+2024-10-09 12:01:19 [info]: MONGO_URI: Cargado correctamente
+2024-10-09 12:01:19 [info]: GOOGLE_CLIENT_ID: Cargado correctamente
+2024-10-09 12:01:19 [info]: GOOGLE_CLIENT_SECRET: Cargado correctamente
+2024-10-09 12:01:19 [info]: SESSION_SECRET: Cargado correctamente
+2024-10-09 12:01:19 [info]: EMAIL_USER: Cargado correctamente
+2024-10-09 12:01:19 [info]: EMAIL_PASS: Cargado correctamente
+2024-10-09 12:01:19 [info]: PORT: 8080
+2024-10-09 12:01:19 [info]: Variable de entorno JWT_SECRET cargada correctamente.
+2024-10-09 12:01:19 [info]: Variable de entorno MONGO_URI cargada correctamente.
+2024-10-09 12:01:19 [info]: Variable de entorno GOOGLE_CLIENT_ID cargada correctamente.
+2024-10-09 12:01:19 [info]: Variable de entorno GOOGLE_CLIENT_SECRET cargada correctamente.
+2024-10-09 12:01:19 [info]: Variable de entorno SESSION_SECRET cargada correctamente.
+2024-10-09 12:01:19 [info]: Variable de entorno EMAIL_USER cargada correctamente.
+2024-10-09 12:01:19 [info]: Variable de entorno EMAIL_PASS cargada correctamente.
+2024-10-09 12:01:19 [info]: Variable de entorno PORT cargada correctamente.
+2024-10-09 12:01:19 [info]: Variable de entorno NODE_ENV cargada correctamente.
+2024-10-09 12:01:19 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 12:01:20 [info]: Conectado a MongoDB Atlas
+2024-10-09 12:05:13 [info]: Configuración del logger: Entorno -> production, Nivel de log -> info
+2024-10-09 12:05:14 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 12:05:15 [info]: Conectado a MongoDB Atlas
+2024-10-09 12:05:33 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 12:05:33 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 12:05:34 [info]: Conectado a MongoDB Atlas

@@ -1,6 +1,9 @@
 import { createLogger, transports, format } from 'winston';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -27,6 +30,8 @@ const customLevels = {
 import winston from 'winston';
 winston.addColors(customLevels.colors);
 
+const environment = process.env.NODE_ENV || 'development'; 
+
 const logFormat = format.combine(
   format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
   format.printf(({ timestamp, level, message }) => `${timestamp} [${level}]: ${message}`)
@@ -34,7 +39,7 @@ const logFormat = format.combine(
 
 const loggerTransports = [
   new transports.Console({
-    level: process.env.NODE_ENV === 'development' ? 'debug' : 'info',
+    level: environment === 'development' ? 'debug' : 'info', 
     format: format.combine(
       format.colorize({ all: true }),
       logFormat
@@ -56,10 +61,10 @@ const loggerTransports = [
 
 const logger = createLogger({
   levels: customLevels.levels,
-  level: process.env.NODE_ENV === 'development' ? 'debug' : 'info',
+  level: environment === 'development' ? 'debug' : 'info', 
   transports: loggerTransports,
 });
 
-logger.info(`Configuración del logger: Entorno -> ${process.env.NODE_ENV}, Nivel de log -> ${logger.level}`);
+logger.info(`Configuración del logger: Entorno -> ${environment}, Nivel de log -> ${logger.level}`);
 
 export default logger;

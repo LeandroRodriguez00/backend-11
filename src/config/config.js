@@ -12,6 +12,7 @@ const config = {
   emailUser: process.env.EMAIL_USER,
   emailPass: process.env.EMAIL_PASS,
   port: process.env.PORT || 3000,
+  nodeEnv: process.env.NODE_ENV || 'development', 
 };
 
 const requiredEnvVars = [
@@ -22,7 +23,8 @@ const requiredEnvVars = [
   { key: 'SESSION_SECRET', value: config.sessionSecret },
   { key: 'EMAIL_USER', value: config.emailUser },
   { key: 'EMAIL_PASS', value: config.emailPass },
-  { key: 'PORT', value: config.port }
+  { key: 'PORT', value: config.port },
+  { key: 'NODE_ENV', value: config.nodeEnv } 
 ];
 
 requiredEnvVars.forEach(({ key, value }) => {
