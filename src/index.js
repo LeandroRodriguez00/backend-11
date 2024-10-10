@@ -136,3 +136,4 @@ app.use((err, req, res, next) => {
 app.listen(port, () => {
   logger.info(`Servidor escuchando en el puerto ${port}`);
 });
+export default app;

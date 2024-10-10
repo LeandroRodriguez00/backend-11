@@ -964,3 +964,592 @@
 2024-10-09 12:05:33 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
 2024-10-09 12:05:33 [info]: Servidor escuchando en el puerto 8080
 2024-10-09 12:05:34 [info]: Conectado a MongoDB Atlas
+2024-10-09 12:15:05 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 12:15:05 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 12:19:01 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 12:19:01 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 12:24:59 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 12:25:00 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 12:29:21 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 12:29:21 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 12:50:55 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 12:50:55 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 12:50:56 [info]: Conectado a MongoDB Atlas
+2024-10-09 12:53:12 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 12:53:12 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 12:53:12 [warn]: Token no encontrado en las cookies
+2024-10-09 12:53:12 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 12:53:12 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 12:53:12 [warn]: Token no encontrado en las cookies
+2024-10-09 12:53:12 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 12:53:12 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 12:53:12 [warn]: Token no encontrado en las cookies
+2024-10-09 12:53:12 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 12:53:12 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 12:53:12 [warn]: Token no encontrado en las cookies
+2024-10-09 12:53:12 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 12:53:12 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 12:53:12 [warn]: Token no encontrado en las cookies
+2024-10-09 12:53:12 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 12:53:12 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 12:53:12 [warn]: Token no encontrado en las cookies
+2024-10-09 12:53:12 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 12:53:12 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 12:53:13 [info]: Conectado a MongoDB Atlas
+2024-10-09 12:54:38 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 12:54:38 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 12:54:38 [warn]: Token no encontrado en las cookies
+2024-10-09 12:54:38 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 12:54:38 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 12:54:38 [warn]: Token no encontrado en las cookies
+2024-10-09 12:54:38 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 12:54:38 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 12:54:38 [warn]: Token no encontrado en las cookies
+2024-10-09 12:54:38 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 12:54:38 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 12:54:38 [warn]: Token no encontrado en las cookies
+2024-10-09 12:54:38 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 12:54:38 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 12:54:38 [warn]: Token no encontrado en las cookies
+2024-10-09 12:54:38 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 12:54:38 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 12:54:38 [warn]: Token no encontrado en las cookies
+2024-10-09 12:54:38 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 12:54:38 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 12:54:39 [info]: Conectado a MongoDB Atlas
+2024-10-09 12:56:46 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 12:56:46 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 12:58:56 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 12:58:57 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 12:58:57 [warn]: Token no encontrado en las cookies
+2024-10-09 12:58:57 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 12:58:57 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 12:58:57 [warn]: Token no encontrado en las cookies
+2024-10-09 12:58:57 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 12:58:57 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 12:58:57 [warn]: Token no encontrado en las cookies
+2024-10-09 12:58:57 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 12:58:57 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 12:58:57 [warn]: Token no encontrado en las cookies
+2024-10-09 12:58:57 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 12:58:57 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 12:58:57 [warn]: Token no encontrado en las cookies
+2024-10-09 12:58:57 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 12:58:57 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 12:58:57 [warn]: Token no encontrado en las cookies
+2024-10-09 12:58:57 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 12:58:57 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 12:58:58 [info]: Conectado a MongoDB Atlas
+2024-10-09 13:00:40 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 13:00:41 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 13:00:41 [warn]: Token no encontrado en las cookies
+2024-10-09 13:00:41 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:00:41 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:00:41 [warn]: Token no encontrado en las cookies
+2024-10-09 13:00:41 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:00:41 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:00:41 [warn]: Token no encontrado en las cookies
+2024-10-09 13:00:41 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:00:41 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:00:41 [warn]: Token no encontrado en las cookies
+2024-10-09 13:00:41 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:00:41 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:00:41 [warn]: Token no encontrado en las cookies
+2024-10-09 13:00:41 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:00:41 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:00:41 [warn]: Token no encontrado en las cookies
+2024-10-09 13:00:41 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:00:41 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:00:42 [info]: Conectado a MongoDB Atlas
+2024-10-09 13:10:01 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 13:10:02 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 13:10:02 [warn]: Token no encontrado en las cookies
+2024-10-09 13:10:02 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:10:02 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:10:02 [warn]: Token no encontrado en las cookies
+2024-10-09 13:10:02 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:10:02 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:10:02 [warn]: Token no encontrado en las cookies
+2024-10-09 13:10:02 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:10:02 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:10:02 [warn]: Token no encontrado en las cookies
+2024-10-09 13:10:02 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:10:02 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:10:02 [warn]: Token no encontrado en las cookies
+2024-10-09 13:10:02 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:10:02 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:10:02 [warn]: Token no encontrado en las cookies
+2024-10-09 13:10:02 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:10:02 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:10:03 [info]: Conectado a MongoDB Atlas
+2024-10-09 13:11:45 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 13:11:45 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 13:11:45 [warn]: Token no encontrado en las cookies
+2024-10-09 13:11:45 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:11:45 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:11:45 [warn]: Token no encontrado en las cookies
+2024-10-09 13:11:45 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:11:45 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:11:45 [warn]: Token no encontrado en las cookies
+2024-10-09 13:11:45 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:11:45 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:11:45 [warn]: Token no encontrado en las cookies
+2024-10-09 13:11:45 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:11:45 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:11:45 [warn]: Token no encontrado en las cookies
+2024-10-09 13:11:45 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:11:45 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:11:45 [warn]: Token no encontrado en las cookies
+2024-10-09 13:11:45 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:11:45 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:13:02 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 13:13:03 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 13:13:03 [warn]: Token no encontrado en las cookies
+2024-10-09 13:13:03 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:13:03 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:13:03 [warn]: Token no encontrado en las cookies
+2024-10-09 13:13:03 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:13:03 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:13:03 [warn]: Token no encontrado en las cookies
+2024-10-09 13:13:03 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:13:03 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:13:03 [warn]: Token no encontrado en las cookies
+2024-10-09 13:13:03 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:13:03 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:13:03 [warn]: Token no encontrado en las cookies
+2024-10-09 13:13:03 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:13:03 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:13:03 [warn]: Token no encontrado en las cookies
+2024-10-09 13:13:03 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:13:03 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:14:21 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 13:14:21 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 13:14:22 [info]: Conectado a MongoDB Atlas
+2024-10-09 13:14:26 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 13:14:26 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 13:14:44 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 13:14:45 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 13:16:27 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 13:16:27 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 13:16:27 [warn]: Token no encontrado en las cookies
+2024-10-09 13:16:27 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:16:27 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:16:27 [warn]: Token no encontrado en las cookies
+2024-10-09 13:16:27 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:16:27 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:16:27 [warn]: Token no encontrado en las cookies
+2024-10-09 13:16:27 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:16:27 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:16:27 [warn]: Token no encontrado en las cookies
+2024-10-09 13:16:27 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:16:27 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:16:27 [warn]: Token no encontrado en las cookies
+2024-10-09 13:16:27 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:16:27 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:16:27 [warn]: Token no encontrado en las cookies
+2024-10-09 13:16:27 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:16:27 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:16:27 [warn]: Token no encontrado en las cookies
+2024-10-09 13:16:27 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:16:27 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 13:16:27 [warn]: Token no encontrado en las cookies
+2024-10-09 13:16:27 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 13:16:27 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 14:45:25 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 14:45:25 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 14:45:27 [warn]: Token no encontrado en las cookies
+2024-10-09 14:45:27 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 14:45:27 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 14:45:27 [info]: Conectado a MongoDB Atlas
+2024-10-09 14:45:32 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 14:45:32 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 14:47:42 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 14:47:42 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 14:47:43 [info]: Conectado a MongoDB Atlas
+2024-10-09 14:47:48 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 14:47:49 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 14:47:49 [info]: Conectado a MongoDB Atlas
+2024-10-09 14:47:55 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 14:47:56 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 14:47:56 [info]: Conectado a MongoDB Atlas
+2024-10-09 14:51:26 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 14:51:26 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 14:52:33 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 14:52:34 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 14:55:44 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 14:55:45 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 14:55:46 [info]: Conectado a MongoDB Atlas
+2024-10-09 14:55:46 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 14:55:46 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 14:59:37 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 14:59:37 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 14:59:38 [info]: Conectado a MongoDB Atlas
+2024-10-09 14:59:38 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 14:59:38 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 14:59:39 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 14:59:39 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 14:59:39 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 14:59:39 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 14:59:39 [warn]: Token no encontrado en las cookies
+2024-10-09 14:59:39 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 14:59:39 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 14:59:39 [warn]: Token no encontrado en las cookies
+2024-10-09 14:59:39 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 14:59:39 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 14:59:39 [warn]: Token no encontrado en las cookies
+2024-10-09 14:59:39 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 14:59:39 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 14:59:39 [warn]: Token no encontrado en las cookies
+2024-10-09 14:59:39 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 14:59:39 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 14:59:39 [warn]: Token no encontrado en las cookies
+2024-10-09 14:59:39 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 14:59:39 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 14:59:39 [warn]: Token no encontrado en las cookies
+2024-10-09 14:59:39 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 14:59:39 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 14:59:39 [warn]: Token no encontrado en las cookies
+2024-10-09 14:59:39 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 14:59:39 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 14:59:39 [warn]: Token no encontrado en las cookies
+2024-10-09 14:59:39 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 14:59:39 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 14:59:39 [info]: Usuario ha cerrado sesión.
+2024-10-09 14:59:39 [warn]: Campos obligatorios faltantes en el registro.
+2024-10-09 14:59:39 [error]: 400 - MissingFieldError: Todos los campos son obligatorios.
+2024-10-09 14:59:39 [error]: Error controlado: Todos los campos son obligatorios.
+2024-10-09 14:59:39 [warn]: Campos obligatorios faltantes en el registro.
+2024-10-09 14:59:39 [error]: 400 - MissingFieldError: Todos los campos son obligatorios.
+2024-10-09 14:59:39 [error]: Error controlado: Todos los campos son obligatorios.
+2024-10-09 15:04:09 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 15:04:10 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 15:04:11 [info]: Conectado a MongoDB Atlas
+2024-10-09 15:04:11 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 15:04:11 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 15:04:11 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 15:04:11 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 15:04:11 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 15:04:11 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 15:04:11 [warn]: Token no encontrado en las cookies
+2024-10-09 15:04:11 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:04:11 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:04:11 [warn]: Token no encontrado en las cookies
+2024-10-09 15:04:11 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:04:11 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:04:11 [warn]: Token no encontrado en las cookies
+2024-10-09 15:04:11 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:04:11 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:04:11 [warn]: Token no encontrado en las cookies
+2024-10-09 15:04:11 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:04:11 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:04:11 [warn]: Token no encontrado en las cookies
+2024-10-09 15:04:11 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:04:11 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:04:11 [warn]: Token no encontrado en las cookies
+2024-10-09 15:04:11 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:04:11 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:04:11 [warn]: Token no encontrado en las cookies
+2024-10-09 15:04:11 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:04:11 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:04:11 [warn]: Token no encontrado en las cookies
+2024-10-09 15:04:11 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:04:11 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:04:11 [info]: Usuario ha cerrado sesión.
+2024-10-09 15:04:11 [warn]: Campos obligatorios faltantes en el registro.
+2024-10-09 15:04:11 [error]: 400 - MissingFieldError: Todos los campos son obligatorios.
+2024-10-09 15:04:11 [error]: Error controlado: Todos los campos son obligatorios.
+2024-10-09 15:04:11 [warn]: Campos obligatorios faltantes en el registro.
+2024-10-09 15:04:11 [error]: 400 - MissingFieldError: Todos los campos son obligatorios.
+2024-10-09 15:04:11 [error]: Error controlado: Todos los campos son obligatorios.
+2024-10-09 15:07:04 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 15:07:04 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 15:07:05 [info]: Conectado a MongoDB Atlas
+2024-10-09 15:07:05 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 15:07:05 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 15:07:05 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 15:07:05 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 15:07:05 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 15:07:05 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 15:07:05 [warn]: Token no encontrado en las cookies
+2024-10-09 15:07:05 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:07:05 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:07:05 [warn]: Token no encontrado en las cookies
+2024-10-09 15:07:05 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:07:05 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:07:05 [warn]: Token no encontrado en las cookies
+2024-10-09 15:07:05 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:07:05 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:07:05 [warn]: Token no encontrado en las cookies
+2024-10-09 15:07:05 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:07:05 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:07:05 [warn]: Token no encontrado en las cookies
+2024-10-09 15:07:05 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:07:05 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:07:05 [warn]: Token no encontrado en las cookies
+2024-10-09 15:07:05 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:07:05 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:07:05 [warn]: Token no encontrado en las cookies
+2024-10-09 15:07:05 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:07:05 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:07:05 [warn]: Token no encontrado en las cookies
+2024-10-09 15:07:05 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:07:05 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:07:05 [info]: Usuario ha cerrado sesión.
+2024-10-09 15:07:05 [warn]: Campos obligatorios faltantes en el registro.
+2024-10-09 15:07:05 [error]: 400 - MissingFieldError: Todos los campos son obligatorios.
+2024-10-09 15:07:05 [error]: Error controlado: Todos los campos son obligatorios.
+2024-10-09 15:07:05 [warn]: Campos obligatorios faltantes en el registro.
+2024-10-09 15:07:05 [error]: 400 - MissingFieldError: Todos los campos son obligatorios.
+2024-10-09 15:07:05 [error]: Error controlado: Todos los campos son obligatorios.
+2024-10-09 15:09:18 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 15:09:18 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 15:09:19 [info]: Conectado a MongoDB Atlas
+2024-10-09 15:09:19 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 15:09:19 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 15:09:19 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 15:09:19 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 15:09:19 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 15:09:19 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 15:09:19 [warn]: Token no encontrado en las cookies
+2024-10-09 15:09:19 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:09:19 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:09:19 [warn]: Token no encontrado en las cookies
+2024-10-09 15:09:19 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:09:19 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:09:19 [warn]: Token no encontrado en las cookies
+2024-10-09 15:09:19 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:09:19 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:09:19 [warn]: Token no encontrado en las cookies
+2024-10-09 15:09:19 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:09:19 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:09:19 [warn]: Token no encontrado en las cookies
+2024-10-09 15:09:19 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:09:19 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:09:19 [warn]: Token no encontrado en las cookies
+2024-10-09 15:09:19 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:09:19 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:09:19 [warn]: Token no encontrado en las cookies
+2024-10-09 15:09:19 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:09:19 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:09:19 [warn]: Token no encontrado en las cookies
+2024-10-09 15:09:19 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:09:19 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:09:19 [info]: Usuario ha cerrado sesión.
+2024-10-09 15:09:19 [warn]: Campos obligatorios faltantes en el registro.
+2024-10-09 15:09:19 [error]: 400 - MissingFieldError: Todos los campos son obligatorios.
+2024-10-09 15:09:19 [error]: Error controlado: Todos los campos son obligatorios.
+2024-10-09 15:09:19 [warn]: Campos obligatorios faltantes en el registro.
+2024-10-09 15:09:19 [error]: 400 - MissingFieldError: Todos los campos son obligatorios.
+2024-10-09 15:09:19 [error]: Error controlado: Todos los campos son obligatorios.
+2024-10-09 15:10:51 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 15:10:51 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 15:10:53 [info]: Conectado a MongoDB Atlas
+2024-10-09 15:10:53 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 15:10:53 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 15:10:53 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 15:10:53 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 15:10:53 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 15:10:53 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 15:10:53 [warn]: Token no encontrado en las cookies
+2024-10-09 15:10:53 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:10:53 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:10:53 [warn]: Token no encontrado en las cookies
+2024-10-09 15:10:53 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:10:53 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:10:53 [warn]: Token no encontrado en las cookies
+2024-10-09 15:10:53 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:10:53 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:10:53 [warn]: Token no encontrado en las cookies
+2024-10-09 15:10:53 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:10:53 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:10:53 [warn]: Token no encontrado en las cookies
+2024-10-09 15:10:53 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:10:53 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:10:53 [warn]: Token no encontrado en las cookies
+2024-10-09 15:10:53 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:10:53 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:10:53 [warn]: Token no encontrado en las cookies
+2024-10-09 15:10:53 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:10:53 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:10:53 [warn]: Token no encontrado en las cookies
+2024-10-09 15:10:53 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:10:53 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:10:53 [info]: Usuario ha cerrado sesión.
+2024-10-09 15:10:53 [warn]: Campos obligatorios faltantes en el registro.
+2024-10-09 15:10:53 [error]: 400 - MissingFieldError: Todos los campos son obligatorios.
+2024-10-09 15:10:53 [error]: Error controlado: Todos los campos son obligatorios.
+2024-10-09 15:10:53 [warn]: Campos obligatorios faltantes en el registro.
+2024-10-09 15:10:53 [error]: 400 - MissingFieldError: Todos los campos son obligatorios.
+2024-10-09 15:10:53 [error]: Error controlado: Todos los campos son obligatorios.
+2024-10-09 15:15:04 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 15:15:04 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 15:15:05 [info]: Conectado a MongoDB Atlas
+2024-10-09 15:15:05 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 15:15:05 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 15:16:26 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 15:16:26 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 15:16:27 [info]: Conectado a MongoDB Atlas
+2024-10-09 15:16:27 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 15:16:27 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 15:25:55 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 15:25:55 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 15:25:56 [info]: Conectado a MongoDB Atlas
+2024-10-09 15:25:56 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 15:25:56 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 15:25:56 [warn]: Token no encontrado en las cookies
+2024-10-09 15:25:56 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:25:56 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:27:31 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 15:27:31 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 15:27:32 [info]: Conectado a MongoDB Atlas
+2024-10-09 15:27:32 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 15:27:32 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 15:27:32 [warn]: Token no encontrado en las cookies
+2024-10-09 15:27:32 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:27:32 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:29:05 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 15:29:05 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 15:29:06 [info]: Conectado a MongoDB Atlas
+2024-10-09 15:29:07 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 15:29:07 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 15:30:46 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 15:30:46 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 15:30:47 [info]: Conectado a MongoDB Atlas
+2024-10-09 15:31:47 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 15:31:47 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 15:32:47 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 15:32:48 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 15:34:01 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 15:34:02 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 15:34:03 [info]: Conectado a MongoDB Atlas
+2024-10-09 15:34:03 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 15:34:03 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 15:34:03 [warn]: Token no encontrado en las cookies
+2024-10-09 15:34:03 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:34:03 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:36:29 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 15:36:30 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 15:36:31 [info]: Conectado a MongoDB Atlas
+2024-10-09 15:36:31 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 15:36:31 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 15:36:31 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 15:36:31 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 15:36:31 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 15:36:31 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 15:36:31 [warn]: Token no encontrado en las cookies
+2024-10-09 15:36:31 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:36:31 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:36:31 [warn]: Token no encontrado en las cookies
+2024-10-09 15:36:31 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:36:31 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:36:31 [warn]: Token no encontrado en las cookies
+2024-10-09 15:36:31 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:36:32 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:36:32 [warn]: Token no encontrado en las cookies
+2024-10-09 15:36:32 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:36:32 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:36:32 [warn]: Token no encontrado en las cookies
+2024-10-09 15:36:32 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:36:32 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:36:32 [warn]: Token no encontrado en las cookies
+2024-10-09 15:36:32 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:36:32 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:36:32 [warn]: Token no encontrado en las cookies
+2024-10-09 15:36:32 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:36:32 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:36:32 [warn]: Token no encontrado en las cookies
+2024-10-09 15:36:32 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 15:36:32 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 15:36:32 [info]: Usuario ha cerrado sesión.
+2024-10-09 15:36:32 [warn]: Campos obligatorios faltantes en el registro.
+2024-10-09 15:36:32 [error]: 400 - MissingFieldError: Todos los campos son obligatorios.
+2024-10-09 15:36:32 [error]: Error controlado: Todos los campos son obligatorios.
+2024-10-09 15:36:32 [warn]: Campos obligatorios faltantes en el registro.
+2024-10-09 15:36:32 [error]: 400 - MissingFieldError: Todos los campos son obligatorios.
+2024-10-09 15:36:32 [error]: Error controlado: Todos los campos son obligatorios.
+2024-10-09 21:56:10 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 21:56:11 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 21:56:13 [info]: Conectado a MongoDB Atlas
+2024-10-09 21:56:13 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 21:56:13 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 21:56:13 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 21:56:13 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 21:56:13 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 21:56:13 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 21:56:13 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-09 21:56:13 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-09 21:56:13 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-09 21:56:13 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-09 21:56:13 [error]: Error al verificar el token JWT
+2024-10-09 21:56:13 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 21:56:13 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 21:56:13 [info]: Usuario ha cerrado sesión.
+2024-10-09 21:56:14 [warn]: Campos obligatorios faltantes en el registro.
+2024-10-09 21:56:14 [error]: 400 - MissingFieldError: Todos los campos son obligatorios.
+2024-10-09 21:56:14 [error]: Error controlado: Todos los campos son obligatorios.
+2024-10-09 21:56:14 [warn]: Campos obligatorios faltantes en el registro.
+2024-10-09 21:56:14 [error]: 400 - MissingFieldError: Todos los campos son obligatorios.
+2024-10-09 21:56:14 [error]: Error controlado: Todos los campos son obligatorios.
+2024-10-09 22:02:35 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 22:02:36 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 22:02:37 [info]: Conectado a MongoDB Atlas
+2024-10-09 22:02:38 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 22:02:38 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 22:02:38 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 22:02:38 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 22:02:38 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 22:02:38 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 22:02:38 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-09 22:02:38 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-09 22:02:38 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-09 22:02:38 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-09 22:02:38 [error]: Error al verificar el token JWT
+2024-10-09 22:02:38 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 22:02:38 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 22:02:38 [info]: Usuario ha cerrado sesión.
+2024-10-09 22:02:38 [warn]: Campos obligatorios faltantes en el registro.
+2024-10-09 22:02:38 [error]: 400 - MissingFieldError: Todos los campos son obligatorios.
+2024-10-09 22:02:38 [error]: Error controlado: Todos los campos son obligatorios.
+2024-10-09 22:02:38 [warn]: Campos obligatorios faltantes en el registro.
+2024-10-09 22:02:38 [error]: 400 - MissingFieldError: Todos los campos son obligatorios.
+2024-10-09 22:02:38 [error]: Error controlado: Todos los campos son obligatorios.
+2024-10-09 22:05:39 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 22:05:39 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 22:05:41 [info]: Conectado a MongoDB Atlas
+2024-10-09 22:05:41 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 22:05:41 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 22:06:02 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 22:06:03 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 22:06:04 [info]: Conectado a MongoDB Atlas
+2024-10-09 22:06:04 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 22:06:04 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 22:06:04 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 22:06:04 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 22:06:04 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 22:06:04 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 22:06:05 [error]: Error al crear producto:
+2024-10-09 22:06:05 [error]: 400 - ServerError: Error al crear el producto.
+2024-10-09 22:06:05 [error]: Error al crear producto:
+2024-10-09 22:06:05 [error]: 400 - ServerError: Error al crear el producto.
+2024-10-09 22:06:05 [error]: Error al verificar el token JWT
+2024-10-09 22:06:05 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 22:06:05 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 22:06:05 [info]: Usuario ha cerrado sesión.
+2024-10-09 22:06:05 [warn]: Campos obligatorios faltantes en el registro.
+2024-10-09 22:06:05 [error]: 400 - MissingFieldError: Todos los campos son obligatorios.
+2024-10-09 22:06:05 [error]: Error controlado: Todos los campos son obligatorios.
+2024-10-09 22:06:05 [warn]: Campos obligatorios faltantes en el registro.
+2024-10-09 22:06:05 [error]: 400 - MissingFieldError: Todos los campos son obligatorios.
+2024-10-09 22:06:05 [error]: Error controlado: Todos los campos son obligatorios.
+2024-10-09 22:07:12 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-09 22:07:12 [info]: Servidor escuchando en el puerto 8080
+2024-10-09 22:07:14 [info]: Conectado a MongoDB Atlas
+2024-10-09 22:07:15 [warn]: Token no encontrado en las cookies
+2024-10-09 22:07:15 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-09 22:07:15 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-09 22:07:19 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-09 22:07:19 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-09 22:07:26 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-09 22:07:26 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-09 22:09:12 [info]: Token de recuperación generado para el usuario: leandrorodriguez1130@gmail.com
+2024-10-09 22:09:16 [info]: Correo de recuperación enviado a: leandrorodriguez1130@gmail.com

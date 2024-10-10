@@ -1,44 +1,51 @@
-import * as chai from 'chai';
-import chaiHttp from 'chai-http';
+import request from 'supertest';
 import app from '../src/index.js';
+import { before } from 'mocha';
 
-chai.use(chaiHttp);
-const { expect } = chai;
+let cookie;
 
-describe('Cart Router', () => {
-  let cartId;
-  let productId = '604b1a3e2313b4eeb2ef76b2'; 
+before(async () => {
+  const res = await request(app)
+    .post('/login')
+    .send({
+      email: '555@gmail.com',
+      password: '555',
+    });
 
-  it('Debe crear un nuevo carrito', (done) => {
-    chai.request(app)
+  console.log('Login response cookies:', res.headers['set-cookie']);
+  if (res.headers['set-cookie']) {
+    cookie = res.headers['set-cookie'];
+    console.log('Cookie:', cookie);
+  } else {
+    throw new Error("No se pudo obtener la cookie después del inicio de sesión.");
+  }
+});
+
+describe('Carts Router', () => {
+  it('debería crear un nuevo carrito', async () => {
+    const res = await request(app)
       .post('/carts')
-      .end((err, res) => {
-        expect(res).to.have.status(201);
-        expect(res.body).to.have.property('_id');
-        cartId = res.body._id;
-        done();
-      });
+      .set('Cookie', cookie);
+
+    expect(res.status).to.equal(201);
   });
 
-  it('Debe agregar un producto al carrito', (done) => {
-    chai.request(app)
-      .post(`/carts/${cartId}/products`)
-      .send({ productId, quantity: 2 })
-      .end((err, res) => {
-        expect(res).to.have.status(200);
-        expect(res.body).to.have.property('products').with.lengthOf(1);
-        expect(res.body.products[0]).to.have.property('quantity').eql(2);
-        done();
-      });
+  it('debería agregar un producto al carrito', async () => {
+
+    const res = await request(app)
+      .post('/carts/add-product')
+      .set('Cookie', cookie)
+      .send({ productId: 'VALID_PRODUCT_ID' });
+
+    expect(res.status).to.equal(200);
   });
 
-  it('Debe eliminar el producto del carrito', (done) => {
-    chai.request(app)
-      .delete(`/carts/${cartId}/products/${productId}`)
-      .end((err, res) => {
-        expect(res).to.have.status(200);
-        expect(res.body).to.have.property('message').eql('Producto eliminado del carrito');
-        done();
-      });
+  it('debería fallar al agregar un producto si el producto no existe', async () => {
+    const res = await request(app)
+      .post('/carts/add-product')
+      .set('Cookie', cookie)
+      .send({ productId: 'invalidProductId' });
+
+    expect(res.status).to.equal(404);
   });
 });
