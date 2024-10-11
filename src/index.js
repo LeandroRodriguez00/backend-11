@@ -15,7 +15,7 @@ import swaggerConfig from './config/swaggerConfig.js';
 import productsRoutes from './routes/products.routes.js';
 import cartsRoutes from './routes/carts.routes.js';
 import messagesRoutes from './routes/messages.routes.js';
-import usersRoutes from './routes/users.routes.js';
+import usersRoutes from './routes/users.routes.js';  
 import sessionsRoutes from './routes/sessions.routes.js';
 import loggerTestRoutes from './routes/loggerTest.routes.js'; 
 import verifyJWT from './middlewares/verifyJWT.js';
@@ -96,11 +96,10 @@ app.get('/auth/google/callback',
 
 swaggerConfig(app);
 
-
 app.use('/products', verifyJWT, productsRoutes);
 app.use('/carts', verifyJWT, cartsRoutes);
 app.use('/messages', verifyJWT, messagesRoutes);
-app.use('/', usersRoutes);
+app.use('/api/users', usersRoutes);  
 app.use('/sessions', sessionsRoutes);
 app.use('/', loggerTestRoutes); 
 
@@ -136,4 +135,5 @@ app.use((err, req, res, next) => {
 app.listen(port, () => {
   logger.info(`Servidor escuchando en el puerto ${port}`);
 });
+
 export default app;

@@ -53,7 +53,7 @@ export const registerUser = async (req, res, next) => {
 };
 
 export const loginUser = (req, res, next) => {
-  passport.authenticate('local', (err, user, info) => {
+  passport.authenticate('local', async (err, user, info) => {
     if (err) {
       logger.error('Error al autenticar el usuario:', err);
       return next(err);
@@ -62,6 +62,9 @@ export const loginUser = (req, res, next) => {
       logger.warn('Credenciales inválidas');
       return next(new CustomError(errorDictionary.USER_ERRORS.INVALID_CREDENTIALS));
     }
+
+    user.last_connection = new Date();
+    await user.save();
 
     const token = jwt.sign({ id: user._id, email: user.email, role: user.role }, jwtSecret, {
       expiresIn: '1h',
@@ -79,7 +82,11 @@ export const loginUser = (req, res, next) => {
   })(req, res, next);
 };
 
-export const logoutUser = (req, res) => {
+export const logoutUser = async (req, res) => {
+
+  req.user.last_connection = new Date();
+  await req.user.save();
+
   res.clearCookie('jwt');
   logger.info('Usuario ha cerrado sesión.');
   res.redirect('/login');
@@ -197,20 +204,57 @@ export const changeUserRole = async (req, res) => {
 
     if (!user) {
       logger.warn('Usuario no encontrado al cambiar el rol.');
-      throw new CustomError(errorDictionary.USER_ERRORS.USER_NOT_FOUND);
+      return res.status(404).json({ message: 'Usuario no encontrado' });
     }
 
-    const newRole = user.role === 'user' ? 'premium' : 'user';
-    user.role = newRole;
+    const requiredDocuments = ['Identificación', 'Comprobante de domicilio', 'Comprobante de estado de cuenta'];
+    const uploadedDocuments = user.documents.map(doc => doc.name);
+    const missingDocuments = requiredDocuments.filter(doc => !uploadedDocuments.includes(doc));
+
+  
+    if (missingDocuments.length > 0) {
+      return res.status(400).json({ 
+        message: `Faltan los siguientes documentos para ser premium: ${missingDocuments.join(', ')}` 
+      });
+    }
+
+    user.role = 'premium';
     await user.save();
 
-    logger.info(`El rol del usuario ${user.email} ha sido actualizado a ${newRole}`);
+    logger.info(`El rol del usuario ${user.email} ha sido actualizado a premium`);
     res.status(200).json({
-      message: `El rol del usuario ha sido actualizado a ${newRole}`,
+      message: 'El usuario ha sido actualizado a premium',
       user: userDTO(user),
     });
   } catch (error) {
     logger.error('Error al cambiar el rol del usuario:', error);
     res.status(500).json({ message: 'Error al cambiar el rol del usuario', error });
+  }
+};
+
+export const uploadDocuments = async (req, res, next) => {
+  try {
+    const { uid } = req.params;
+    const user = await UserDao.getUserById(uid);
+
+    if (!user) {
+      logger.warn('Usuario no encontrado.');
+      return res.status(404).json({ message: 'Usuario no encontrado' });
+    }
+
+    req.files.documents.forEach(file => {
+      user.documents.push({
+        name: file.originalname,
+        reference: file.path 
+      });
+    });
+
+    await user.save(); 
+
+    logger.info(`Documentos subidos correctamente para el usuario ${user.email}`);
+    res.status(200).json({ message: 'Documentos subidos correctamente', user });
+  } catch (error) {
+    logger.error('Error al subir documentos:', error);
+    res.status(500).json({ message: 'Error al subir documentos', error });
   }
 };

@@ -1553,3 +1553,62 @@
 2024-10-09 22:07:26 [error]: Error controlado: No tienes permisos para realizar esta acción.
 2024-10-09 22:09:12 [info]: Token de recuperación generado para el usuario: leandrorodriguez1130@gmail.com
 2024-10-09 22:09:16 [info]: Correo de recuperación enviado a: leandrorodriguez1130@gmail.com
+2024-10-10 04:22:28 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-10 04:22:29 [info]: Servidor escuchando en el puerto 8080
+2024-10-10 04:22:30 [info]: Conectado a MongoDB Atlas
+2024-10-10 04:25:57 [error]: Error al subir documentos: Cast to ObjectId failed for value ":uid" (type string) at path "_id" for model "User"
+2024-10-10 14:28:02 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-10 14:28:03 [info]: Servidor escuchando en el puerto 8080
+2024-10-10 14:28:03 [info]: Conectado a MongoDB Atlas
+2024-10-10 14:28:10 [error]: Error al subir documentos: Cast to ObjectId failed for value ":uid" (type string) at path "_id" for model "User"
+2024-10-10 14:45:50 [error]: Error no controlado: Unexpected field
+2024-10-10 15:19:15 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-10 15:19:16 [info]: Servidor escuchando en el puerto 8080
+2024-10-10 15:19:17 [info]: Conectado a MongoDB Atlas
+2024-10-10 15:21:20 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-10 15:21:20 [info]: Servidor escuchando en el puerto 8080
+2024-10-10 15:21:21 [info]: Conectado a MongoDB Atlas
+2024-10-10 15:21:27 [error]: Error no controlado: ENOENT: no such file or directory, open 'C:\Users\leand\Desktop\Backend p\Desafio-Backend-Rodriguez-Leandro\uploads\profiles\1728584487055-rrrrrr.jpg'
+2024-10-10 15:25:30 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-10 15:25:30 [info]: Servidor escuchando en el puerto 8080
+2024-10-10 15:25:31 [info]: Conectado a MongoDB Atlas
+2024-10-10 15:26:16 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-10 15:26:17 [info]: Servidor escuchando en el puerto 8080
+2024-10-10 15:26:18 [info]: Conectado a MongoDB Atlas
+2024-10-10 15:26:19 [error]: Error no controlado: Unexpected field
+2024-10-10 15:27:12 [error]: Error al subir documentos: req.files.forEach is not a function
+2024-10-10 15:37:37 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-10 15:37:38 [info]: Servidor escuchando en el puerto 8080
+2024-10-10 15:37:39 [info]: Conectado a MongoDB Atlas
+2024-10-10 15:40:12 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-10 15:40:13 [info]: Servidor escuchando en el puerto 8080
+2024-10-10 15:40:14 [info]: Conectado a MongoDB Atlas
+2024-10-10 15:40:39 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-10 15:40:40 [info]: Servidor escuchando en el puerto 8080
+2024-10-10 15:40:41 [info]: Conectado a MongoDB Atlas
+2024-10-10 15:40:47 [info]: Documentos subidos correctamente para el usuario 555@gmail.com
+2024-10-10 23:49:27 [error]: Error no controlado: Tipo de archivo no permitido. Solo se aceptan PDF, JPEG, y PNG.
+2024-10-10 23:49:41 [error]: Error al subir documentos: Cannot read properties of undefined (reading 'forEach')
+2024-10-10 23:50:03 [error]: Error al subir documentos: Cannot read properties of undefined (reading 'forEach')
+2024-10-10 23:50:11 [info]: Documentos subidos correctamente para el usuario 555@gmail.com
+2024-10-11 00:07:05 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-11 00:07:05 [info]: Servidor escuchando en el puerto 8080
+2024-10-11 00:07:06 [info]: Conectado a MongoDB Atlas
+2024-10-11 00:07:23 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-11 00:07:23 [info]: Servidor escuchando en el puerto 8080
+2024-10-11 00:07:24 [info]: Conectado a MongoDB Atlas
+2024-10-11 00:07:44 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-11 00:07:45 [info]: Servidor escuchando en el puerto 8080
+2024-10-11 00:07:46 [info]: Conectado a MongoDB Atlas
+2024-10-11 00:08:03 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-11 00:08:03 [info]: Servidor escuchando en el puerto 8080
+2024-10-11 00:08:04 [info]: Conectado a MongoDB Atlas
+2024-10-11 00:08:48 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-11 00:08:49 [info]: Servidor escuchando en el puerto 8080
+2024-10-11 00:08:50 [info]: Conectado a MongoDB Atlas
+2024-10-11 00:09:25 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-11 00:09:26 [info]: Servidor escuchando en el puerto 8080
+2024-10-11 00:09:26 [info]: Conectado a MongoDB Atlas
+2024-10-11 00:09:54 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-11 00:09:54 [info]: Servidor escuchando en el puerto 8080
+2024-10-11 00:09:55 [info]: Conectado a MongoDB Atlas
