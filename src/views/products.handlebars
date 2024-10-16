@@ -1,37 +1,40 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Productos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos</title>
 </head>
 <body>
-    <h1>Bienvenido, {{user.email}} (Rol: {{user.role}})</h1>
-    <h1>Productos</h1>
-    <div>
-        {{#each productos}}
-        <div>
-            <h2>{{this.title}}</h2>
-            <p>{{this.description}}</p>
-            <p>Precio: ${{this.price}}</p>
-            <p>Categoría: {{this.category}}</p>
-            <p>Disponible: {{this.available}}</p>
-            <button onclick="agregarAlCarrito('{{this._id}}')">Agregar al carrito</button>
-        </div>
-        {{/each}}
-    </div>
-    <div>
-        {{#if hasPrevPage}}
-        <a href="{{prevLink}}">Página anterior</a>
-        {{/if}}
-        Página {{page}} de {{totalPages}}
-        {{#if hasNextPage}}
-        <a href="{{nextLink}}">Página siguiente</a>
-        {{/if}}
-    </div>
-    <script>
-        function agregarAlCarrito(productId) {
-    
-        }
-    </script>
+  <h1>Lista de Productos</h1>
+  <div>
+    <ul>
+      {{#each productos}}
+      <li>
+        <h2>{{this.title}}</h2>
+        <p>{{this.description}}</p>
+        <p>Precio: ${{this.price}}</p>
+        <p>Categoría: {{this.category}}</p>
+        <p>Stock: {{this.stock}}</p>
+        <form method="POST" action="/api/carts/add/{{this._id}}">
+          <button type="submit">Agregar al carrito</button>
+        </form>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+
+  <div>
+    <a href="/cart">Ver Carrito</a>
+  </div>
+
+  <!-- Paginación (si se aplica) -->
+  {{#if hasPrevPage}}
+    <a href="{{prevLink}}">Página anterior</a>
+  {{/if}}
+  {{#if hasNextPage}}
+    <a href="{{nextLink}}">Página siguiente</a>
+  {{/if}}
+
 </body>
 </html>

@@ -25,6 +25,15 @@ class UserMongoDAO {
   async updateUserRole(id, newRole) {
     return await User.findByIdAndUpdate(id, { role: newRole }, { new: true });
   }
+
+  async getAllUsers() {
+    return await User.find({}, 'first_name last_name email role'); 
+  }
+
+  async getInactiveUsers() {
+    const cutoffDate = new Date(Date.now() - 30 * 60 * 1000); 
+    return await User.find({ last_connection: { $lt: cutoffDate } });
+  }
 }
 
 export default new UserMongoDAO();

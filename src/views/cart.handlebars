@@ -1,26 +1,40 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Carrito</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tu Carrito</title>
 </head>
 <body>
-    <h1>Carrito</h1>
-    <div>
-        {{#each carrito.products}}
-        <div>
-            <h2>{{this.product.title}}</h2>
-            <p>{{this.product.description}}</p>
-            <p>Precio: ${{this.product.price}}</p>
-            <p>Cantidad: {{this.quantity}}</p>
-            <button onclick="eliminarProducto('{{this.product._id}}')">Eliminar</button>
-        </div>
-        {{/each}}
-    </div>
-    <script>
-        function eliminarProducto(productId) {
-        
-        }
-    </script>
+  <h1>Tu Carrito</h1>
+
+  <ul>
+    {{#each cart.products}}
+    <li>
+      <h2>{{this.title}}</h2>
+      <p>Precio: ${{this.price}}</p>
+      <p>Cantidad: {{this.quantity}}</p>
+
+      <form method="POST" action="/api/carts/update/{{this._id}}">
+        <input type="number" name="quantity" value="{{this.quantity}}" min="1" />
+        <button type="submit">Actualizar cantidad</button>
+      </form>
+
+      <form method="POST" action="/api/carts/remove/{{this._id}}">
+        <button type="submit">Eliminar del carrito</button>
+      </form>
+    </li>
+    {{/each}}
+  </ul>
+
+  <h2>Total: ${{cart.total}}</h2>
+
+  <form method="POST" action="/api/purchase">
+    <button type="submit">Finalizar Compra</button>
+  </form>
+
+  <div>
+    <a href="/products">Continuar Comprando</a>
+  </div>
 </body>
 </html>

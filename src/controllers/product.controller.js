@@ -2,6 +2,7 @@ import ProductDao from '../../dao/mongo/ProductMongoDAO.js';
 import CustomError from '../middlewares/customError.js';
 import errorDictionary from '../config/errorDictionary.js';
 import logger from '../middlewares/logger.js';
+import { sendEmail } from '../services/emailService.js'; 
 
 export const getAllProducts = async (req, res) => {
   try {
@@ -148,6 +149,11 @@ export const deleteProduct = async (req, res) => {
     }
 
     await ProductDao.deleteProduct(id);
+
+    if (product.owner === user.email && user.role === 'premium') {
+      await sendEmail(user.email, 'Producto eliminado', `Tu producto "${product.title}" ha sido eliminado.`);
+    }
+
     res.status(200).json({ message: 'Producto eliminado' });
   } catch (error) {
     if (error instanceof CustomError) {

@@ -6,14 +6,16 @@ import fs from 'fs';
 import { registerUser, loginUser, logoutUser, forgotPassword, resetPassword, changeUserRole, uploadDocuments } from '../controllers/user.controller.js';
 import verifyJWT from '../middlewares/verifyJWT.js';
 import UserDTO from '../../dto/UserDTO.js';
+import UserMongoDAO from '../../dao/mongo/UserMongoDAO.js';
+import verifyRole from '../middlewares/verifyRole.js'; 
 import logger from '../middlewares/logger.js';
+import { sendDeletionEmail } from '../services/emailService.js'; 
 
 const router = express.Router();
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     let folder = 'uploads/';
-    
     
     if (file.fieldname === 'profile') {
       folder += 'profiles/';
@@ -30,7 +32,6 @@ const storage = multer.diskStorage({
     cb(null, folder);
   },
   filename: (req, file, cb) => {
-
     cb(null, `${Date.now()}-${file.originalname}`);
   }
 });
@@ -44,7 +45,6 @@ const fileFilter = (req, file, cb) => {
   }
 };
 
-
 const upload = multer({ 
   storage,
   fileFilter  
@@ -53,6 +53,65 @@ const upload = multer({
   { name: 'product', maxCount: 1 },
   { name: 'documents', maxCount: 10 }
 ]);
+
+
+router.get('/', verifyJWT, verifyRole(['admin']), async (req, res, next) => {
+  try {
+    const users = await UserMongoDAO.getAllUsers(); 
+    const usersDTO = users.map(user => new UserDTO(user)); 
+    res.json(usersDTO); 
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.delete('/', verifyJWT, verifyRole(['admin']), async (req, res, next) => {
+  try {
+    const inactiveUsers = await UserMongoDAO.getInactiveUsers(); 
+
+    for (const user of inactiveUsers) {
+      await UserMongoDAO.deleteUser(user._id); 
+      await sendDeletionEmail(user.email);
+    }
+
+    res.json({ message: `${inactiveUsers.length} usuarios eliminados por inactividad.` });
+  } catch (error) {
+    next(error);
+  }
+});
+
+
+router.get('/admin/users', verifyJWT, verifyRole(['admin']), async (req, res, next) => {
+  try {
+    const users = await UserMongoDAO.getAllUsers(); 
+    res.render('adminUsers', { users }); 
+  } catch (error) {
+    next(error);
+  }
+});
+
+
+router.post('/:uid/role', verifyJWT, verifyRole(['admin']), async (req, res, next) => {
+  try {
+    const { uid } = req.params;
+    const { role } = req.body;
+    await UserMongoDAO.updateUserRole(uid, role);
+    res.redirect('/api/users/admin/users'); 
+  } catch (error) {
+    next(error);
+  }
+});
+
+
+router.post('/:uid/delete', verifyJWT, verifyRole(['admin']), async (req, res, next) => {
+  try {
+    const { uid } = req.params;
+    await UserMongoDAO.deleteUser(uid); 
+    res.redirect('/api/users/admin/users'); 
+  } catch (error) {
+    next(error);
+  }
+});
 
 
 router.get('/register', (req, res) => {
@@ -102,11 +161,6 @@ router.get('/reset-password/:token', (req, res) => {
 router.post('/reset-password/:token', (req, res, next) => {
   const { token } = req.params;
   resetPassword(req, res, next);
-});
-
-router.get('/forgot-password', (req, res) => {
-  const { expired, email } = req.query;
-  res.render('forgotPassword', { expired: expired === 'true', email });
 });
 
 router.put('/premium/:uid', changeUserRole);
