@@ -404,3 +404,32 @@
 2024-10-10 23:49:27 [error]: Error no controlado: Tipo de archivo no permitido. Solo se aceptan PDF, JPEG, y PNG.
 2024-10-10 23:49:41 [error]: Error al subir documentos: Cannot read properties of undefined (reading 'forEach')
 2024-10-10 23:50:03 [error]: Error al subir documentos: Cannot read properties of undefined (reading 'forEach')
+2024-10-16 13:04:43 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-16 13:04:43 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-16 14:04:53 [error]: Error no controlado: Expected double-quoted property name in JSON at position 54
+2024-10-16 14:21:31 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-16 14:21:31 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-16 14:29:27 [error]: El token JWT no contiene toda la información requerida.
+2024-10-16 14:29:27 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-16 14:29:27 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-16 14:29:30 [error]: El token JWT no contiene toda la información requerida.
+2024-10-16 14:29:30 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-16 14:29:30 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-16 14:29:34 [error]: El token JWT no contiene toda la información requerida.
+2024-10-16 14:29:34 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-16 14:29:34 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-16 14:31:25 [error]: El token JWT no contiene toda la información requerida.
+2024-10-16 14:31:25 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-16 14:31:25 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-16 14:32:10 [error]: El token JWT no contiene toda la información requerida.
+2024-10-16 14:32:10 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-16 14:32:10 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-16 15:25:17 [error]: Error al cerrar sesión: mongoose is not defined
+2024-10-16 15:26:22 [error]: Error al cerrar sesión: mongoose is not defined
+2024-10-16 17:31:56 [error]: 400 - ValidationError: El correo electrónico ya está registrado.
+2024-10-16 17:31:56 [error]: Error controlado: El correo electrónico ya está registrado.
+2024-10-16 18:09:03 [error]: Error al obtener el usuario desde la base de datos
+2024-10-16 18:11:01 [error]: Error al obtener el usuario desde la base de datos
+2024-10-16 18:11:37 [error]: Error al obtener el usuario desde la base de datos
+2024-10-16 18:17:44 [error]: Error al obtener el usuario desde la base de datos
+2024-10-16 18:17:51 [error]: Error al obtener el usuario desde la base de datos

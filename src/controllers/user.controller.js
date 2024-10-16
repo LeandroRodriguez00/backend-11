@@ -66,7 +66,13 @@ export const loginUser = (req, res, next) => {
     user.last_connection = new Date();
     await user.save();
 
-    const token = jwt.sign({ id: user._id, email: user.email, role: user.role }, jwtSecret, {
+    const token = jwt.sign({ 
+      id: user._id, 
+      email: user.email, 
+      role: user.role, 
+      first_name: user.first_name, 
+      last_name: user.last_name 
+    }, jwtSecret, {
       expiresIn: '1h',
     });
 
@@ -83,6 +89,11 @@ export const loginUser = (req, res, next) => {
 };
 
 export const logoutUser = async (req, res) => {
+  
+  if (!req.user) {
+    logger.warn('No se encontró un usuario en la solicitud para cerrar sesión.');
+    return res.status(400).json({ message: 'No se puede cerrar sesión porque no hay un usuario autenticado.' });
+  }
 
   req.user.last_connection = new Date();
   await req.user.save();
@@ -102,10 +113,14 @@ export const getCurrentUser = async (req, res, next) => {
   try {
     const decoded = jwt.verify(token, jwtSecret);
     const user = await UserDao.getUserById(decoded.id);
+
+    logger.info('Usuario obtenido de la base de datos:', user);
+
     if (!user) {
       logger.warn('Usuario no encontrado para el token proporcionado.');
       return next(new CustomError(errorDictionary.USER_ERRORS.USER_NOT_FOUND));
     }
+
     logger.info('Usuario actual obtenido correctamente.');
     res.json(userDTO(user));
   } catch (error) {
@@ -211,7 +226,6 @@ export const changeUserRole = async (req, res) => {
     const uploadedDocuments = user.documents.map(doc => doc.name);
     const missingDocuments = requiredDocuments.filter(doc => !uploadedDocuments.includes(doc));
 
-  
     if (missingDocuments.length > 0) {
       return res.status(400).json({ 
         message: `Faltan los siguientes documentos para ser premium: ${missingDocuments.join(', ')}` 

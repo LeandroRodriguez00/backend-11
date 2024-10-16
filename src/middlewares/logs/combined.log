@@ -1660,3 +1660,281 @@
 2024-10-16 02:44:45 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
 2024-10-16 02:44:45 [info]: Servidor escuchando en el puerto 8080
 2024-10-16 02:44:46 [info]: Conectado a MongoDB Atlas
+2024-10-16 13:04:39 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 13:04:40 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 13:04:41 [info]: Conectado a MongoDB Atlas
+2024-10-16 13:04:43 [warn]: Token no encontrado en las cookies
+2024-10-16 13:04:43 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-16 13:04:43 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-16 14:02:20 [info]: Usuario registrado con éxito: juan.perez@example.com
+2024-10-16 14:03:41 [info]: Usuario registrado con éxito: admin@gmail.com
+2024-10-16 14:04:25 [info]: Usuario autenticado con éxito: juan.perez@example.com
+2024-10-16 14:04:25 [info]: Usuario juan.perez@example.com autenticado con éxito.
+2024-10-16 14:04:53 [error]: Error no controlado: Expected double-quoted property name in JSON at position 54
+2024-10-16 14:05:31 [info]: Usuario autenticado con éxito: admin@gmail.com
+2024-10-16 14:05:31 [info]: Usuario admin@gmail.com autenticado con éxito.
+2024-10-16 14:21:31 [warn]: Token no encontrado en las cookies
+2024-10-16 14:21:31 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-16 14:21:31 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-16 14:26:34 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 14:26:34 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 14:29:17 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 14:29:18 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 14:29:19 [info]: Conectado a MongoDB Atlas
+2024-10-16 14:29:27 [error]: El token JWT no contiene toda la información requerida.
+2024-10-16 14:29:27 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-16 14:29:27 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-16 14:29:30 [error]: El token JWT no contiene toda la información requerida.
+2024-10-16 14:29:30 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-16 14:29:30 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-16 14:29:34 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 14:29:34 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 14:29:34 [error]: El token JWT no contiene toda la información requerida.
+2024-10-16 14:29:34 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-16 14:29:34 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-16 14:29:57 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 14:29:58 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 14:29:58 [info]: Conectado a MongoDB Atlas
+2024-10-16 14:31:17 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 14:31:18 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 14:31:19 [info]: Conectado a MongoDB Atlas
+2024-10-16 14:31:25 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 14:31:25 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 14:31:25 [error]: El token JWT no contiene toda la información requerida.
+2024-10-16 14:31:25 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-16 14:31:25 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-16 14:32:08 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 14:32:09 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 14:32:10 [info]: Conectado a MongoDB Atlas
+2024-10-16 14:32:10 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 14:32:10 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 14:32:10 [info]: Iniciando la verificación del token JWT
+2024-10-16 14:32:10 [info]: Token JWT encontrado en las cookies:
+2024-10-16 14:32:10 [info]: Token JWT verificado y decodificado con éxito:
+2024-10-16 14:32:10 [error]: El token JWT no contiene toda la información requerida.
+2024-10-16 14:32:10 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-16 14:32:10 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-16 14:32:19 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 14:32:20 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 14:32:20 [info]: Conectado a MongoDB Atlas
+2024-10-16 14:32:25 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 14:32:25 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 14:33:44 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 14:33:45 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 14:33:46 [info]: Conectado a MongoDB Atlas
+2024-10-16 14:33:49 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 14:33:49 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 14:33:49 [info]: Iniciando la verificación del token JWT
+2024-10-16 14:33:49 [info]: Token JWT encontrado:
+2024-10-16 14:33:49 [info]: Token JWT verificado correctamente. Payload decodificado:
+2024-10-16 14:33:49 [info]: Usuario asignado en el request: {"id":"66e9fc79b85506617a678bc1","email":"555@gmail.com","role":"admin","iat":1729100029,"exp":1729103629}
+2024-10-16 14:33:49 [info]: Iniciando la verificación del token JWT
+2024-10-16 14:33:49 [info]: Token JWT encontrado:
+2024-10-16 14:33:49 [info]: Token JWT verificado correctamente. Payload decodificado:
+2024-10-16 14:33:49 [info]: Usuario asignado en el request: {"id":"66e9fc79b85506617a678bc1","email":"555@gmail.com","role":"admin","iat":1729100029,"exp":1729103629}
+2024-10-16 14:33:58 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 14:33:58 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 14:33:58 [info]: Iniciando la verificación del token JWT
+2024-10-16 14:33:58 [info]: Token JWT encontrado:
+2024-10-16 14:33:58 [info]: Token JWT verificado correctamente. Payload decodificado:
+2024-10-16 14:33:58 [info]: Usuario asignado en el request: {"id":"66e9fc79b85506617a678bc1","email":"555@gmail.com","role":"admin","iat":1729100038,"exp":1729103638}
+2024-10-16 14:33:58 [info]: Iniciando la verificación del token JWT
+2024-10-16 14:33:58 [info]: Token JWT encontrado:
+2024-10-16 14:33:58 [info]: Token JWT verificado correctamente. Payload decodificado:
+2024-10-16 14:33:58 [info]: Usuario asignado en el request: {"id":"66e9fc79b85506617a678bc1","email":"555@gmail.com","role":"admin","iat":1729100038,"exp":1729103638}
+2024-10-16 14:34:04 [info]: Iniciando la verificación del token JWT
+2024-10-16 14:34:04 [info]: Token JWT encontrado:
+2024-10-16 14:34:04 [info]: Token JWT verificado correctamente. Payload decodificado:
+2024-10-16 14:34:04 [info]: Usuario asignado en el request: {"id":"66e9fc79b85506617a678bc1","email":"555@gmail.com","role":"admin","iat":1729100038,"exp":1729103638}
+2024-10-16 14:35:22 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 14:35:23 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 14:35:24 [info]: Conectado a MongoDB Atlas
+2024-10-16 14:54:51 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 14:54:51 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 14:54:52 [info]: Conectado a MongoDB Atlas
+2024-10-16 14:55:03 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 14:55:03 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 14:58:28 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 14:58:28 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 14:58:29 [info]: Conectado a MongoDB Atlas
+2024-10-16 14:58:38 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 14:58:38 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 14:58:55 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 14:58:56 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 14:58:56 [info]: Conectado a MongoDB Atlas
+2024-10-16 14:59:01 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 14:59:01 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 14:59:26 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 14:59:27 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 14:59:27 [info]: Conectado a MongoDB Atlas
+2024-10-16 14:59:54 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 14:59:54 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 14:59:55 [info]: Conectado a MongoDB Atlas
+2024-10-16 15:00:02 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 15:00:02 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 15:01:17 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 15:01:18 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 15:01:19 [info]: Conectado a MongoDB Atlas
+2024-10-16 15:03:17 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 15:03:17 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 15:03:18 [info]: Conectado a MongoDB Atlas
+2024-10-16 15:03:29 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 15:03:29 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 15:05:26 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 15:05:26 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 15:05:27 [info]: Conectado a MongoDB Atlas
+2024-10-16 15:05:33 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 15:05:33 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 15:09:04 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 15:09:05 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 15:09:06 [info]: Conectado a MongoDB Atlas
+2024-10-16 15:09:12 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 15:09:12 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 15:15:36 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 15:15:37 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 15:15:38 [info]: Conectado a MongoDB Atlas
+2024-10-16 15:15:43 [info]: Valor de req.user en logout:
+2024-10-16 15:15:43 [warn]: No se encontró un usuario en la solicitud para cerrar sesión.
+2024-10-16 15:15:51 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 15:15:51 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 15:15:56 [info]: Valor de req.user en logout:
+2024-10-16 15:15:56 [warn]: No se encontró un usuario en la solicitud para cerrar sesión.
+2024-10-16 15:15:59 [info]: Valor de req.user en logout:
+2024-10-16 15:15:59 [warn]: No se encontró un usuario en la solicitud para cerrar sesión.
+2024-10-16 15:16:21 [info]: Valor de req.user en logout:
+2024-10-16 15:16:21 [warn]: No se encontró un usuario en la solicitud para cerrar sesión.
+2024-10-16 15:24:51 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 15:24:51 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 15:24:53 [info]: Conectado a MongoDB Atlas
+2024-10-16 15:25:03 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 15:25:03 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 15:25:17 [error]: Error al cerrar sesión: mongoose is not defined
+2024-10-16 15:26:12 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 15:26:12 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 15:26:14 [info]: Conectado a MongoDB Atlas
+2024-10-16 15:26:18 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 15:26:18 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 15:26:22 [error]: Error al cerrar sesión: mongoose is not defined
+2024-10-16 15:29:15 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 15:29:16 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 15:29:17 [info]: Conectado a MongoDB Atlas
+2024-10-16 15:29:18 [info]: Valor de req.user en logout:
+2024-10-16 15:29:18 [warn]: No se encontró un usuario en la solicitud para cerrar sesión.
+2024-10-16 15:29:22 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 15:29:22 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 15:29:26 [info]: Valor de req.user en logout:
+2024-10-16 15:29:26 [warn]: No se encontró un usuario en la solicitud para cerrar sesión.
+2024-10-16 15:29:29 [info]: Valor de req.user en logout:
+2024-10-16 15:29:29 [warn]: No se encontró un usuario en la solicitud para cerrar sesión.
+2024-10-16 15:29:33 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 15:29:33 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 15:29:36 [info]: Valor de req.user en logout:
+2024-10-16 15:29:36 [warn]: No se encontró un usuario en la solicitud para cerrar sesión.
+2024-10-16 17:26:54 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 17:26:54 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 17:26:55 [info]: Conectado a MongoDB Atlas
+2024-10-16 17:29:54 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 17:29:54 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 17:31:56 [warn]: Correo ya registrado: admin@gmail.com
+2024-10-16 17:31:56 [error]: 400 - ValidationError: El correo electrónico ya está registrado.
+2024-10-16 17:31:56 [error]: Error controlado: El correo electrónico ya está registrado.
+2024-10-16 17:32:00 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 17:32:00 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 17:32:13 [info]: Valor de req.user en logout:
+2024-10-16 17:32:13 [warn]: No se encontró un usuario en la solicitud para cerrar sesión.
+2024-10-16 17:50:06 [info]: Valor de req.user en logout:
+2024-10-16 17:50:06 [warn]: No se encontró un usuario en la solicitud para cerrar sesión.
+2024-10-16 17:50:14 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 17:50:14 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 17:50:18 [info]: Valor de req.user en logout:
+2024-10-16 17:50:18 [warn]: No se encontró un usuario en la solicitud para cerrar sesión.
+2024-10-16 18:00:29 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 18:00:30 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 18:00:31 [info]: Conectado a MongoDB Atlas
+2024-10-16 18:00:34 [info]: Valor de req.user en logout:
+2024-10-16 18:05:13 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 18:05:14 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 18:05:16 [info]: Conectado a MongoDB Atlas
+2024-10-16 18:08:44 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 18:08:45 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 18:08:46 [info]: Conectado a MongoDB Atlas
+2024-10-16 18:09:03 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 18:09:03 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 18:09:03 [error]: Error al obtener el usuario desde la base de datos
+2024-10-16 18:11:01 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 18:11:01 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 18:11:01 [error]: Error al obtener el usuario desde la base de datos
+2024-10-16 18:11:12 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 18:11:13 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 18:11:14 [info]: Conectado a MongoDB Atlas
+2024-10-16 18:11:31 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 18:11:31 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 18:11:32 [info]: Conectado a MongoDB Atlas
+2024-10-16 18:11:37 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 18:11:37 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 18:11:37 [error]: Error al obtener el usuario desde la base de datos
+2024-10-16 18:11:53 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 18:11:54 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 18:11:55 [info]: Conectado a MongoDB Atlas
+2024-10-16 18:12:00 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 18:12:00 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 18:15:44 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 18:15:44 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 18:15:52 [info]: Valor de req.user en logout:
+2024-10-16 18:16:03 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 18:16:03 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 18:16:04 [info]: Conectado a MongoDB Atlas
+2024-10-16 18:16:06 [info]: Valor de req.user en logout:
+2024-10-16 18:17:21 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 18:17:22 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 18:17:23 [info]: Conectado a MongoDB Atlas
+2024-10-16 18:17:44 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 18:17:44 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 18:17:44 [error]: Error al obtener el usuario desde la base de datos
+2024-10-16 18:17:51 [error]: Error al obtener el usuario desde la base de datos
+2024-10-16 18:22:30 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 18:22:31 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 18:22:32 [info]: Conectado a MongoDB Atlas
+2024-10-16 18:27:13 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 18:27:13 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 18:27:15 [info]: Conectado a MongoDB Atlas
+2024-10-16 18:27:20 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 18:27:20 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 18:27:20 [info]: Token decodificado correctamente: {"id":"66e9fc79b85506617a678bc1","email":"555@gmail.com","role":"admin","first_name":"555","last_name":"555","iat":1729114040,"exp":1729117640}
+2024-10-16 18:27:20 [info]: Usuario encontrado en la base de datos: 555@gmail.com
+2024-10-16 18:27:20 [info]: Token decodificado correctamente: {"id":"66e9fc79b85506617a678bc1","email":"555@gmail.com","role":"admin","first_name":"555","last_name":"555","iat":1729114040,"exp":1729117640}
+2024-10-16 18:27:20 [info]: Usuario encontrado en la base de datos: 555@gmail.com
+2024-10-16 18:27:24 [info]: Token decodificado correctamente: {"id":"66e9fc79b85506617a678bc1","email":"555@gmail.com","role":"admin","first_name":"555","last_name":"555","iat":1729114040,"exp":1729117640}
+2024-10-16 18:27:24 [info]: Usuario encontrado en la base de datos: 555@gmail.com
+2024-10-16 18:27:24 [info]: Valor de req.user en logout:
+2024-10-16 18:27:25 [info]: Usuario ha cerrado sesión.
+2024-10-16 18:47:17 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 18:47:18 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 18:47:19 [info]: Conectado a MongoDB Atlas
+2024-10-16 18:47:21 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 18:47:21 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 18:47:48 [info]: Valor de req.user en logout:
+2024-10-16 18:47:48 [info]: Usuario ha cerrado sesión.
+2024-10-16 18:51:05 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 18:51:05 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 18:51:06 [info]: Conectado a MongoDB Atlas
+2024-10-16 18:51:18 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-16 18:51:18 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-16 18:51:49 [info]: Usuario ha cerrado sesión.
+2024-10-16 18:53:06 [info]: Token de recuperación generado para el usuario: leandrorodriguez1130@gmail.com
+2024-10-16 18:53:09 [info]: Correo de recuperación enviado a: leandrorodriguez1130@gmail.com
+2024-10-16 19:10:33 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 19:10:33 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 19:10:34 [info]: Conectado a MongoDB Atlas
+2024-10-16 19:10:51 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 19:10:52 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 19:10:53 [info]: Conectado a MongoDB Atlas
+2024-10-16 19:10:54 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 19:10:55 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 19:10:56 [info]: Conectado a MongoDB Atlas
+2024-10-16 19:11:37 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 19:11:38 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 19:11:39 [info]: Conectado a MongoDB Atlas
+2024-10-16 19:11:50 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-16 19:11:51 [info]: Servidor escuchando en el puerto 8080
+2024-10-16 19:11:52 [info]: Conectado a MongoDB Atlas

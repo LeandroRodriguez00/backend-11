@@ -2,36 +2,46 @@ import config from '../config/config.js';
 import CustomError from '../middlewares/customError.js';
 import errorDictionary from '../config/errorDictionary.js';
 import jwt from 'jsonwebtoken';
-import logger from '../middlewares/logger.js';
+import UserDao from '../../dao/mongo/UserMongoDAO.js';  // Importar el DAO para buscar al usuario en la base de datos
 
 const { jwtSecret } = config; 
 
-function verifyJWT(req, res, next) {
+async function verifyJWT(req, res, next) {
   if (!jwtSecret) {
-    logger.error('El valor de jwtSecret es undefined en verifyJWT.');
     return res.status(500).send('Error interno del servidor: jwtSecret no está definido');
   }
 
   const token = req.cookies.jwt;
 
   if (!token) {
-    logger.warn('Token no encontrado en las cookies');
     return next(new CustomError(errorDictionary.AUTH_ERRORS.TOKEN_INVALID));
   }
 
-  jwt.verify(token, jwtSecret, (err, decoded) => {
+  jwt.verify(token, jwtSecret, async (err, decoded) => {
     if (err) {
       if (err.name === 'TokenExpiredError') {
-        logger.warn('Token expirado');
         return next(new CustomError(errorDictionary.AUTH_ERRORS.TOKEN_EXPIRED));
       } else {
-        logger.error('Error al verificar el token JWT', { error: err.message });
         return next(new CustomError(errorDictionary.AUTH_ERRORS.TOKEN_INVALID));
       }
     }
 
-    req.user = decoded; 
-    next(); 
+    try {
+      if (!decoded.id) {
+        return next(new CustomError(errorDictionary.USER_ERRORS.USER_NOT_FOUND));
+      }
+
+      const user = await UserDao.getUserById(decoded.id);
+
+      if (!user) {
+        return next(new CustomError(errorDictionary.USER_ERRORS.USER_NOT_FOUND));
+      }
+
+      req.user = user;
+      next();
+    } catch (error) {
+      return res.status(500).send('Error interno del servidor al verificar el usuario.');
+    }
   });
 }
 

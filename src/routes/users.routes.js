@@ -126,7 +126,7 @@ router.post('/login', (req, res, next) => {
   loginUser(req, res, next);
 });
 
-router.get('/logout', (req, res) => {
+router.get('/logout', verifyJWT, (req, res) => {
   logoutUser(req, res);
 });
 

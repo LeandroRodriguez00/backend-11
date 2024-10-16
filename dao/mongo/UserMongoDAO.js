@@ -1,4 +1,5 @@
 import User from '../models/User.js';
+import mongoose from 'mongoose';  
 
 class UserMongoDAO {
   async getUserByEmail(email) {
@@ -6,7 +7,22 @@ class UserMongoDAO {
   }
 
   async getUserById(id) {
-    return await User.findById(id);
+ 
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      console.error(`Invalid User ID: ${id}`);  
+      throw new Error('Invalid User ID');
+    }
+
+    try {
+      const user = await User.findById(id);
+      if (!user) {
+        console.warn(`No se encontró el usuario con el ID: ${id}`); 
+      }
+      return user;
+    } catch (error) {
+      console.error(`Error al buscar el usuario con ID ${id}: ${error.message}`);
+      throw new Error('Error al buscar el usuario por ID');
+    }
   }
 
   async createUser(userData) {
