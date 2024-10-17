@@ -136,9 +136,9 @@ export const updateProduct = async (req, res) => {
 
 export const deleteProduct = async (req, res) => {
   try {
-    const { id } = req.params;
+    const { id } = req.params; 
     const product = await ProductDao.getProductById(id);
-    const user = req.user;
+    const user = req.user; 
 
     if (!product) {
       return res.status(404).json({ message: 'Producto no encontrado' });
@@ -159,7 +159,8 @@ export const deleteProduct = async (req, res) => {
     if (error instanceof CustomError) {
       return res.status(error.status).json({ message: error.message });
     }
-    logger.error(`Error al eliminar producto con ID ${id}:`, { error });
+
+    logger.error(`Error al eliminar producto con ID ${req.params.id}:`, { error });
     res.status(500).json({ message: 'Error al eliminar el producto' });
   }
 };

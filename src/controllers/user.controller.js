@@ -89,7 +89,6 @@ export const loginUser = (req, res, next) => {
 };
 
 export const logoutUser = async (req, res) => {
-  
   if (!req.user) {
     logger.warn('No se encontró un usuario en la solicitud para cerrar sesión.');
     return res.status(400).json({ message: 'No se puede cerrar sesión porque no hay un usuario autenticado.' });
@@ -256,11 +255,20 @@ export const uploadDocuments = async (req, res, next) => {
       return res.status(404).json({ message: 'Usuario no encontrado' });
     }
 
-    req.files.documents.forEach(file => {
-      user.documents.push({
-        name: file.originalname,
-        reference: file.path 
-      });
+    const documentNames = ['Identificación', 'Comprobante de domicilio', 'Comprobante de estado de cuenta'];
+
+    if (!req.files.documents || req.files.documents.length < documentNames.length) {
+      return res.status(400).json({ message: 'No se han subido suficientes documentos.' });
+    }
+
+   
+    req.files.documents.forEach((file, index) => {
+      if (index < documentNames.length) {
+        user.documents.push({
+          name: documentNames[index], 
+          reference: file.path       
+        });
+      }
     });
 
     await user.save(); 

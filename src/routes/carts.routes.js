@@ -108,7 +108,7 @@ router.get('/:id', verifyJWT, validateObjectId, getCartById);
  *       401:
  *         description: No autorizado
  */
-router.post('/:id/products', verifyJWT, verifyRole(['user']), validateObjectId, addProductToCart);
+router.post('/:cartId/products', verifyJWT, verifyRole(['premium', 'user']), addProductToCart);
 
 /**
  * @swagger

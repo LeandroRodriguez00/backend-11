@@ -1938,3 +1938,81 @@
 2024-10-16 19:11:50 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
 2024-10-16 19:11:51 [info]: Servidor escuchando en el puerto 8080
 2024-10-16 19:11:52 [info]: Conectado a MongoDB Atlas
+2024-10-17 01:04:41 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-17 01:04:42 [info]: Servidor escuchando en el puerto 8080
+2024-10-17 01:04:43 [info]: Conectado a MongoDB Atlas
+2024-10-17 01:05:45 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-17 01:05:45 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-17 01:06:08 [warn]: Correo ya registrado: juannFl1@gmail.com
+2024-10-17 01:06:08 [error]: 400 - ValidationError: El correo electrónico ya está registrado.
+2024-10-17 01:06:08 [error]: Error controlado: El correo electrónico ya está registrado.
+2024-10-17 01:06:22 [info]: Usuario ha cerrado sesión.
+2024-10-17 01:07:17 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-17 01:07:17 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-17 01:08:16 [info]: Token de recuperación generado para el usuario: leandrorodriguez1130@gmail.com
+2024-10-17 01:08:18 [info]: Correo de recuperación enviado a: leandrorodriguez1130@gmail.com
+2024-10-17 01:10:09 [error]: Error al restablecer la contraseña: jwt malformed
+2024-10-17 01:10:09 [error]: Error no controlado: jwt malformed
+2024-10-17 01:11:02 [warn]: El enlace de restablecimiento ha expirado.
+2024-10-17 01:11:57 [info]: Contraseña actualizada exitosamente para el usuario: leandrorodriguez1130@gmail.com
+2024-10-17 01:18:57 [info]: Documentos subidos correctamente para el usuario leandrorodriguez1130@gmail.com
+2024-10-17 01:25:17 [info]: Documentos subidos correctamente para el usuario leandrorodriguez1130@gmail.com
+2024-10-17 01:28:30 [info]: Documentos subidos correctamente para el usuario leandrorodriguez1130@gmail.com
+2024-10-17 01:38:22 [info]: Documentos subidos correctamente para el usuario leandrorodriguez1130@gmail.com
+2024-10-17 01:44:00 [info]: Documentos subidos correctamente para el usuario leandrorodriguez1130@gmail.com
+2024-10-17 03:03:33 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-17 03:03:33 [info]: Servidor escuchando en el puerto 8080
+2024-10-17 03:03:34 [info]: Conectado a MongoDB Atlas
+2024-10-17 03:03:52 [info]: Documentos subidos correctamente para el usuario leandrorodriguez1130@gmail.com
+2024-10-17 03:03:59 [info]: El rol del usuario leandrorodriguez1130@gmail.com ha sido actualizado a premium
+2024-10-17 03:06:40 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-17 03:06:40 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-17 03:06:46 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-17 03:06:46 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-17 03:07:20 [error]: 400 - NotFoundError: Producto no encontrado.
+2024-10-17 03:10:04 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-17 03:10:05 [info]: Servidor escuchando en el puerto 8080
+2024-10-17 03:10:06 [info]: Conectado a MongoDB Atlas
+2024-10-17 03:10:08 [error]: 400 - NotFoundError: Producto no encontrado.
+2024-10-17 03:10:08 [error]: Error al obtener el producto con ID 66dff87da066356f4db0173c:
+2024-10-17 03:10:08 [error]: Error al eliminar producto con ID 66dff87da066356f4db0173c:
+2024-10-17 03:10:35 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-17 03:10:35 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-17 03:10:49 [error]: Error no controlado: Cannot destructure property 'message' of 'undefined' as it is undefined.
+2024-10-17 03:11:01 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-17 03:11:01 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-17 03:13:37 [info]: Usuario autenticado con éxito: 555@gmail.com
+2024-10-17 03:13:37 [info]: Usuario 555@gmail.com autenticado con éxito.
+2024-10-17 03:13:59 [warn]: Usuario no encontrado: leandrorodriguez1130@gmail.com@gmail.com
+2024-10-17 03:13:59 [error]: 400 - NotFoundError: Usuario no encontrado.
+2024-10-17 03:13:59 [error]: Error en la autenticación local: Usuario no encontrado.
+2024-10-17 03:13:59 [error]: Error al autenticar el usuario: Usuario no encontrado.
+2024-10-17 03:13:59 [error]: Error controlado: Usuario no encontrado.
+2024-10-17 03:14:09 [info]: Usuario autenticado con éxito: leandrorodriguez1130@gmail.com
+2024-10-17 03:14:10 [info]: Usuario leandrorodriguez1130@gmail.com autenticado con éxito.
+2024-10-17 03:14:41 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-17 03:14:41 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-17 03:14:45 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-17 03:14:45 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-17 03:14:49 [error]: Error no controlado: Cannot destructure property 'message' of 'undefined' as it is undefined.
+2024-10-17 03:14:57 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-17 03:14:57 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-17 03:18:11 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-17 03:18:12 [info]: Servidor escuchando en el puerto 8080
+2024-10-17 03:18:13 [info]: Conectado a MongoDB Atlas
+2024-10-17 03:18:15 [error]: 400 - NotFoundError: Carrito no encontrado.
+2024-10-17 03:18:42 [error]: 400 - NotFoundError: Carrito no encontrado.
+2024-10-17 03:20:21 [error]: 400 - NotFoundError: Carrito no encontrado.
+2024-10-17 03:20:54 [error]: 400 - NotFoundError: Carrito no encontrado.
+2024-10-17 03:21:08 [error]: Error no controlado: Cannot destructure property 'message' of 'undefined' as it is undefined.
+2024-10-17 03:21:53 [error]: 400 - NotFoundError: Carrito no encontrado.
+2024-10-17 03:21:59 [error]: 400 - NotFoundError: Carrito no encontrado.
+2024-10-17 03:26:05 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-17 03:26:06 [info]: Servidor escuchando en el puerto 8080
+2024-10-17 03:26:07 [info]: Conectado a MongoDB Atlas
+2024-10-17 03:26:24 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-17 03:26:25 [info]: Servidor escuchando en el puerto 8080
+2024-10-17 03:26:25 [info]: Conectado a MongoDB Atlas
+2024-10-17 03:26:33 [info]: Configuración del logger: Entorno -> development, Nivel de log -> debug
+2024-10-17 03:26:34 [info]: Servidor escuchando en el puerto 8080
+2024-10-17 03:26:35 [info]: Conectado a MongoDB Atlas
