@@ -35,17 +35,19 @@ class CartMongoDAO {
   async addProductToCart(cartId, productId, quantity) {
     const cart = await this.getCartById(cartId);
     
-    const productIndex = cart.products.findIndex(p => p.product.equals(productId));
 
-    if (productIndex >= 0) {
-      cart.products[productIndex].quantity += quantity;
+    const existingProduct = cart.products.find(p => p.product.equals(productId));
+  
+    if (existingProduct) {
+
+      existingProduct.quantity += quantity;
     } else {
+
       cart.products.push({ product: productId, quantity });
     }
-
+  
     return await cart.save();
   }
-
   async updateCartProducts(id, products) {
     const updatedCart = await Cart.findByIdAndUpdate(id, { products }, { new: true });
     if (!updatedCart) {

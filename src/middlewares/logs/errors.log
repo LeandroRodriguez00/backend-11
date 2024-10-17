@@ -466,3 +466,42 @@
 2024-10-17 03:21:08 [error]: Error no controlado: Cannot destructure property 'message' of 'undefined' as it is undefined.
 2024-10-17 03:21:53 [error]: 400 - NotFoundError: Carrito no encontrado.
 2024-10-17 03:21:59 [error]: 400 - NotFoundError: Carrito no encontrado.
+2024-10-17 17:27:11 [error]: 400 - AuthenticationError: Token inválido o no proporcionado.
+2024-10-17 17:27:11 [error]: Error controlado: Token inválido o no proporcionado.
+2024-10-17 17:27:50 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-17 17:27:50 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-17 17:29:44 [error]: 400 - ValidationError: El correo electrónico ya está registrado.
+2024-10-17 17:29:44 [error]: Error controlado: El correo electrónico ya está registrado.
+2024-10-17 17:30:10 [error]: 400 - NotFoundError: Carrito no encontrado.
+2024-10-17 17:33:13 [error]: 400 - NotFoundError: Carrito no encontrado.
+2024-10-17 17:35:07 [error]: 400 - NotFoundError: Carrito no encontrado.
+2024-10-17 17:36:08 [error]: 400 - NotFoundError: Carrito no encontrado.
+2024-10-17 17:40:35 [error]: 400 - NotFoundError: Carrito no encontrado.
+2024-10-17 17:44:44 [error]: 400 - NotFoundError: Carrito no encontrado.
+2024-10-17 17:45:25 [error]: 400 - NotFoundError: Carrito no encontrado.
+2024-10-17 17:46:16 [error]: 400 - NotFoundError: Carrito no encontrado.
+2024-10-17 18:23:31 [error]: 400 - NotFoundError: Producto no encontrado en el carrito.
+2024-10-17 18:24:51 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-17 18:24:51 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-17 18:25:09 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-17 18:25:09 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-17 18:25:12 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-17 18:25:12 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-17 18:26:27 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-17 18:26:27 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-17 18:28:11 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-17 18:28:11 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-17 18:28:12 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-17 18:28:12 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-17 18:30:41 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-17 18:30:41 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-17 18:32:55 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-17 18:32:55 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-17 18:33:40 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-17 18:33:40 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-17 18:38:45 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-17 18:38:45 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-17 18:43:23 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-17 18:43:23 [error]: Error controlado: No tienes permisos para realizar esta acción.
+2024-10-17 18:43:31 [error]: 400 - AuthorizationError: No tienes permisos para realizar esta acción.
+2024-10-17 18:43:31 [error]: Error controlado: No tienes permisos para realizar esta acción.

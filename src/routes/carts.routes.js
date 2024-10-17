@@ -108,7 +108,7 @@ router.get('/:id', verifyJWT, validateObjectId, getCartById);
  *       401:
  *         description: No autorizado
  */
-router.post('/:cartId/products', verifyJWT, verifyRole(['premium', 'user']), addProductToCart);
+router.post('/:id/products', verifyJWT, verifyRole(['premium', 'user']), addProductToCart);
 
 /**
  * @swagger
@@ -189,7 +189,8 @@ router.delete('/:cid', verifyJWT, verifyRole(['admin']), validateObjectId, delet
  *       401:
  *         description: No autorizado
  */
-router.delete('/:cid/products/:pid', verifyJWT, verifyRole(['user']), validateObjectId, removeProductFromCart);
+router.delete('/:cid/products', verifyJWT, verifyRole(['admin', 'premium', 'user']), validateObjectId, clearCart);
+
 
 /**
  * @swagger
